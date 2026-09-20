@@ -515,8 +515,8 @@ html[data-lang="pl"] body [lang="en"] { display: none !important; }
   align-items: end;
 }
 .hero h1 {
-  font-size: clamp(40px, 6.1vw, 104px);
-  font-stretch: 112%;
+  font-size: clamp(38px, 5.7vw, 92px);
+  font-stretch: 106%;
 }
 .h-display .ln { display: block; }
 .hero h1 .dim { color: var(--fg-3); }
