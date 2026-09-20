@@ -1,0 +1,179 @@
+<!--{
+"out": "index.html",
+"depth": 0,
+"active": "",
+"title_en": "minimalistic.solutions | Android apps: Outlier & Killswitch",
+"title_pl": "minimalistic.solutions | Aplikacje na Androida: Outlier i Killswitch",
+"desc": "Independent Android app studio. Outlier, an RPG fitness tracker that ranks you against real population data, and Killswitch, an infinite scroll blocker. No ads.",
+"schema": "home",
+"desc_pl": "Niezależne studio aplikacji na Androida. Outlier, fitness tracker RPG z prawdziwymi percentylami populacji, i Killswitch, blokada nieskończonego scrollowania. Zero reklam."
+}-->
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="mono-label" data-scramble><span lang="en">Independent Android studio</span><span lang="pl">Niezależne studio Android</span></p>
+      <h1 class="h-display">
+        <span lang="en"><span class="ln"><span>Software</span></span><span class="ln"><span>with nothing</span></span><span class="ln"><span class="dim">extra.</span></span></span>
+        <span lang="pl"><span class="ln"><span>Aplikacje</span></span><span class="ln"><span>bez niczego</span></span><span class="ln"><span class="dim">zbędnego.</span></span></span>
+      </h1>
+      <div class="hero-fade">
+        <p class="lede">
+          <span lang="en">We build focused Android apps that respect your time, your data and your attention.</span>
+          <span lang="pl">Tworzymy skupione aplikacje na Androida, które szanują Twój czas, Twoje dane i Twoją uwagę.</span>
+        </p>
+        <div class="btn-row" style="margin-top:36px">
+          <a class="btn btn--solid" href="#apps" data-dir="down"><span class="t"><span lang="en">See the apps</span><span lang="pl">Zobacz aplikacje</span></span><span class="g" aria-hidden="true"><i>&#8595;</i></span></a>
+          <a class="btn btn--ghost" href="#contact"><span class="t"><span lang="en">Contact</span><span lang="pl">Kontakt</span></span><span class="g" aria-hidden="true"><i>@</i></span></a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="galton hud hero-fade" aria-label="Animated Galton board: balls fall through pegs and pile into a bell curve. The last ball lands alone in the far tail.">
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <div class="hud-in">
+        <div class="hud-bar"><span><b>galton_board</b>.sim</span><span>n = <output id="galton-n">000</output></span></div>
+        <canvas id="galton"></canvas>
+        <div class="galton-foot">
+          <span><span lang="en">Every user is a data point</span><span lang="pl">Każdy użytkownik to punkt danych</span></span>
+          <button type="button" id="galton-replay"><span lang="en">Run again &#8635;</span><span lang="pl">Jeszcze raz &#8635;</span></button>
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <dl class="hero-meta hero-fade">
+      <div><dt><span lang="en">Live</span><span lang="pl">Opublikowane</span></dt><dd>Outlier</dd></div>
+      <div><dt><span lang="en">In development</span><span lang="pl">W produkcji</span></dt><dd>Killswitch</dd></div>
+      <div><dt><span lang="en">Platform</span><span lang="pl">Platforma</span></dt><dd>Android</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================ APPS ============================ -->
+<section class="section" id="apps">
+  <div class="wrap">
+    <div class="apps-head">
+      <h2 class="h2" data-reveal><span lang="en">Apps</span><span lang="pl">Aplikacje</span></h2>
+      <p class="lede" data-reveal style="--i:1">
+        <span lang="en">Two apps. Each one does a single job, properly.</span>
+        <span lang="pl">Dwie aplikacje. Każda robi jedną rzecz, porządnie.</span>
+      </p>
+    </div>
+
+    <!-- OUTLIER -->
+    <article class="app theme-outlier" data-reveal>
+      <div class="app-info">
+        <div>
+          <span class="status live"><i></i><span lang="en">Live on Google Play</span><span lang="pl">Dostępna w Google Play</span></span>
+          <h3 class="app-name h-display" style="margin-top:28px"><span class="acc">Out</span>lier</h3>
+          <p class="app-tag">
+            <span lang="en">An RPG fitness tracker that ranks your body against real population data.</span>
+            <span lang="pl">Fitness tracker w stylu RPG, który porównuje Twoje ciało z prawdziwymi danymi populacji.</span>
+          </p>
+        </div>
+        <div style="display:grid;gap:24px">
+          <dl class="app-specs">
+            <div><dt><span lang="en">Category</span><span lang="pl">Kategoria</span></dt><dd><span lang="en">Health &amp; fitness</span><span lang="pl">Zdrowie i fitness</span></dd></div>
+            <div><dt><span lang="en">Model</span><span lang="pl">Model</span></dt><dd><span lang="en">Free + OUTLIER+</span><span lang="pl">Darmowa + OUTLIER+</span></dd></div>
+            <div><dt><span lang="en">Ads</span><span lang="pl">Reklamy</span></dt><dd class="acc-text"><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
+            <div><dt><span lang="en">Exercises</span><span lang="pl">Ćwiczenia</span></dt><dd><span lang="en">89 animated</span><span lang="pl">89 animowanych</span></dd></div>
+          </dl>
+          <div class="app-cta">
+            <a class="btn btn--solid" href="{{PLAY}}" rel="noopener"><span class="t">Google Play</span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+            <a class="btn btn--ghost" href="{{P}}outlier/"><span class="t"><span lang="en">Explore Outlier</span><span lang="pl">Poznaj Outlier</span></span><span class="g" aria-hidden="true"><i>&#8594;</i></span></a>
+          </div>
+        </div>
+      </div>
+      <a class="app-visual" href="{{P}}outlier/" tabindex="-1" aria-hidden="true">
+        <img src="{{A}}assets/img/outlier/theme-samurai.webp" srcset="{{A}}assets/img/outlier/theme-samurai-360.webp 360w, {{A}}assets/img/outlier/theme-samurai.webp 720w" sizes="(max-width: 1080px) 100vw, 50vw" width="720" height="1280" alt="" loading="lazy" decoding="async">
+      </a>
+    </article>
+
+    <!-- KILLSWITCH -->
+    <article class="app theme-killswitch" data-reveal>
+      <div class="app-info">
+        <div>
+          <span class="status"><i></i><span lang="en">In development</span><span lang="pl">W trakcie tworzenia</span></span>
+          <h3 class="app-name h-display" style="margin-top:28px">Kill<span class="acc">switch</span></h3>
+          <p class="app-tag">
+            <span lang="en">Stops infinite feeds in the apps you choose. Comments, chats and replies keep working.</span>
+            <span lang="pl">Zatrzymuje nieskończone feedy w wybranych aplikacjach. Komentarze, czaty i odpowiedzi działają dalej.</span>
+          </p>
+        </div>
+        <div style="display:grid;gap:24px">
+          <dl class="app-specs">
+            <div><dt><span lang="en">Category</span><span lang="pl">Kategoria</span></dt><dd><span lang="en">Digital wellbeing</span><span lang="pl">Cyfrowy dobrostan</span></dd></div>
+            <div><dt><span lang="en">Price</span><span lang="pl">Cena</span></dt><dd><span lang="en">Free, no purchases</span><span lang="pl">Darmowa, bez zakupów</span></dd></div>
+            <div><dt><span lang="en">Data collected</span><span lang="pl">Zbierane dane</span></dt><dd class="acc-text"><span lang="en">None</span><span lang="pl">Żadne</span></dd></div>
+            <div><dt><span lang="en">Network access</span><span lang="pl">Dostęp do sieci</span></dt><dd><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
+          </dl>
+          <div class="app-cta">
+            <a class="btn btn--solid" href="{{P}}killswitch/"><span class="t"><span lang="en">Explore Killswitch</span><span lang="pl">Poznaj Killswitch</span></span><span class="g" aria-hidden="true"><i>&#8594;</i></span></a>
+            <a class="btn btn--ghost" href="{{P}}killswitch/privacy-policy/"><span class="t"><span lang="en">Privacy</span><span lang="pl">Prywatność</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+          </div>
+        </div>
+      </div>
+      <a class="app-visual" href="{{P}}killswitch/" tabindex="-1" aria-hidden="true">
+        <span class="hazard">
+          <span class="hazard-card">
+            <span class="row"><span>Killswitch</span><span class="acc-text">&#9632; <span lang="en">Triggered</span><span lang="pl">Aktywny</span></span></span>
+            <span class="big"><span lang="en">Feed<br>blocked.</span><span lang="pl">Feed<br>zablokowany.</span></span>
+            <span class="meter"></span>
+            <span class="row"><span><span lang="en">Comments</span><span lang="pl">Komentarze</span></span><span><span lang="en">Still open</span><span lang="pl">Nadal otwarte</span></span></span>
+          </span>
+        </span>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- ============================ PRINCIPLES ============================ -->
+<section class="section" id="principles">
+  <div class="wrap">
+    <h2 class="h2" data-reveal><span lang="en">How we build</span><span lang="pl">Jak budujemy</span></h2>
+    <div class="principles">
+      <article class="principle principle--inv" data-reveal>
+        <span class="glyph">[x] ads</span>
+        <h3><span lang="en">No ads. Ever.</span><span lang="pl">Zero reklam.</span></h3>
+        <p><span lang="en">Neither app shows advertising. Revenue comes from people who choose to pay, not from selling attention.</span><span lang="pl">Żadna z aplikacji nie wyświetla reklam. Zarabiamy na osobach, które same zdecydują się zapłacić, a nie na sprzedawaniu uwagi.</span></p>
+      </article>
+      <article class="principle" data-reveal style="--i:1">
+        <span class="glyph">[~] local</span>
+        <h3><span lang="en">Your data stays yours.</span><span lang="pl">Twoje dane są Twoje.</span></h3>
+        <p><span lang="en">Local first. Anything that leaves your phone is listed line by line in a privacy policy written for humans.</span><span lang="pl">Najpierw lokalnie. Wszystko, co opuszcza telefon, jest wypisane punkt po punkcie w polityce prywatności pisanej dla ludzi.</span></p>
+      </article>
+      <article class="principle" data-reveal>
+        <span class="glyph">[1] scope</span>
+        <h3><span lang="en">One job, done well.</span><span lang="pl">Jedno zadanie. Dobrze.</span></h3>
+        <p><span lang="en">Every app solves a single problem. Features that don't serve it don't ship.</span><span lang="pl">Każda aplikacja rozwiązuje jeden problem. Funkcje, które mu nie służą, nie trafiają do wydania.</span></p>
+      </article>
+      <article class="principle" data-reveal style="--i:1">
+        <span class="glyph">[@] human</span>
+        <h3><span lang="en">A person answers.</span><span lang="pl">Odpisuje człowiek.</span></h3>
+        <p><span lang="en">No ticket queues, no bots. Your email reaches the person who built the app.</span><span lang="pl">Bez kolejki zgłoszeń i bez botów. Twój e-mail trafia do osoby, która zbudowała aplikację.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="mono-label" data-scramble><span lang="en">Contact</span><span lang="pl">Kontakt</span></p>
+    <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Say hello.</span><span lang="pl">Napisz do nas.</span></h2>
+    <p class="lede" style="margin-top:24px;--i:1" data-reveal>
+      <span lang="en">Bug report, feature idea or a project to talk about. One inbox, read by a human.</span>
+      <span lang="pl">Zgłoszenie błędu, pomysł na funkcję albo projekt do omówienia. Jedna skrzynka, czytana przez człowieka.</span>
+    </p>
+    <a class="contact-mail" href="mailto:{{MAIL}}" data-reveal>{{MAIL}}</a>
+
+    <dl class="contact-grid" data-reveal>
+      <div><dt><span lang="en">Support</span><span lang="pl">Wsparcie</span></dt><dd><span lang="en">Outlier and Killswitch</span><span lang="pl">Outlier i Killswitch</span></dd></div>
+      <div><dt><span lang="en">Data requests</span><span lang="pl">Wnioski o dane</span></dt><dd><a class="tlink" href="{{P}}outlier/delete-account/"><span lang="en">Delete an Outlier account</span><span lang="pl">Usuń konto Outlier</span></a></dd></div>
+      <div><dt><span lang="en">Languages</span><span lang="pl">Języki</span></dt><dd><span lang="en">English, Polish</span><span lang="pl">Polski, angielski</span></dd></div>
+    </dl>
+  </div>
+</section>

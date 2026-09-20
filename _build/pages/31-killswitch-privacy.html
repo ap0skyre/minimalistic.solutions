@@ -1,0 +1,308 @@
+<!--{
+"out": "killswitch/privacy-policy/index.html",
+"depth": 2,
+"crumb": "killswitch",
+"theme": "theme-killswitch",
+"favicon": "killswitch.svg",
+"back": "../",
+"back_name": "Killswitch",
+"title_en": "Killswitch privacy policy | minimalistic.solutions",
+"title_pl": "Killswitch: polityka prywatności | minimalistic.solutions",
+"desc": "Killswitch privacy policy. The app collects nothing, sends nothing and shows no ads. A precise account of the Accessibility Service and overlay permissions.",
+"schema": "doc",
+"desc_pl": "Polityka prywatności Killswitcha. Aplikacja niczego nie zbiera, niczego nie wysyła i nie ma reklam. Dokładny opis uprawnień ułatwień dostępu i nakładki."
+}-->
+
+<header class="doc-head">
+  <div class="wrap">
+    <p class="mono-label" data-scramble>legal_doc // killswitch // privacy_policy.txt</p>
+    <h1 class="h-display"><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></h1>
+    <dl class="doc-meta">
+      <div><dt><span lang="en">App</span><span lang="pl">Aplikacja</span></dt><dd>Killswitch</dd></div>
+      <div><dt><span lang="en">Version</span><span lang="pl">Wersja</span></dt><dd>1.0</dd></div>
+      <div><dt><span lang="en">Last updated</span><span lang="pl">Ostatnia zmiana</span></dt><dd><span lang="en">September 6, 2026</span><span lang="pl">6 września 2026</span></dd></div>
+      <div><dt><span lang="en">Contact</span><span lang="pl">Kontakt</span></dt><dd><a class="tlink" href="mailto:{{MAIL}}">{{MAIL}}</a></dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- ============================ ENGLISH ============================ -->
+<div class="doc wrap" lang="en">
+<!--TOC-->
+<div class="prose">
+
+<section id="who">
+<h2>Who we are</h2>
+<p>Killswitch is an independent Android application that interrupts infinite-feed scrolling in the apps you choose, while leaving comments, chats and replies working. It is not affiliated with any corporation, and it is not affiliated with, endorsed by, or connected to any of the apps it guards.</p>
+<p>There is no company behind it and no team: one developer, one app. For any privacy-related question, write to the address at the bottom of this page.</p>
+</section>
+
+<section id="short">
+<h2>The short version</h2>
+<div class="note"><b>POLICY</b>Killswitch collects nothing, sends nothing and shows no ads. There is no account, no server, no analytics SDK and no tracking of any kind. Everything the app knows lives in its own storage on your phone, and uninstalling it deletes all of it.</div>
+<p>The rest of this document exists because Killswitch uses two powerful Android permissions, and you deserve a precise account of what they are used for. Sections 04 and 05 are the ones that matter.</p>
+</section>
+
+<section id="collect">
+<h2>Data we collect</h2>
+<p>None. Not "anonymised", not "aggregated": none. Specifically, Killswitch does not collect, transmit, or have any means of receiving:</p>
+<ul>
+<li>Your name, email address, phone number, or any account identifier</li>
+<li>An advertising ID, device ID, or any other persistent identifier</li>
+<li>Location data, precise or coarse</li>
+<li>Your contacts, photos, files, or clipboard</li>
+<li>The contents of your screen, your messages, or anything you type</li>
+<li>Which apps are installed on your device. Killswitch cannot even see them (section 06)</li>
+<li>Usage analytics, crash reports, or diagnostic logs</li>
+<li>Payment information. The app has no purchases of any kind</li>
+</ul>
+<p>Killswitch contains no advertising network, no analytics library and no crash-reporting library. It makes no network requests. The app functions identically with your device in airplane mode, permanently.</p>
+<div class="note"><b>POLICY</b>We do not sell your data, because we do not have any of your data to sell.</div>
+</section>
+
+<section id="a11y">
+<h2>Accessibility Service</h2>
+<p>Killswitch uses Android's <code>AccessibilityService</code> API. This is the only way an Android app can detect that scrolling is happening inside another app, and detecting exactly that is the app's entire function.</p>
+<h3>What the service does</h3>
+<ul>
+<li>Receives scroll events (<code>TYPE_VIEW_SCROLLED</code>) and app-switch events (<code>TYPE_WINDOW_STATE_CHANGED</code>)</li>
+<li>Only from the apps you personally ticked on the TARGETS screen. The service narrows itself to that exact list of packages and is not woken by any other app</li>
+<li>Reads the structure of the visible screen to tell a feed apart from a comment thread or a chat: view identifiers, class names, and whether a text field is focused</li>
+<li>Counts scrolls against a time window, and when the threshold is crossed, shows the block screen and presses Back</li>
+</ul>
+<h3>What the service does not do</h3>
+<ul>
+<li>It does not read the text of your screen, your posts, your messages, or your comments</li>
+<li>It does not log keystrokes or capture anything you type</li>
+<li>It does not take screenshots or record your screen</li>
+<li>It does not store any screen content, not even temporarily on the device</li>
+<li>It does not transmit anything anywhere. The service has no network access path</li>
+</ul>
+<p>The structural signals in section 04 are examined in memory, in the moment, to answer a single yes/no question ("is this a feed?") and are discarded immediately. Nothing derived from them is written to disk beyond an anonymous counter of how many times the guard fired.</p>
+<div class="note"><b>NOTE</b>The accessibility service is off until you switch it on yourself in Android Settings, and you can switch it off at any time in the same place. Killswitch stops working the moment you do, and does nothing to discourage or prevent it.</div>
+</section>
+
+<section id="overlay">
+<h2>Display over other apps</h2>
+<p>Killswitch requests the <code>SYSTEM_ALERT_WINDOW</code> permission so it can draw the block screen on top of the app you were scrolling. That screen shows the app's name and your count for the day, and dismisses itself after about three seconds.</p>
+<p>The overlay is used for nothing else. It does not display advertising, does not collect taps, and does not appear over any app that is not on your guarded list.</p>
+</section>
+
+<section id="stored">
+<h2>Data stored on your device</h2>
+<p>Killswitch keeps a small amount of state in its own private app storage, readable only by the app itself. In full, that is:</p>
+<table class="table">
+<thead><tr><th>Stored</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td><small>TARGETS</small>Package names you ticked</td><td>So the guard knows which apps to watch</td></tr>
+<tr><td><small>COUNTERS</small>Daily block and scroll counts, last 30 days</td><td>The STATS screen</td></tr>
+<tr><td><small>BASELINE</small>The hours-per-day figure you entered</td><td>To measure your progress against your own number</td></tr>
+<tr><td><small>SETTINGS</small>Accent colour, sensitivity, toggles</td><td>So the app looks and behaves the way you set it</td></tr>
+</tbody>
+</table>
+<p>That is the complete list. None of it leaves your device, none of it is backed up to any server of ours, and you can erase the counters at any time from CONFIG &gt; DATA &gt; RESET STATISTICS.</p>
+<h3>What the app can see of your installed apps</h3>
+<p>Almost nothing, and this is enforced by Android rather than promised by us. Killswitch does not hold the <code>QUERY_ALL_PACKAGES</code> permission, so it cannot read the list of apps on your phone.</p>
+<p>Instead it declares roughly forty specific packages in its manifest (apps known to present an infinite feed) and can check only whether those are installed, in order to draw the TARGETS screen. Every other app on your device is invisible to it: the operating system reports them as not found.</p>
+<div class="note"><b>NOTE</b>This is why the TARGETS list is short. It is not a bug and it is not a curated recommendation. It is the complete set of apps Killswitch is technically able to see.</div>
+</section>
+
+<section id="third">
+<h2>Third-party services</h2>
+<p>None. Killswitch integrates no third-party service of any kind:</p>
+<ul>
+<li>No Firebase, Google Analytics, or any other analytics provider</li>
+<li>No advertising network or mediation SDK</li>
+<li>No crash reporting (Crashlytics, Sentry, or similar)</li>
+<li>No sign-in provider. There is no account to sign in to</li>
+<li>No cloud storage or sync backend</li>
+</ul>
+<p>The app is distributed through Google Play, and Google collects its own data about installs and purchases under <a href="https://policies.google.com/privacy" rel="noopener">its own privacy policy</a>. That happens on Google's side of the transaction and we receive no personal data from it.</p>
+</section>
+
+<section id="rights">
+<h2>Your rights</h2>
+<h3>European Union (GDPR)</h3>
+<p>GDPR grants you rights over personal data a controller holds about you. Killswitch holds none, so in practice these rights are satisfied by the app's design rather than by a request process, but they are stated here in full:</p>
+<div class="rights">
+<div><b>Access</b><p>All stored data is visible inside the app. There is nothing held elsewhere.</p></div>
+<div><b>Rectification</b><p>Change any of it in the app at any time.</p></div>
+<div><b>Erasure</b><p>Reset statistics in CONFIG, or uninstall. Both are immediate and complete.</p></div>
+<div><b>Portability</b><p>No data is held by us that could be ported.</p></div>
+<div><b>Object / withdraw</b><p>Revoke either permission in Android Settings whenever you like.</p></div>
+<div><b>Complaint</b><p>You may lodge a complaint with your national supervisory authority.</p></div>
+</div>
+<h3>California (CCPA / CPRA)</h3>
+<p>We do not collect, sell, or share personal information as those terms are defined under California law. There is no data to request, delete, or opt out of, and nothing to be discriminated against for.</p>
+</section>
+
+<section id="age">
+<h2>Minimum age</h2>
+<p>The App is intended for users aged 13 and older. Because it collects no personal data from anyone, it cannot knowingly or unknowingly collect personal data from a child. Parents who wish to set up Killswitch on a younger child's device may do so; the app's behaviour is identical regardless of who uses it.</p>
+</section>
+
+<section id="security">
+<h2>Data security and retention</h2>
+<p>Data stored by Killswitch lives in the app's private storage directory, which Android isolates from other apps, and is protected by your device's own security: screen lock and full-disk encryption. Keeping your device software up to date is the single most effective thing you can do for it.</p>
+<ul>
+<li><strong>Counters:</strong> kept for a rolling 30 days, then discarded automatically</li>
+<li><strong>Settings and targets:</strong> kept until you change them or uninstall</li>
+<li><strong>Everything else:</strong> does not exist</li>
+</ul>
+<p>There is no server-side retention period, because there is no server.</p>
+</section>
+
+<section id="changes">
+<h2>Policy changes</h2>
+<p>We may update this Privacy Policy from time to time. When we do, the "Last updated" date at the top of this page changes. If a future version of Killswitch ever begins collecting any data at all, that change will be described here and announced inside the app before it takes effect, not buried in a revision.</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Questions, concerns, or anything about this policy you think is wrong: write directly.</p>
+<div class="mail-cta"><a class="btn btn--solid" href="mailto:{{MAIL}}"><span class="t">{{MAIL}}</span><span class="g" aria-hidden="true"><i>@</i></span></a></div>
+</section>
+
+</div>
+</div><!--/doc-->
+
+<!-- ============================ POLSKI ============================ -->
+<div class="doc wrap" lang="pl">
+<!--TOC-->
+<div class="prose">
+<p class="translation-note">Tłumaczenie polskie ma charakter informacyjny. W razie rozbieżności rozstrzyga wersja angielska.</p>
+
+<section id="pl-who">
+<h2>Kim jesteśmy</h2>
+<p>Killswitch to niezależna aplikacja na Androida, która przerywa nieskończone przewijanie feedów w wybranych przez Ciebie aplikacjach, pozostawiając działające komentarze, czaty i odpowiedzi. Nie jest powiązana z żadną korporacją ani z żadną z aplikacji, które chroni; nie jest też przez nie wspierana.</p>
+<p>Nie stoi za nią firma ani zespół: jeden programista, jedna aplikacja. W sprawach prywatności napisz na adres podany na dole tej strony.</p>
+</section>
+
+<section id="pl-short">
+<h2>W skrócie</h2>
+<div class="note"><b>ZASADA</b>Killswitch niczego nie zbiera, niczego nie wysyła i nie wyświetla reklam. Nie ma konta, serwera, SDK analitycznego ani żadnego śledzenia. Wszystko, co aplikacja wie, znajduje się w jej własnej pamięci na telefonie, a odinstalowanie usuwa to w całości.</div>
+<p>Reszta dokumentu istnieje, ponieważ Killswitch korzysta z dwóch mocnych uprawnień Androida i zasługujesz na dokładne wyjaśnienie, do czego służą. Najważniejsze są punkty 04 i 05.</p>
+</section>
+
+<section id="pl-collect">
+<h2>Jakie dane zbieramy</h2>
+<p>Żadnych. Nie „zanonimizowanych”, nie „zagregowanych”: żadnych. Killswitch nie zbiera, nie przesyła i nie ma żadnej możliwości otrzymania:</p>
+<ul>
+<li>Imienia, adresu e-mail, numeru telefonu ani żadnego identyfikatora konta</li>
+<li>Identyfikatora reklamowego, identyfikatora urządzenia ani innego trwałego identyfikatora</li>
+<li>Danych o lokalizacji, dokładnej ani przybliżonej</li>
+<li>Kontaktów, zdjęć, plików ani schowka</li>
+<li>Zawartości ekranu, wiadomości ani niczego, co wpisujesz</li>
+<li>Listy zainstalowanych aplikacji. Killswitch nawet ich nie widzi (punkt 06)</li>
+<li>Analityki użycia, raportów awarii ani logów diagnostycznych</li>
+<li>Danych płatniczych. Aplikacja nie ma żadnych zakupów</li>
+</ul>
+<p>Killswitch nie zawiera sieci reklamowej, biblioteki analitycznej ani biblioteki do raportowania awarii. Nie wykonuje żadnych żądań sieciowych. Działa identycznie w trybie samolotowym, zawsze.</p>
+<div class="note"><b>ZASADA</b>Nie sprzedajemy Twoich danych, bo nie mamy żadnych Twoich danych do sprzedania.</div>
+</section>
+
+<section id="pl-a11y">
+<h2>Usługa ułatwień dostępu</h2>
+<p>Killswitch korzysta z API <code>AccessibilityService</code> Androida. To jedyny sposób, w jaki aplikacja na Androida może wykryć przewijanie w innej aplikacji, a wykrywanie właśnie tego jest całą funkcją Killswitcha.</p>
+<h3>Co robi usługa</h3>
+<ul>
+<li>Odbiera zdarzenia przewijania (<code>TYPE_VIEW_SCROLLED</code>) i przełączania aplikacji (<code>TYPE_WINDOW_STATE_CHANGED</code>)</li>
+<li>Tylko z aplikacji, które sam zaznaczyłeś na ekranie TARGETS. Usługa ogranicza się dokładnie do tej listy pakietów i nie jest wybudzana przez żadną inną aplikację</li>
+<li>Czyta strukturę widocznego ekranu, aby odróżnić feed od wątku komentarzy lub czatu: identyfikatory widoków, nazwy klas i to, czy aktywne jest pole tekstowe</li>
+<li>Liczy przewinięcia w oknie czasowym, a po przekroczeniu progu pokazuje ekran blokady i naciska Wstecz</li>
+</ul>
+<h3>Czego usługa nie robi</h3>
+<ul>
+<li>Nie czyta tekstu na ekranie, Twoich postów, wiadomości ani komentarzy</li>
+<li>Nie rejestruje naciśnięć klawiszy ani niczego, co wpisujesz</li>
+<li>Nie robi zrzutów ekranu ani nie nagrywa ekranu</li>
+<li>Nie zapisuje żadnej zawartości ekranu, nawet tymczasowo na urządzeniu</li>
+<li>Niczego nigdzie nie wysyła. Usługa nie ma dostępu do sieci</li>
+</ul>
+<p>Sygnały strukturalne z punktu 04 są analizowane w pamięci, w danej chwili, aby odpowiedzieć na jedno pytanie tak/nie („czy to feed?”), i natychmiast odrzucane. Nic z nich nie trafia na dysk poza anonimowym licznikiem tego, ile razy blokada zadziałała.</p>
+<div class="note"><b>UWAGA</b>Usługa ułatwień dostępu jest wyłączona, dopóki sam jej nie włączysz w Ustawieniach Androida, i w tym samym miejscu możesz ją w każdej chwili wyłączyć. Killswitch przestaje wtedy działać i w żaden sposób Cię od tego nie odwodzi ani tego nie blokuje.</div>
+</section>
+
+<section id="pl-overlay">
+<h2>Wyświetlanie nad innymi aplikacjami</h2>
+<p>Killswitch prosi o uprawnienie <code>SYSTEM_ALERT_WINDOW</code>, aby wyświetlić ekran blokady nad aplikacją, którą przewijałeś. Ekran pokazuje nazwę aplikacji i Twój dzisiejszy licznik, a po około trzech sekundach sam znika.</p>
+<p>Nakładka nie służy do niczego innego. Nie wyświetla reklam, nie zbiera kliknięć i nie pojawia się nad żadną aplikacją spoza Twojej listy.</p>
+</section>
+
+<section id="pl-stored">
+<h2>Dane zapisane na urządzeniu</h2>
+<p>Killswitch przechowuje niewielką ilość danych we własnej, prywatnej pamięci aplikacji, dostępnej tylko dla niej. Pełna lista:</p>
+<table class="table">
+<thead><tr><th>Co</th><th>Po co</th></tr></thead>
+<tbody>
+<tr><td><small>TARGETS</small>Nazwy zaznaczonych pakietów</td><td>Żeby blokada wiedziała, które aplikacje obserwować</td></tr>
+<tr><td><small>COUNTERS</small>Dzienne liczniki blokad i przewinięć, ostatnie 30 dni</td><td>Ekran STATS</td></tr>
+<tr><td><small>BASELINE</small>Wpisana przez Ciebie liczba godzin dziennie</td><td>Żeby mierzyć postęp względem Twojej własnej liczby</td></tr>
+<tr><td><small>SETTINGS</small>Kolor akcentu, czułość, przełączniki</td><td>Żeby aplikacja wyglądała i działała tak, jak ją ustawisz</td></tr>
+</tbody>
+</table>
+<p>To pełna lista. Nic z tego nie opuszcza urządzenia, nic nie jest kopiowane na żaden nasz serwer, a liczniki możesz w każdej chwili wyczyścić w CONFIG &gt; DATA &gt; RESET STATISTICS.</p>
+<h3>Co aplikacja widzi z Twoich aplikacji</h3>
+<p>Prawie nic, i to wymusza Android, a nie nasza obietnica. Killswitch nie ma uprawnienia <code>QUERY_ALL_PACKAGES</code>, więc nie może odczytać listy aplikacji na Twoim telefonie.</p>
+<p>Zamiast tego deklaruje w manifeście około czterdziestu konkretnych pakietów (aplikacji znanych z nieskończonego feedu) i może sprawdzić jedynie, czy są zainstalowane, aby narysować ekran TARGETS. Każda inna aplikacja jest dla niej niewidoczna: system zgłasza ją jako nieznalezioną.</p>
+<div class="note"><b>UWAGA</b>Dlatego lista TARGETS jest krótka. To nie błąd ani wyselekcjonowana rekomendacja. To pełen zestaw aplikacji, które Killswitch jest technicznie w stanie zobaczyć.</div>
+</section>
+
+<section id="pl-third">
+<h2>Usługi zewnętrzne</h2>
+<p>Żadne. Killswitch nie integruje żadnej zewnętrznej usługi:</p>
+<ul>
+<li>Brak Firebase, Google Analytics i innych dostawców analityki</li>
+<li>Brak sieci reklamowej i SDK mediacyjnego</li>
+<li>Brak raportowania awarii (Crashlytics, Sentry i podobne)</li>
+<li>Brak dostawcy logowania. Nie ma konta, do którego można się zalogować</li>
+<li>Brak przechowywania w chmurze i backendu synchronizacji</li>
+</ul>
+<p>Aplikacja jest dystrybuowana przez Google Play, a Google zbiera własne dane o instalacjach i zakupach zgodnie z <a href="https://policies.google.com/privacy" rel="noopener">własną polityką prywatności</a>. Dzieje się to po stronie Google i nie otrzymujemy z tego żadnych danych osobowych.</p>
+</section>
+
+<section id="pl-rights">
+<h2>Twoje prawa</h2>
+<h3>Unia Europejska (RODO)</h3>
+<p>RODO daje Ci prawa do danych osobowych, które przechowuje o Tobie administrator. Killswitch nie przechowuje żadnych, więc w praktyce prawa te realizuje sama konstrukcja aplikacji, a nie procedura wniosków. Mimo to wymieniamy je w całości:</p>
+<div class="rights">
+<div><b>Dostęp</b><p>Wszystkie zapisane dane widać w aplikacji. Nic nie jest przechowywane gdzie indziej.</p></div>
+<div><b>Sprostowanie</b><p>Możesz zmienić wszystko w aplikacji w każdej chwili.</p></div>
+<div><b>Usunięcie</b><p>Wyczyść statystyki w CONFIG albo odinstaluj aplikację. Oba sposoby działają natychmiast i w całości.</p></div>
+<div><b>Przenoszenie</b><p>Nie przechowujemy danych, które można by przenieść.</p></div>
+<div><b>Sprzeciw / wycofanie</b><p>Odbierz dowolne uprawnienie w Ustawieniach Androida, kiedy chcesz.</p></div>
+<div><b>Skarga</b><p>Możesz złożyć skargę do krajowego organu nadzorczego.</p></div>
+</div>
+<h3>Kalifornia (CCPA / CPRA)</h3>
+<p>Nie zbieramy, nie sprzedajemy i nie udostępniamy danych osobowych w rozumieniu prawa Kalifornii. Nie ma danych, o które można wnioskować, które można usunąć lub z których można zrezygnować, ani niczego, za co można by być dyskryminowanym.</p>
+</section>
+
+<section id="pl-age">
+<h2>Minimalny wiek</h2>
+<p>Aplikacja jest przeznaczona dla osób w wieku 13 lat i starszych. Ponieważ nie zbiera żadnych danych osobowych, nie może, świadomie ani nieświadomie, zebrać danych dziecka. Rodzice mogą zainstalować Killswitch na urządzeniu młodszego dziecka; aplikacja działa tak samo niezależnie od tego, kto z niej korzysta.</p>
+</section>
+
+<section id="pl-security">
+<h2>Bezpieczeństwo i przechowywanie</h2>
+<p>Dane Killswitcha znajdują się w prywatnym katalogu aplikacji, który Android izoluje od innych aplikacji, i chronią je zabezpieczenia urządzenia: blokada ekranu i pełne szyfrowanie dysku. Aktualizowanie oprogramowania urządzenia to najskuteczniejsza rzecz, jaką możesz dla nich zrobić.</p>
+<ul>
+<li><strong>Liczniki:</strong> przechowywane przez kroczące 30 dni, potem automatycznie usuwane</li>
+<li><strong>Ustawienia i cele:</strong> przechowywane, dopóki ich nie zmienisz lub nie odinstalujesz aplikacji</li>
+<li><strong>Cała reszta:</strong> nie istnieje</li>
+</ul>
+<p>Nie ma okresu przechowywania po stronie serwera, bo nie ma serwera.</p>
+</section>
+
+<section id="pl-changes">
+<h2>Zmiany polityki</h2>
+<p>Możemy od czasu do czasu aktualizować tę Politykę Prywatności. Zmieni się wtedy data „Ostatnia zmiana” na górze strony. Jeśli przyszła wersja Killswitcha zacznie zbierać jakiekolwiek dane, zmiana zostanie opisana tutaj i ogłoszona w aplikacji, zanim wejdzie w życie, a nie ukryta w kolejnej wersji dokumentu.</p>
+</section>
+
+<section id="pl-contact">
+<h2>Kontakt</h2>
+<p>Pytania, wątpliwości albo coś w tej polityce, co uważasz za błędne: napisz bezpośrednio.</p>
+<div class="mail-cta"><a class="btn btn--solid" href="mailto:{{MAIL}}"><span class="t">{{MAIL}}</span><span class="g" aria-hidden="true"><i>@</i></span></a></div>
+</section>
+
+</div>
+</div><!--/doc-->

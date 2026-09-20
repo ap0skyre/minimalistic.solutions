@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://minimalistic.solutions/sitemap.xml

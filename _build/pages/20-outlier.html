@@ -1,0 +1,249 @@
+<!--{
+"out": "outlier/index.html",
+"depth": 1,
+"active": "outlier",
+"crumb": "outlier",
+"theme": "theme-outlier",
+"favicon": "outlier/icon-192.png",
+"title_en": "Outlier: RPG Fitness Tracker for Android | minimalistic.solutions",
+"title_pl": "Outlier: RPG fitness tracker na Androida | minimalistic.solutions",
+"desc": "Gym and body tracker that ranks you against real NHANES population data. RPG levels E to S, 89 animated exercises, live workouts, progressive overload. No ads.",
+"schema": "outlier",
+"desc_pl": "Tracker treningów i sylwetki, który porównuje Cię z prawdziwymi danymi populacji NHANES. Poziomy RPG od E do S, 89 animowanych ćwiczeń, treningi na żywo. Bez reklam."
+}-->
+
+<!-- ============================ HERO ============================ -->
+<section class="p-hero">
+  <div class="wrap p-hero-grid">
+    <div>
+      <div class="app-id hero-fade">
+        <img src="{{A}}assets/img/outlier/icon.webp" width="96" height="96" alt="Outlier icon">
+        <div>
+          <div class="mono-label" style="color:var(--fg)">Outlier: RPG Fitness Tracker</div>
+          <span class="status live" style="margin-top:4px"><i></i><span lang="en">Live on Google Play</span><span lang="pl">Dostępna w Google Play</span></span>
+        </div>
+      </div>
+      <h1 class="h-display">
+        <span lang="en"><span class="ln"><span>You are a</span></span><span class="ln"><span>data point.</span></span><span class="ln"><span class="acc-text">Find out which.</span></span></span>
+        <span lang="pl"><span class="ln"><span>Jesteś</span></span><span class="ln"><span>punktem danych.</span></span><span class="ln"><span class="acc-text">Sprawdź którym.</span></span></span>
+      </h1>
+      <div class="hero-fade">
+        <p class="lede">
+          <span lang="en">Outlier ranks your body against real population data, then turns training into an RPG.</span>
+          <span lang="pl">Outlier porównuje Twoje ciało z prawdziwymi danymi populacji, a trening zamienia w grę RPG.</span>
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--solid" href="{{PLAY}}" rel="noopener"><span class="t"><span lang="en">Get it on Google Play</span><span lang="pl">Pobierz z Google Play</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+          <a class="btn btn--ghost" href="#how" data-dir="down"><span class="t"><span lang="en">How it works</span><span lang="pl">Jak to działa</span></span><span class="g" aria-hidden="true"><i>&#8595;</i></span></a>
+        </div>
+      </div>
+    </div>
+    <figure class="phone-shot hero-fade">
+      <div class="hud">
+        <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+        <div class="hud-in"><img src="{{A}}assets/img/outlier/theme-samurai.webp" srcset="{{A}}assets/img/outlier/theme-samurai-360.webp 360w, {{A}}assets/img/outlier/theme-samurai.webp 720w" sizes="(max-width: 1080px) 380px, 440px" width="720" height="1280" alt="Outlier home screen in the SAMURAI_OS theme: rank, level and percentile with the samurai cat coach." fetchpriority="high"></div>
+      </div>
+      <figcaption><span><span lang="en">Theme: Samurai_OS</span><span lang="pl">Motyw: Samurai_OS</span></span><span>Android</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ STATS ============================ -->
+<div class="stats" aria-label="Outlier in numbers">
+  <div class="stat" data-reveal><div class="n">89</div><div class="l"><span lang="en">Animated exercises</span><span lang="pl">Animowanych ćwiczeń</span></div></div>
+  <div class="stat" data-reveal style="--i:1"><div class="n">10</div><div class="l"><span lang="en">Workout presets</span><span lang="pl">Gotowych treningów</span></div></div>
+  <div class="stat" data-reveal style="--i:2"><div class="n">7</div><div class="l"><span lang="en">Visual themes</span><span lang="pl">Motywów wizualnych</span></div></div>
+  <div class="stat" data-reveal style="--i:3"><div class="n">E<span class="acc-text">&#8594;</span>S</div><div class="l"><span lang="en">Rank tiers</span><span lang="pl">Poziomy rangi</span></div></div>
+</div>
+
+<!-- ============================ GAUSSIAN ============================ -->
+<section class="section" style="border-top:0">
+  <div class="wrap gauss">
+    <div>
+      <h2 class="h2" data-reveal><span lang="en">Where do you actually stand?</span><span lang="pl">Gdzie naprawdę jesteś?</span></h2>
+      <p class="body" style="margin-top:28px" data-reveal>
+        <span lang="en">Every measurement lands on a normal distribution built from NHANES population data. No participation trophies: your level reflects your real percentile, not how often you opened the app.</span>
+        <span lang="pl">Każdy pomiar trafia na rozkład normalny zbudowany z danych populacyjnych NHANES. Bez nagród za samo przyjście: Twój poziom odzwierciedla prawdziwy percentyl, a nie to, ile razy otworzyłeś aplikację.</span>
+      </p>
+    </div>
+    <div class="hud gauss-panel" data-reveal style="--i:1">
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <div class="hud-in">
+        <div class="hud-bar"><span><b>percentile</b>.model</span><span><span lang="en">Try it</span><span lang="pl">Wypróbuj</span></span></div>
+        <div class="gauss-body">
+        <canvas id="gauss" aria-hidden="true"></canvas>
+        <dl class="gauss-read">
+          <div><dt><span lang="en">Deviation</span><span lang="pl">Odchylenie</span></dt><dd id="g-z">+1.00&#963;</dd></div>
+          <div><dt><span lang="en">Better than</span><span lang="pl">Lepiej niż</span></dt><dd id="g-p">84.1%</dd></div>
+          <div><dt><span lang="en">You are</span><span lang="pl">Jesteś w</span></dt><dd id="g-t" class="acc-text">TOP 15.9%</dd></div>
+        </dl>
+        <div class="gauss-ctrl">
+          <label for="gauss-z"><span><span lang="en">Your position</span><span lang="pl">Twoja pozycja</span></span><span style="text-transform:none">&#8722;3&#963; &#8230; +3&#963;</span></label>
+          <input type="range" id="gauss-z" min="-3" max="3" step="0.01" value="1">
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="mono-label" data-scramble><span lang="en">How it works</span><span lang="pl">Jak to działa</span></p>
+    <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Your body is a character sheet.</span><span lang="pl">Twoje ciało to karta postaci.</span></h2>
+    <ol class="rail">
+      <li data-reveal>
+        <span class="arrow">&gt;</span>
+        <h3><span lang="en">Measure</span><span lang="pl">Zmierz</span></h3>
+        <p><span lang="en">Enter weight, height, circumferences and body fat. Outlier calculates your real percentile from NHANES population data and a Gaussian model.</span><span lang="pl">Wpisz wagę, wzrost, obwody i tkankę tłuszczową. Outlier liczy Twój prawdziwy percentyl na podstawie danych populacyjnych NHANES i modelu Gaussa.</span></p>
+      </li>
+      <li data-reveal style="--i:1">
+        <span class="arrow">&gt;&gt;</span>
+        <h3><span lang="en">Train</span><span lang="pl">Trenuj</span></h3>
+        <p><span lang="en">Log workouts in Quick or Live mode. Pick one of 10 presets or build your own, with 89 animated guides keeping your form sharp.</span><span lang="pl">Zapisuj treningi w trybie szybkim albo na żywo. Wybierz jeden z 10 gotowych planów lub zbuduj własny, a 89 animacji pilnuje techniki.</span></p>
+      </li>
+      <li data-reveal style="--i:2">
+        <span class="arrow">&gt;&gt;&gt;</span>
+        <h3><span lang="en">Level up</span><span lang="pl">Awansuj</span></h3>
+        <p><span lang="en">Climb from rank E to S. Your level tracks where you actually stand, so it moves when your body does.</span><span lang="pl">Wspinaj się od rangi E do S. Poziom pokazuje, gdzie naprawdę jesteś, więc rośnie razem z Twoim ciałem.</span></p>
+      </li>
+      <li data-reveal style="--i:3">
+        <span class="arrow">///</span>
+        <h3><span lang="en">Dominate</span><span lang="pl">Dominuj</span></h3>
+        <p><span lang="en">Track progressive overload, earn achievements and keep the streak alive. The cat starves if you skip training. Don't let the cat starve.</span><span lang="pl">Śledź progresję obciążeń, zdobywaj osiągnięcia i nie przerywaj serii. Kot głoduje, gdy opuszczasz trening. Nie daj kotu zgłodnieć.</span></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ FEATURES ============================ -->
+<section class="section" id="features">
+  <div class="wrap">
+    <h2 class="h2" data-reveal><span lang="en">Everything in the kit</span><span lang="pl">Wszystko w zestawie</span></h2>
+    <div class="bento">
+      <article class="cell cell--img c-7 r-2 tall" data-reveal>
+        <img src="{{A}}assets/img/outlier/tab-live.webp" srcset="{{A}}assets/img/outlier/tab-live-600.webp 600w, {{A}}assets/img/outlier/tab-live.webp 1200w" sizes="(max-width: 767px) 100vw, 60vw" width="1200" height="723" alt="Live workout screen: 7 second rest timer, cooldown bar and a list of cardio exercises with add set buttons." loading="lazy" decoding="async" style="object-position:0 0">
+        <div class="cap">
+          <span class="k">&gt; live mode</span>
+          <h3 class="h3"><span lang="en">Live workout</span><span lang="pl">Trening na żywo</span></h3>
+          <p><span lang="en">Per-set logging with rest timer, pause and resume, undo, extended cooldown and sound feedback per theme. Keeps running while you move around the app.</span><span lang="pl">Zapis każdej serii z timerem przerwy, pauzą, cofaniem, wydłużonym cooldownem i dźwiękami zależnymi od motywu. Działa dalej, gdy przechodzisz między ekranami.</span></p>
+        </div>
+      </article>
+      <article class="cell cell--acc c-5" data-reveal style="--i:1">
+        <span class="k">&gt; percentile</span>
+        <h3 class="h3"><span lang="en">Real rankings</span><span lang="pl">Prawdziwe rankingi</span></h3>
+        <p><span lang="en">See where you actually stand, not where an algorithm wants you to feel good.</span><span lang="pl">Zobacz, gdzie naprawdę jesteś, a nie gdzie algorytm chce, żebyś czuł się dobrze.</span></p>
+      </article>
+      <article class="cell c-5" data-reveal style="--i:2">
+        <span class="k">&gt; overload</span>
+        <h3 class="h3"><span lang="en">Progressive overload</span><span lang="pl">Progresja obciążeń</span></h3>
+        <p><span lang="en">Automatic PR detection across your whole session history, with badges that change with the theme.</span><span lang="pl">Automatyczne wykrywanie rekordów w całej historii treningów, z odznakami zmieniającymi się razem z motywem.</span></p>
+      </article>
+      <article class="cell c-4" data-reveal>
+        <span class="k">&gt; animated</span>
+        <h3 class="h3"><span lang="en">89 exercises</span><span lang="pl">89 ćwiczeń</span></h3>
+        <p><span lang="en">Smooth animation guide for every movement. Search by category, add mid-workout, merge templates on the fly.</span><span lang="pl">Płynna animacja dla każdego ruchu. Szukaj po kategorii, dodawaj w trakcie treningu, łącz szablony w locie.</span></p>
+      </article>
+      <article class="cell cell--tint c-4" data-reveal style="--i:1">
+        <span class="k">&gt; widget</span>
+        <h3 class="h3"><span lang="en">Home screen widget</span><span lang="pl">Widżet na ekran</span></h3>
+        <p><span lang="en">Level, top percentile and streak at a glance. Refreshes after every finished workout.</span><span lang="pl">Poziom, percentyl i seria w jednym spojrzeniu. Odświeża się po każdym zakończonym treningu.</span></p>
+      </article>
+      <article class="cell c-4" data-reveal style="--i:2">
+        <span class="k">&gt; streak</span>
+        <h3 class="h3"><span lang="en">Streaks and a cat coach</span><span lang="pl">Serie i kot trener</span></h3>
+        <p><span lang="en">Daily streak, quests, achievements, 10 easter eggs and a cat that gets hungry when you skip training.</span><span lang="pl">Codzienna seria, zadania, osiągnięcia, 10 easter eggów i kot, który głoduje, gdy opuszczasz trening.</span></p>
+      </article>
+      <article class="cell cell--img c-7" style="min-height:360px" data-reveal>
+        <img src="{{A}}assets/img/outlier/tab-curve.webp" srcset="{{A}}assets/img/outlier/tab-curve-600.webp 600w, {{A}}assets/img/outlier/tab-curve.webp 1200w" sizes="(max-width: 767px) 100vw, 60vw" width="1200" height="750" alt="Body composition screen with body fat, BMI and a bell curve showing the user's position in the population." loading="lazy" decoding="async" style="object-position:0 40%">
+        <div class="cap">
+          <span class="k">&gt; stats</span>
+          <h3 class="h3"><span lang="en">Body composition</span><span lang="pl">Skład ciała</span></h3>
+          <p><span lang="en">Navy body fat formula, percentile chart, goal line and history. Estimates are flagged with &#8776; so you always know what is measured.</span><span lang="pl">Wzór Navy na tkankę tłuszczową, wykres percentyli, linia celu i historia. Szacunki są oznaczone &#8776;, więc zawsze wiesz, co jest pomiarem.</span></p>
+        </div>
+      </article>
+      <article class="cell c-5" data-reveal style="--i:1">
+        <span class="k">&gt; local</span>
+        <h3 class="h3"><span lang="en">Privacy first</span><span lang="pl">Prywatność przede wszystkim</span></h3>
+        <p><span lang="en">Your data stays on the device by default. Google sign-in for cloud backup is optional. No ads, no data sales.</span><span lang="pl">Dane domyślnie zostają na urządzeniu. Logowanie Google do kopii w chmurze jest opcjonalne. Zero reklam i sprzedaży danych.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ THEMES ============================ -->
+<section class="section" id="themes" data-strip>
+  <div class="wrap strip-head">
+    <div>
+      <p class="mono-label" data-scramble><span lang="en">Themes</span><span lang="pl">Motywy</span></p>
+      <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Pick your world.</span><span lang="pl">Wybierz swój świat.</span></h2>
+      <p class="body" style="margin-top:24px" data-reveal><span lang="en">Every screen, sound, badge and even the cat coach changes with the theme.</span><span lang="pl">Każdy ekran, dźwięk, odznaka, a nawet kot trener zmienia się razem z motywem.</span></p>
+    </div>
+    <div class="strip-ctrl">
+      <button type="button" data-strip-dir="-1" aria-label="Previous">&#8592;</button>
+      <button type="button" data-strip-dir="1" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div class="strip" tabindex="0" aria-label="Outlier themes">
+    <figure data-reveal><div class="frame"><img src="{{A}}assets/img/outlier/theme-outlier.webp" srcset="{{A}}assets/img/outlier/theme-outlier-360.webp 360w, {{A}}assets/img/outlier/theme-outlier.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="Outlier default theme" loading="lazy" decoding="async"></div><figcaption><span>Outlier</span><span><span lang="en">Default</span><span lang="pl">Domyślny</span></span></figcaption></figure>
+    <figure data-reveal style="--i:1"><div class="frame"><img src="{{A}}assets/img/outlier/theme-samurai.webp" srcset="{{A}}assets/img/outlier/theme-samurai-360.webp 360w, {{A}}assets/img/outlier/theme-samurai.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="SAMURAI_OS theme" loading="lazy" decoding="async"></div><figcaption><span>Samurai_OS</span><span></span></figcaption></figure>
+    <figure data-reveal style="--i:2"><div class="frame"><img src="{{A}}assets/img/outlier/theme-nexus.webp" srcset="{{A}}assets/img/outlier/theme-nexus-360.webp 360w, {{A}}assets/img/outlier/theme-nexus.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="NEXUS-6 theme" loading="lazy" decoding="async"></div><figcaption><span>Nexus-6</span><span></span></figcaption></figure>
+    <figure data-reveal style="--i:3"><div class="frame"><img src="{{A}}assets/img/outlier/theme-construct.webp" srcset="{{A}}assets/img/outlier/theme-construct-360.webp 360w, {{A}}assets/img/outlier/theme-construct.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="CONSTRUCT_OS theme" loading="lazy" decoding="async"></div><figcaption><span>Construct_OS</span><span></span></figcaption></figure>
+    <figure data-reveal style="--i:4"><div class="frame"><img src="{{A}}assets/img/outlier/theme-outrun.webp" srcset="{{A}}assets/img/outlier/theme-outrun-360.webp 360w, {{A}}assets/img/outlier/theme-outrun.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="OUTRUN_OS theme" loading="lazy" decoding="async"></div><figcaption><span>Outrun_OS</span><span></span></figcaption></figure>
+    <figure data-reveal style="--i:5"><div class="frame"><img src="{{A}}assets/img/outlier/theme-eclipse.webp" srcset="{{A}}assets/img/outlier/theme-eclipse-360.webp 360w, {{A}}assets/img/outlier/theme-eclipse.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="ECLIPSE_OS theme" loading="lazy" decoding="async"></div><figcaption><span>Eclipse_OS</span><span></span></figcaption></figure>
+    <figure data-reveal style="--i:6"><div class="frame"><img src="{{A}}assets/img/outlier/theme-event.webp" srcset="{{A}}assets/img/outlier/theme-event-360.webp 360w, {{A}}assets/img/outlier/theme-event.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="EVENT_OS theme" loading="lazy" decoding="async"></div><figcaption><span>Event_OS</span><span></span></figcaption></figure>
+  </div>
+</section>
+
+<!-- ============================ OUTLIER+ ============================ -->
+<section class="section">
+  <div class="wrap">
+    <div class="plus" data-reveal>
+      <div>
+        <h2 class="h2" style="font-size:clamp(36px,4.6vw,72px)"><span lang="en">Free core.<br><span class="acc-text">Outlier+</span> for more.</span><span lang="pl">Darmowy rdzeń.<br><span class="acc-text">Outlier+</span> po więcej.</span></h2>
+        <p class="body" style="margin-top:24px"><span lang="en">Training, measurements and rankings are free. OUTLIER+ unlocks premium themes and detailed statistics.</span><span lang="pl">Treningi, pomiary i rankingi są darmowe. OUTLIER+ odblokowuje motywy premium i szczegółowe statystyki.</span></p>
+      </div>
+      <div>
+        <p class="mono-label"><span lang="en">Plans, billed by Google Play</span><span lang="pl">Plany, rozliczane przez Google Play</span></p>
+        <ul>
+          <li><b><span lang="en">Monthly</span><span lang="pl">Miesięczny</span></b><span><span lang="en">Subscription</span><span lang="pl">Subskrypcja</span></span></li>
+          <li><b><span lang="en">Yearly</span><span lang="pl">Roczny</span></b><span><span lang="en">Subscription</span><span lang="pl">Subskrypcja</span></span></li>
+          <li><b><span lang="en">Lifetime</span><span lang="pl">Dożywotni</span></b><span class="acc-text"><span lang="en">One-time purchase</span><span lang="pl">Jednorazowy zakup</span></span></li>
+          <li><b><span lang="en">Ads</span><span lang="pl">Reklamy</span></b><span><span lang="en">None, on any plan</span><span lang="pl">Brak, w każdym planie</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LEGAL ============================ -->
+<section class="section" id="privacy">
+  <div class="wrap">
+    <h2 class="h2" data-reveal><span lang="en">Your data, in plain words.</span><span lang="pl">Twoje dane, po ludzku.</span></h2>
+    <div class="legal-links" style="margin-top:clamp(40px,5vw,72px)" data-reveal>
+      <a href="privacy-policy/">
+        <span class="mono-label">v1.0 / 25.06.2026</span>
+        <span class="h3"><span><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></span><i>&#8599;</i></span>
+      </a>
+      <a href="delete-account/">
+        <span class="mono-label"><span lang="en">Within 30 days</span><span lang="pl">Do 30 dni</span></span>
+        <span class="h3"><span><span lang="en">Delete account</span><span lang="pl">Usuń konto</span></span><i>&#8599;</i></span>
+      </a>
+      <a href="mailto:{{MAIL}}">
+        <span class="mono-label">{{MAIL}}</span>
+        <span class="h3"><span><span lang="en">Ask a question</span><span lang="pl">Zadaj pytanie</span></span><i>&#8599;</i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL ============================ -->
+<section class="section">
+  <div class="wrap final">
+    <p class="h-display" data-wipe style="font-size:clamp(44px,8.4vw,150px)"><span lang="en">Don't let<br>the cat <span class="acc-text">starve.</span></span><span lang="pl">Nie daj kotu<br><span class="acc-text">zgłodnieć.</span></span></p>
+    <div class="btn-row" data-reveal>
+      <a class="btn btn--solid" href="{{PLAY}}" rel="noopener"><span class="t"><span lang="en">Get it on Google Play</span><span lang="pl">Pobierz z Google Play</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+    </div>
+  </div>
+</section>

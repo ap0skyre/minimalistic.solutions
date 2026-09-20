@@ -1,0 +1,176 @@
+<!--{
+"out": "killswitch/index.html",
+"depth": 1,
+"active": "killswitch",
+"crumb": "killswitch",
+"theme": "theme-killswitch",
+"favicon": "killswitch.svg",
+"title_en": "Killswitch: infinite scroll blocker for Android | minimalistic.solutions",
+"title_pl": "Killswitch: blokada nieskończonego scrollowania | minimalistic.solutions",
+"desc": "Killswitch stops infinite feed scrolling in the Android apps you choose, while comments and chats keep working. No data collected, no network access.",
+"schema": "killswitch",
+"desc_pl": "Killswitch zatrzymuje nieskończone przewijanie feedu w wybranych aplikacjach na Androida, a komentarze i czaty działają dalej. Zero zbieranych danych."
+}-->
+
+<!-- ============================ HERO ============================ -->
+<section class="p-hero">
+  <div class="wrap p-hero-grid">
+    <div>
+      <div class="app-id hero-fade">
+        <span aria-hidden="true" style="width:48px;height:48px;background:var(--acc);display:grid;place-items:center;color:var(--acc-ink);font:800 22px/1 var(--sans);font-stretch:125%">K</span>
+        <div>
+          <div class="mono-label" style="color:var(--fg)">Killswitch</div>
+          <span class="status" style="margin-top:4px"><i></i><span lang="en">In development</span><span lang="pl">W trakcie tworzenia</span></span>
+        </div>
+      </div>
+      <h1 class="h-display">
+        <span lang="en"><span class="ln"><span>Kill the feed.</span></span><span class="ln"><span class="acc-text">Keep the</span></span><span class="ln"><span class="acc-text">conversation.</span></span></span>
+        <span lang="pl"><span class="ln"><span>Zabij feed.</span></span><span class="ln"><span class="acc-text">Zostaw</span></span><span class="ln"><span class="acc-text">rozmowę.</span></span></span>
+      </h1>
+      <div class="hero-fade">
+        <p class="lede">
+          <span lang="en">Killswitch interrupts infinite scrolling in the apps you choose, while comments, chats and replies keep working.</span>
+          <span lang="pl">Killswitch przerywa nieskończone przewijanie w wybranych aplikacjach, a komentarze, czaty i odpowiedzi działają dalej.</span>
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--solid" href="#demo" data-dir="down"><span class="t"><span lang="en">Try the demo</span><span lang="pl">Wypróbuj demo</span></span><span class="g" aria-hidden="true"><i>&#8595;</i></span></a>
+          <a class="btn btn--ghost" href="privacy-policy/"><span class="t"><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="ks-demo hero-fade" id="demo">
+      <div class="hud">
+        <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+        <div class="hud-in">
+          <div class="hud-bar"><span><b>live</b>.demo</span><span><span lang="en">Scroll the feed</span><span lang="pl">Przewijaj feed</span></span></div>
+          <div class="ks-screen">
+            <div class="ks-app">
+              <div class="ks-app-bar"><span>feed.app</span><span><span lang="en">For you</span><span lang="pl">Dla ciebie</span></span></div>
+              <div class="ks-feed" id="ks-feed" tabindex="0" aria-label="Demo feed. Scroll it quickly to trigger Killswitch."></div>
+            </div>
+            <div class="ks-hud" aria-live="polite">
+              <div class="row"><span><span lang="en">Swipes (10 s)</span><span lang="pl">Przesunięcia (10 s)</span></span><b id="ks-s">0/8</b></div>
+              <div class="ks-meter"><i id="ks-meter"></i></div>
+              <div class="row"><span><span lang="en">Blocks this visit</span><span lang="pl">Blokady w tej wizycie</span></span><b id="ks-b">0</b></div>
+            </div>
+            <div class="ks-block" id="ks-block" aria-hidden="true" role="alert">
+              <span class="t">Killswitch // <span lang="en">triggered</span><span lang="pl">aktywny</span></span>
+              <span class="big"><span lang="en">Feed<br>blocked.</span><span lang="pl">Feed<br>zablokowany.</span></span>
+              <span>
+                <span class="count" id="ks-count">00</span>
+                <span class="t" style="display:block;margin-top:8px"><span lang="en">Blocks this visit</span><span lang="pl">Blokady w tej wizycie</span></span>
+              </span>
+              <span class="bar"><i></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="ks-note"><span><span lang="en">Demo threshold: 8 swipes in 10 s</span><span lang="pl">Próg w demo: 8 przesunięć w 10 s</span></span><span><span lang="en">Adjustable in app</span><span lang="pl">W aplikacji regulowany</span></span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ STATS ============================ -->
+<div class="stats" aria-label="Killswitch in numbers">
+  <div class="stat" data-reveal><div class="n">0</div><div class="l"><span lang="en">Bytes collected</span><span lang="pl">Zebranych bajtów</span></div></div>
+  <div class="stat" data-reveal style="--i:1"><div class="n">0</div><div class="l"><span lang="en">Network requests</span><span lang="pl">Żądań sieciowych</span></div></div>
+  <div class="stat" data-reveal style="--i:2"><div class="n"><span class="acc-text">~</span>40</div><div class="l"><span lang="en">Feed apps it can guard</span><span lang="pl">Aplikacji z feedem</span></div></div>
+  <div class="stat" data-reveal style="--i:3"><div class="n">3<span class="acc-text">s</span></div><div class="l"><span lang="en">Block screen, then Back</span><span lang="pl">Blokada, potem Wstecz</span></div></div>
+</div>
+
+<!-- ============================ HOW ============================ -->
+<section class="section" id="how" style="border-top:0">
+  <div class="wrap">
+    <h2 class="h2" data-reveal><span lang="en">The feed ends.<br>The chat doesn't.</span><span lang="pl">Feed się kończy.<br>Czat nie.</span></h2>
+    <ol class="rail">
+      <li data-reveal>
+        <span class="arrow">&gt;</span>
+        <h3><span lang="en">Pick targets</span><span lang="pl">Wybierz cele</span></h3>
+        <p><span lang="en">Tick the apps to guard on the TARGETS screen. The service listens to those packages and nothing else.</span><span lang="pl">Zaznacz aplikacje na ekranie TARGETS. Usługa nasłuchuje tylko tych pakietów i niczego więcej.</span></p>
+      </li>
+      <li data-reveal style="--i:1">
+        <span class="arrow">&gt;&gt;</span>
+        <h3><span lang="en">Scroll</span><span lang="pl">Przewijaj</span></h3>
+        <p><span lang="en">Feed scrolls are counted against a time window. Comment threads, chats and focused text fields are recognised and left alone.</span><span lang="pl">Przewinięcia feedu są liczone w oknie czasowym. Wątki komentarzy, czaty i aktywne pola tekstowe są rozpoznawane i pomijane.</span></p>
+      </li>
+      <li data-reveal style="--i:2">
+        <span class="arrow">&gt;&gt;&gt;</span>
+        <h3><span lang="en">Get cut off</span><span lang="pl">Odetnij się</span></h3>
+        <p><span lang="en">Cross the threshold and a block screen shows for about three seconds, then Back is pressed for you.</span><span lang="pl">Po przekroczeniu progu na około trzy sekundy pojawia się ekran blokady, a potem aplikacja naciska za Ciebie Wstecz.</span></p>
+      </li>
+      <li data-reveal style="--i:3">
+        <span class="arrow">///</span>
+        <h3><span lang="en">See progress</span><span lang="pl">Śledź postęp</span></h3>
+        <p><span lang="en">Set your own hours-per-day BASELINE. The STATS screen tracks daily blocks and scrolls for the last 30 days.</span><span lang="pl">Ustaw własny BASELINE godzin dziennie. Ekran STATS pokazuje dzienne blokady i przewinięcia z ostatnich 30 dni.</span></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ PRIVACY ============================ -->
+<section class="section" id="privacy">
+  <div class="wrap split">
+    <div>
+      <p class="mono-label" data-scramble><span lang="en">Privacy</span><span lang="pl">Prywatność</span></p>
+      <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Nothing leaves your phone.</span><span lang="pl">Nic nie opuszcza telefonu.</span></h2>
+      <p class="body" style="margin-top:28px" data-reveal><span lang="en">No account, no server, no analytics SDK, no tracking of any kind. Everything the app knows lives in its own storage on your phone, and uninstalling it deletes all of it.</span><span lang="pl">Bez konta, bez serwera, bez SDK analitycznego i bez jakiegokolwiek śledzenia. Wszystko, co aplikacja wie, jest w jej własnej pamięci na telefonie, a odinstalowanie usuwa to w całości.</span></p>
+    </div>
+    <div class="readout" data-reveal style="--i:1">
+      <div class="hud-bar"><span><b>killswitch</b>.audit</span><span><span lang="en">From the privacy policy</span><span lang="pl">Z polityki prywatności</span></span></div>
+      <dl>
+        <div><dt><span lang="en">Account</span><span lang="pl">Konto</span></dt><dd class="acc-text"><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
+        <div><dt><span lang="en">Server</span><span lang="pl">Serwer</span></dt><dd class="acc-text"><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
+        <div><dt><span lang="en">Analytics / crash SDK</span><span lang="pl">SDK analityki / crashy</span></dt><dd class="acc-text"><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
+        <div><dt><span lang="en">Advertising</span><span lang="pl">Reklamy</span></dt><dd class="acc-text"><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
+        <div><dt><span lang="en">Network requests</span><span lang="pl">Żądania sieciowe</span></dt><dd>0</dd></div>
+        <div><dt><span lang="en">Works in airplane mode</span><span lang="pl">Działa w trybie samolotowym</span></dt><dd><span lang="en">Yes, permanently</span><span lang="pl">Tak, zawsze</span></dd></div>
+        <div><dt>QUERY_ALL_PACKAGES</dt><dd><span lang="en">Not requested</span><span lang="pl">Nie wymagane</span></dd></div>
+        <div><dt><span lang="en">Screen text read</span><span lang="pl">Czytanie tekstu ekranu</span></dt><dd><span lang="en">Never</span><span lang="pl">Nigdy</span></dd></div>
+        <div><dt><span lang="en">Stored on device</span><span lang="pl">Zapisane na telefonie</span></dt><dd><span lang="en">Targets, counters, settings</span><span lang="pl">Cele, liczniki, ustawienia</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PERMISSIONS ============================ -->
+<section class="section" id="permissions">
+  <div class="wrap">
+    <h2 class="h2" data-reveal><span lang="en">Two permissions, fully explained.</span><span lang="pl">Dwa uprawnienia, w pełni wyjaśnione.</span></h2>
+    <div class="perm" data-reveal>
+      <div>
+        <code>AccessibilityService</code>
+        <h3 class="h3"><span lang="en">Detecting the scroll</span><span lang="pl">Wykrywanie przewijania</span></h3>
+        <ul>
+          <li><span lang="en">Receives scroll and app-switch events, only from the apps you ticked</span><span lang="pl">Odbiera zdarzenia przewijania i przełączania aplikacji, tylko z zaznaczonych przez Ciebie aplikacji</span></li>
+          <li><span lang="en">Reads screen structure (view IDs, class names) to tell a feed from a thread</span><span lang="pl">Czyta strukturę ekranu (ID widoków, nazwy klas), żeby odróżnić feed od wątku</span></li>
+          <li class="no"><span lang="en">Never reads your text, messages or comments</span><span lang="pl">Nigdy nie czyta Twoich tekstów, wiadomości ani komentarzy</span></li>
+          <li class="no"><span lang="en">No keylogging, no screenshots, no recording</span><span lang="pl">Bez keyloggera, zrzutów ekranu i nagrywania</span></li>
+          <li class="no"><span lang="en">Off until you switch it on, off whenever you want</span><span lang="pl">Wyłączone, dopóki go nie włączysz, i wyłączasz je, kiedy chcesz</span></li>
+        </ul>
+      </div>
+      <div>
+        <code>SYSTEM_ALERT_WINDOW</code>
+        <h3 class="h3"><span lang="en">Drawing the block screen</span><span lang="pl">Wyświetlanie blokady</span></h3>
+        <ul>
+          <li><span lang="en">Shows the app name and your count for the day</span><span lang="pl">Pokazuje nazwę aplikacji i dzisiejszy licznik</span></li>
+          <li><span lang="en">Dismisses itself after about three seconds</span><span lang="pl">Znika sam po około trzech sekundach</span></li>
+          <li class="no"><span lang="en">No advertising, no tap collection</span><span lang="pl">Bez reklam i bez zbierania kliknięć</span></li>
+          <li class="no"><span lang="en">Never appears over apps you did not guard</span><span lang="pl">Nigdy nie pojawia się nad aplikacjami, których nie wybrałeś</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="body" style="margin-top:32px" data-reveal><a class="tlink" href="privacy-policy/"><span lang="en">Read the full privacy policy</span><span lang="pl">Przeczytaj pełną politykę prywatności</span> &#8599;</a></p>
+  </div>
+</section>
+
+<!-- ============================ FINAL ============================ -->
+<section class="section">
+  <div class="wrap final">
+    <p class="h-display" data-wipe style="font-size:clamp(44px,8.4vw,150px)"><span lang="en">Coming to<br><span class="acc-text">Google Play.</span></span><span lang="pl">Wkrótce w<br><span class="acc-text">Google Play.</span></span></p>
+    <p class="lede" data-reveal><span lang="en">Want to know when it ships, or join testing? Send one line.</span><span lang="pl">Chcesz wiedzieć, kiedy wyjdzie, albo dołączyć do testów? Wyślij jedną linijkę.</span></p>
+    <div class="btn-row" data-reveal>
+      <a class="btn btn--solid" href="mailto:{{MAIL}}?subject=Killswitch%20launch"><span class="t"><span lang="en">Notify me</span><span lang="pl">Powiadom mnie</span></span><span class="g" aria-hidden="true"><i>@</i></span></a>
+    </div>
+  </div>
+</section>
