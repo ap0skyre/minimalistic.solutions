@@ -19,8 +19,8 @@
     <h1 class="h-display"><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></h1>
     <dl class="doc-meta">
       <div><dt><span lang="en">App</span><span lang="pl">Aplikacja</span></dt><dd>Killswitch</dd></div>
-      <div><dt><span lang="en">Version</span><span lang="pl">Wersja</span></dt><dd>1.0</dd></div>
-      <div><dt><span lang="en">Last updated</span><span lang="pl">Ostatnia zmiana</span></dt><dd><span lang="en">September 6, 2026</span><span lang="pl">6 września 2026</span></dd></div>
+      <div><dt><span lang="en">Version</span><span lang="pl">Wersja</span></dt><dd>1.1</dd></div>
+      <div><dt><span lang="en">Last updated</span><span lang="pl">Ostatnia zmiana</span></dt><dd><span lang="en">October 6, 2026</span><span lang="pl">6 października 2026</span></dd></div>
       <div><dt><span lang="en">Contact</span><span lang="pl">Kontakt</span></dt><dd><a class="tlink" href="mailto:{{MAIL}}">{{MAIL}}</a></dd></div>
     </dl>
   </div>
@@ -40,7 +40,7 @@
 <section id="short">
 <h2>The short version</h2>
 <div class="note"><b>POLICY</b>Killswitch collects nothing, sends nothing and shows no ads. There is no account, no server, no analytics SDK and no tracking of any kind. Everything the app knows lives in its own storage on your phone, and uninstalling it deletes all of it.</div>
-<p>The rest of this document exists because Killswitch uses two powerful Android permissions, and you deserve a precise account of what they are used for. Sections 04 and 05 are the ones that matter.</p>
+<p>The rest of this document exists because Killswitch uses two powerful Android permissions and one optional one, and you deserve a precise account of what they are used for. Sections 04 and 05 are the ones that matter.</p>
 </section>
 
 <section id="collect">
@@ -52,6 +52,7 @@
 <li>Location data, precise or coarse</li>
 <li>Your contacts, photos, files, or clipboard</li>
 <li>The contents of your screen, your messages, or anything you type</li>
+<li>How long you use your apps. If you allow usage access, it is read on your phone to sort one list and is never stored or sent (section 06)</li>
 <li>Which apps are installed on your device. Killswitch cannot even see them (section 06)</li>
 <li>Usage analytics, crash reports, or diagnostic logs</li>
 <li>Payment information. The app has no purchases of any kind</li>
@@ -65,20 +66,21 @@
 <p>Killswitch uses Android's <code>AccessibilityService</code> API. This is the only way an Android app can detect that scrolling is happening inside another app, and detecting exactly that is the app's entire function.</p>
 <h3>What the service does</h3>
 <ul>
-<li>Receives scroll events (<code>TYPE_VIEW_SCROLLED</code>) and app-switch events (<code>TYPE_WINDOW_STATE_CHANGED</code>)</li>
+<li>Receives scroll events (<code>TYPE_VIEW_SCROLLED</code>), screen-change events (<code>TYPE_WINDOW_STATE_CHANGED</code>) and tap events (<code>TYPE_VIEW_CLICKED</code>)</li>
 <li>Only from the apps you personally ticked on the TARGETS screen. The service narrows itself to that exact list of packages and is not woken by any other app</li>
-<li>Reads the structure of the visible screen to tell a feed apart from a comment thread or a chat: view identifiers, class names, and whether a text field is focused</li>
-<li>Counts scrolls against a time window, and when the threshold is crossed, shows the block screen and presses Back</li>
+<li>Reads the structure of the visible screen to tell a feed or a short-video player apart from a comment thread or a chat: view identifiers, class names, positions on screen, and whether a text field is present or focused</li>
+<li>Uses taps for one purpose: to know that you tapped your way into your messages, your comments or a share sheet, so that nothing you open from there is blocked. For that it reads the short label of the button you tapped, such as "Inbox" or "Comments", compares it on the spot against a fixed list of words, and discards it. A label longer than 40 characters, such as a video title or a message, is content rather than a button and is never read</li>
+<li>Applies the mode you chose for each app: blocks short-video players, blocks a burst of fast feed scrolling, or blocks feed scrolling altogether. When it fires, it shows the block screen and takes you out of the feed: it opens the app's own inbox, leaves the app, or presses Back, as you choose in CONFIG. The inbox is opened by pressing the app's own messages button, exactly as your finger would, and nothing outside that app is ever pressed</li>
 </ul>
 <h3>What the service does not do</h3>
 <ul>
-<li>It does not read the text of your screen, your posts, your messages, or your comments</li>
+<li>It does not read your posts, your messages, your comments, or anything else people write. The only words it ever reads are the short labels of buttons you tap, as described above</li>
 <li>It does not log keystrokes or capture anything you type</li>
 <li>It does not take screenshots or record your screen</li>
 <li>It does not store any screen content, not even temporarily on the device</li>
 <li>It does not transmit anything anywhere. The service has no network access path</li>
 </ul>
-<p>The structural signals in section 04 are examined in memory, in the moment, to answer a single yes/no question ("is this a feed?") and are discarded immediately. Nothing derived from them is written to disk beyond an anonymous counter of how many times the guard fired.</p>
+<p>The structural signals in section 04 are examined in memory, in the moment, to answer a single yes/no question ("is this a feed?") and are discarded immediately. Nothing derived from them is written to disk beyond the daily counters listed in section 06.</p>
 <div class="note"><b>NOTE</b>The accessibility service is off until you switch it on yourself in Android Settings, and you can switch it off at any time in the same place. Killswitch stops working the moment you do, and does nothing to discourage or prevent it.</div>
 </section>
 
@@ -95,16 +97,19 @@
 <thead><tr><th>Stored</th><th>Why</th></tr></thead>
 <tbody>
 <tr><td><small>TARGETS</small>Package names you ticked</td><td>So the guard knows which apps to watch</td></tr>
-<tr><td><small>COUNTERS</small>Daily block and scroll counts, last 30 days</td><td>The STATS screen</td></tr>
+<tr><td><small>MODES</small>What gets blocked, overall and per app</td><td>So the guard applies the rule you chose</td></tr>
+<tr><td><small>COUNTERS</small>Daily block and scroll counts and time spent in guarded feeds, last 30 days</td><td>The STATS screen</td></tr>
 <tr><td><small>BASELINE</small>The hours-per-day figure you entered</td><td>To measure your progress against your own number</td></tr>
-<tr><td><small>SETTINGS</small>Accent colour, sensitivity, toggles</td><td>So the app looks and behaves the way you set it</td></tr>
+<tr><td><small>SETTINGS</small>Accent colour, sensitivity, toggles, passes used today, when you armed the guard and when you accepted this policy</td><td>So the app looks and behaves the way you set it</td></tr>
 </tbody>
 </table>
 <p>That is the complete list. None of it leaves your device, none of it is backed up to any server of ours, and you can erase the counters at any time from CONFIG &gt; DATA &gt; RESET STATISTICS.</p>
 <h3>What the app can see of your installed apps</h3>
 <p>Almost nothing, and this is enforced by Android rather than promised by us. Killswitch does not hold the <code>QUERY_ALL_PACKAGES</code> permission, so it cannot read the list of apps on your phone.</p>
-<p>Instead it declares roughly forty specific packages in its manifest (apps known to present an infinite feed) and can check only whether those are installed, in order to draw the TARGETS screen. Every other app on your device is invisible to it: the operating system reports them as not found.</p>
+<p>Instead it declares about thirty specific packages in its manifest (apps known to present an infinite feed) and can check only whether those are installed, in order to draw the TARGETS screen. Every other app on your device is invisible to it: the operating system reports them as not found.</p>
 <div class="note"><b>NOTE</b>This is why the TARGETS list is short. It is not a bug and it is not a curated recommendation. It is the complete set of apps Killswitch is technically able to see.</div>
+<h3>Screen time, if you allow it</h3>
+<p>Usage access (<code>PACKAGE_USAGE_STATS</code>) is optional, and only you can grant it, in Android Settings. With it, Killswitch shows next to each app on its list the average time per day you spent in it over the last week, the same figure Digital Wellbeing shows, and uses it to sort the list and to suggest which apps to guard. It is read on demand, only for the apps on Killswitch's own list, and is never written to storage or sent anywhere. Killswitch works exactly the same without it, and you can revoke it in the same settings screen at any time.</p>
 </section>
 
 <section id="third">
@@ -129,7 +134,7 @@
 <div><b>Rectification</b><p>Change any of it in the app at any time.</p></div>
 <div><b>Erasure</b><p>Reset statistics in CONFIG, or uninstall. Both are immediate and complete.</p></div>
 <div><b>Portability</b><p>No data is held by us that could be ported.</p></div>
-<div><b>Object / withdraw</b><p>Revoke either permission in Android Settings whenever you like.</p></div>
+<div><b>Object / withdraw</b><p>Revoke any of its permissions in Android Settings whenever you like.</p></div>
 <div><b>Complaint</b><p>You may lodge a complaint with your national supervisory authority.</p></div>
 </div>
 <h3>California (CCPA / CPRA)</h3>
@@ -147,6 +152,7 @@
 <ul>
 <li><strong>Counters:</strong> kept for a rolling 30 days, then discarded automatically</li>
 <li><strong>Settings and targets:</strong> kept until you change them or uninstall</li>
+<li><strong>Screen time:</strong> never stored, read only while the app list is being drawn</li>
 <li><strong>Everything else:</strong> does not exist</li>
 </ul>
 <p>There is no server-side retention period, because there is no server.</p>
@@ -181,7 +187,7 @@
 <section id="pl-short">
 <h2>W skrócie</h2>
 <div class="note"><b>ZASADA</b>Killswitch niczego nie zbiera, niczego nie wysyła i nie wyświetla reklam. Nie ma konta, serwera, SDK analitycznego ani żadnego śledzenia. Wszystko, co aplikacja wie, znajduje się w jej własnej pamięci na telefonie, a odinstalowanie usuwa to w całości.</div>
-<p>Reszta dokumentu istnieje, ponieważ Killswitch korzysta z dwóch mocnych uprawnień Androida i zasługujesz na dokładne wyjaśnienie, do czego służą. Najważniejsze są punkty 04 i 05.</p>
+<p>Reszta dokumentu istnieje, ponieważ Killswitch korzysta z dwóch mocnych uprawnień Androida oraz jednego opcjonalnego i zasługujesz na dokładne wyjaśnienie, do czego służą. Najważniejsze są punkty 04 i 05.</p>
 </section>
 
 <section id="pl-collect">
@@ -193,6 +199,7 @@
 <li>Danych o lokalizacji, dokładnej ani przybliżonej</li>
 <li>Kontaktów, zdjęć, plików ani schowka</li>
 <li>Zawartości ekranu, wiadomości ani niczego, co wpisujesz</li>
+<li>Czasu korzystania z aplikacji. Jeśli zezwolisz na dostęp do danych o użyciu, jest on odczytywany na telefonie wyłącznie do posortowania jednej listy i nigdy nie jest zapisywany ani wysyłany (punkt 06)</li>
 <li>Listy zainstalowanych aplikacji. Killswitch nawet ich nie widzi (punkt 06)</li>
 <li>Analityki użycia, raportów awarii ani logów diagnostycznych</li>
 <li>Danych płatniczych. Aplikacja nie ma żadnych zakupów</li>
@@ -206,20 +213,21 @@
 <p>Killswitch korzysta z API <code>AccessibilityService</code> Androida. To jedyny sposób, w jaki aplikacja na Androida może wykryć przewijanie w innej aplikacji, a wykrywanie właśnie tego jest całą funkcją Killswitcha.</p>
 <h3>Co robi usługa</h3>
 <ul>
-<li>Odbiera zdarzenia przewijania (<code>TYPE_VIEW_SCROLLED</code>) i przełączania aplikacji (<code>TYPE_WINDOW_STATE_CHANGED</code>)</li>
+<li>Odbiera zdarzenia przewijania (<code>TYPE_VIEW_SCROLLED</code>), zmiany ekranu (<code>TYPE_WINDOW_STATE_CHANGED</code>) i stuknięć (<code>TYPE_VIEW_CLICKED</code>)</li>
 <li>Tylko z aplikacji, które sam zaznaczyłeś na ekranie TARGETS. Usługa ogranicza się dokładnie do tej listy pakietów i nie jest wybudzana przez żadną inną aplikację</li>
-<li>Czyta strukturę widocznego ekranu, aby odróżnić feed od wątku komentarzy lub czatu: identyfikatory widoków, nazwy klas i to, czy aktywne jest pole tekstowe</li>
-<li>Liczy przewinięcia w oknie czasowym, a po przekroczeniu progu pokazuje ekran blokady i naciska Wstecz</li>
+<li>Czyta strukturę widocznego ekranu, aby odróżnić feed lub odtwarzacz krótkich filmów od wątku komentarzy lub czatu: identyfikatory widoków, nazwy klas, położenie na ekranie oraz to, czy jest na nim pole tekstowe i czy jest aktywne</li>
+<li>Używa stuknięć w jednym celu: żeby wiedzieć, że przeszedłeś do wiadomości, komentarzy albo okna udostępniania, i niczego, co stamtąd otworzysz, nie blokować. W tym celu odczytuje krótką etykietę stukniętego przycisku, na przykład „Inbox” albo „Komentarze”, porównuje ją na miejscu ze stałą listą słów i od razu odrzuca. Etykieta dłuższa niż 40 znaków, na przykład tytuł filmu albo wiadomość, to treść, a nie przycisk, i nigdy nie jest odczytywana</li>
+<li>Stosuje tryb wybrany dla każdej aplikacji: blokuje odtwarzacze krótkich filmów, blokuje serię szybkich przewinięć feedu albo blokuje przewijanie feedu w ogóle. Gdy zadziała, pokazuje ekran blokady i wyprowadza Cię z feedu: otwiera skrzynkę wiadomości tej aplikacji, zamyka aplikację albo naciska Wstecz, zależnie od ustawienia w CONFIG. Skrzynkę otwiera, naciskając przycisk wiadomości tej aplikacji, dokładnie tak, jak zrobiłby to Twój palec, i nigdy nie naciska niczego poza tą aplikacją</li>
 </ul>
 <h3>Czego usługa nie robi</h3>
 <ul>
-<li>Nie czyta tekstu na ekranie, Twoich postów, wiadomości ani komentarzy</li>
+<li>Nie czyta Twoich postów, wiadomości, komentarzy ani niczego innego, co ktoś napisał. Jedyne słowa, jakie w ogóle odczytuje, to krótkie etykiety stukniętych przycisków, opisane wyżej</li>
 <li>Nie rejestruje naciśnięć klawiszy ani niczego, co wpisujesz</li>
 <li>Nie robi zrzutów ekranu ani nie nagrywa ekranu</li>
 <li>Nie zapisuje żadnej zawartości ekranu, nawet tymczasowo na urządzeniu</li>
 <li>Niczego nigdzie nie wysyła. Usługa nie ma dostępu do sieci</li>
 </ul>
-<p>Sygnały strukturalne z punktu 04 są analizowane w pamięci, w danej chwili, aby odpowiedzieć na jedno pytanie tak/nie („czy to feed?”), i natychmiast odrzucane. Nic z nich nie trafia na dysk poza anonimowym licznikiem tego, ile razy blokada zadziałała.</p>
+<p>Sygnały strukturalne z punktu 04 są analizowane w pamięci, w danej chwili, aby odpowiedzieć na jedno pytanie tak/nie („czy to feed?”), i natychmiast odrzucane. Nic z nich nie trafia na dysk poza dziennymi licznikami wymienionymi w punkcie 06.</p>
 <div class="note"><b>UWAGA</b>Usługa ułatwień dostępu jest wyłączona, dopóki sam jej nie włączysz w Ustawieniach Androida, i w tym samym miejscu możesz ją w każdej chwili wyłączyć. Killswitch przestaje wtedy działać i w żaden sposób Cię od tego nie odwodzi ani tego nie blokuje.</div>
 </section>
 
@@ -236,16 +244,19 @@
 <thead><tr><th>Co</th><th>Po co</th></tr></thead>
 <tbody>
 <tr><td><small>TARGETS</small>Nazwy zaznaczonych pakietów</td><td>Żeby blokada wiedziała, które aplikacje obserwować</td></tr>
-<tr><td><small>COUNTERS</small>Dzienne liczniki blokad i przewinięć, ostatnie 30 dni</td><td>Ekran STATS</td></tr>
+<tr><td><small>MODES</small>Co jest blokowane, ogólnie i dla każdej aplikacji</td><td>Żeby blokada stosowała wybraną przez Ciebie zasadę</td></tr>
+<tr><td><small>COUNTERS</small>Dzienne liczniki blokad i przewinięć oraz czas spędzony w chronionych feedach, ostatnie 30 dni</td><td>Ekran STATS</td></tr>
 <tr><td><small>BASELINE</small>Wpisana przez Ciebie liczba godzin dziennie</td><td>Żeby mierzyć postęp względem Twojej własnej liczby</td></tr>
-<tr><td><small>SETTINGS</small>Kolor akcentu, czułość, przełączniki</td><td>Żeby aplikacja wyglądała i działała tak, jak ją ustawisz</td></tr>
+<tr><td><small>SETTINGS</small>Kolor akcentu, czułość, przełączniki, wykorzystane dziś przepustki, moment uzbrojenia blokady i data akceptacji tej polityki</td><td>Żeby aplikacja wyglądała i działała tak, jak ją ustawisz</td></tr>
 </tbody>
 </table>
 <p>To pełna lista. Nic z tego nie opuszcza urządzenia, nic nie jest kopiowane na żaden nasz serwer, a liczniki możesz w każdej chwili wyczyścić w CONFIG &gt; DATA &gt; RESET STATISTICS.</p>
 <h3>Co aplikacja widzi z Twoich aplikacji</h3>
 <p>Prawie nic, i to wymusza Android, a nie nasza obietnica. Killswitch nie ma uprawnienia <code>QUERY_ALL_PACKAGES</code>, więc nie może odczytać listy aplikacji na Twoim telefonie.</p>
-<p>Zamiast tego deklaruje w manifeście około czterdziestu konkretnych pakietów (aplikacji znanych z nieskończonego feedu) i może sprawdzić jedynie, czy są zainstalowane, aby narysować ekran TARGETS. Każda inna aplikacja jest dla niej niewidoczna: system zgłasza ją jako nieznalezioną.</p>
+<p>Zamiast tego deklaruje w manifeście około trzydziestu konkretnych pakietów (aplikacji znanych z nieskończonego feedu) i może sprawdzić jedynie, czy są zainstalowane, aby narysować ekran TARGETS. Każda inna aplikacja jest dla niej niewidoczna: system zgłasza ją jako nieznalezioną.</p>
 <div class="note"><b>UWAGA</b>Dlatego lista TARGETS jest krótka. To nie błąd ani wyselekcjonowana rekomendacja. To pełen zestaw aplikacji, które Killswitch jest technicznie w stanie zobaczyć.</div>
+<h3>Czas ekranu, jeśli na to pozwolisz</h3>
+<p>Dostęp do danych o użyciu (<code>PACKAGE_USAGE_STATS</code>) jest opcjonalny i możesz go przyznać tylko Ty, w Ustawieniach Androida. Dzięki niemu Killswitch pokazuje przy każdej aplikacji ze swojej listy średni dzienny czas jej używania z ostatniego tygodnia, tę samą liczbę, którą pokazuje Cyfrowa równowaga, i używa jej do posortowania listy oraz do podpowiedzi, które aplikacje chronić. Dane są odczytywane na bieżąco, tylko dla aplikacji z listy Killswitcha, i nigdy nie są zapisywane ani nigdzie wysyłane. Killswitch działa tak samo bez tego dostępu, a w tym samym miejscu ustawień możesz go w każdej chwili odebrać.</p>
 </section>
 
 <section id="pl-third">
@@ -288,6 +299,7 @@
 <ul>
 <li><strong>Liczniki:</strong> przechowywane przez kroczące 30 dni, potem automatycznie usuwane</li>
 <li><strong>Ustawienia i cele:</strong> przechowywane, dopóki ich nie zmienisz lub nie odinstalujesz aplikacji</li>
+<li><strong>Czas ekranu:</strong> nigdy nie jest zapisywany, odczytywany tylko podczas rysowania listy aplikacji</li>
 <li><strong>Cała reszta:</strong> nie istnieje</li>
 </ul>
 <p>Nie ma okresu przechowywania po stronie serwera, bo nie ma serwera.</p>
