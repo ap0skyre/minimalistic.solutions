@@ -16,7 +16,7 @@ Tokens inside page content:
 
 Run:  python _build/build.py        (requires: pip install beautifulsoup4)
 """
-import datetime, json, pathlib, re
+import datetime, hashlib, json, pathlib, re
 from bs4 import BeautifulSoup
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -296,6 +296,24 @@ def keep_lang(html, lang):
     return str(soup)
 
 
+# Assets are served with a 4 h browser cache (GitHub Pages behind Cloudflare). Every link to
+# a stylesheet, script or image carries a hash of the file, so a changed file gets a new URL
+# and nobody keeps an old copy after a deploy.
+ASSET = re.compile(r'((?:\.\./)*|/|https://minimalistic\.solutions/)(assets/(?:css|js|img)/[\w./-]+\.(?:css|js|webp|png|svg|jpg))(?=["\s,)])')
+_hashes = {}
+
+
+def versioned(html):
+    def one(m):
+        rel = m.group(2)
+        if rel not in _hashes:
+            f = ROOT / rel
+            _hashes[rel] = hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else None
+        h = _hashes[rel]
+        return m.group(0) + (f'?v={h}' if h else '')
+    return ASSET.sub(one, html)
+
+
 def build():
     sitemap = []
     for f in sorted(PAGES.glob('*.html')):
@@ -317,7 +335,7 @@ def build():
             body = (body.replace('{{A}}', A).replace('{{P}}', P).replace('{{LOGIN}}', LOGIN)
                         .replace('{{MAIL}}', MAIL).replace('{{PLAY}}', PLAY[lang]))
             html = head(lang, m, A) + topbar(lang, m, P) + '<main id="main">\n' + body + '\n</main>\n' + footer(lang, m, P, A)
-            html = keep_lang(html, lang)
+            html = versioned(keep_lang(html, lang))
             out = ROOT / (('pl/' if lang == 'pl' and not m.get('only') else '') + m['out'])
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(html, encoding='utf-8')
