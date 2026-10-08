@@ -11,6 +11,9 @@ outlier/privacy-policy/            polityka prywatności Outliera (EN + PL)
 outlier/delete-account/            usuwanie konta Outliera (EN + PL)
 killswitch/                        strona Killswitcha (z działającym demo)
 killswitch/privacy-policy/         polityka prywatności Killswitcha (EN + PL)
+badsector/                         strona BADSECTOR (grywalne demo na silniku z gry)
+badsector/privacy-policy/          polityka prywatności BADSECTOR (EN + PL)
+badsector/delete-data/             usuwanie danych online BADSECTOR (EN + PL)
 404.html
 assets/css  assets/js  assets/fonts (fonty lokalnie, bez Google Fonts = RODO ok)
 assets/img
@@ -74,5 +77,14 @@ Zaktualizuj w Play Console adresy, które dziś wskazują na `ap0skyre.github.io
 - Outlier, polityka prywatności: `https://minimalistic.solutions/outlier/privacy-policy/`
 - Outlier, usuwanie konta: `https://minimalistic.solutions/outlier/delete-account/`
 - Killswitch, polityka prywatności: `https://minimalistic.solutions/killswitch/privacy-policy/`
+- BADSECTOR, polityka prywatności: `https://minimalistic.solutions/badsector/privacy-policy/`
+- BADSECTOR, usuwanie konta/danych: `https://minimalistic.solutions/badsector/delete-data/`
 
 Stare strony na `ap0skyre.github.io` zostaw włączone, dopóki Play Console nie zaakceptuje nowych adresów.
+
+## BADSECTOR: skąd są pliki
+
+- `assets/js/badsector.js`: animacja startowa planszy, grywalny sektor i podpowiedzi. Silnik (generator no-guess, solver, 3BV)
+  to kopia `design/engine/engine.js` z repo gry, więc kod sektora z demo otwiera tę samą planszę w aplikacji.
+- `assets/img/badsector/*.webp`: zrzuty z emulatora (wariant benchmark, 1080×2400 bez paska statusu), po angielsku.
+- `assets/img/badsector.svg`: ikona aplikacji (kot zza miny), źródło w repo gry: `design/icon/`.

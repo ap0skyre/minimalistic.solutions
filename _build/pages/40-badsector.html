@@ -1,0 +1,316 @@
+<!--{
+"out": "badsector/index.html",
+"depth": 1,
+"active": "badsector",
+"crumb": "badsector",
+"crumb_name": "BADSECTOR",
+"theme": "theme-badsector",
+"favicon": "badsector.svg",
+"title_en": "BADSECTOR: no-guess minesweeper for Android | minimalistic.solutions",
+"title_pl": "BADSECTOR: saper bez zgadywania na Androida | minimalistic.solutions",
+"desc": "BADSECTOR is minesweeper rebuilt as a hacking game: every board solvable by logic, three worlds, post-game analysis, an academy and a cat that talks. Play a sector in your browser.",
+"schema": "badsector",
+"desc_pl": "BADSECTOR to saper przebudowany w grę o hakowaniu: każda plansza do rozwiązania logiką, trzy światy, analiza po partii, akademia i gadający kot. Zagraj sektor w przeglądarce."
+}-->
+
+<!-- ============================ HERO ============================ -->
+<section class="p-hero">
+  <div class="wrap p-hero-grid">
+    <div>
+      <div class="app-id hero-fade">
+        <img class="bs-mark" src="{{A}}assets/img/badsector.svg" width="48" height="48" alt="">
+        <div>
+          <div class="mono-label" style="color:var(--fg)">BADSECTOR</div>
+          <span class="status" style="margin-top:4px"><i></i><span lang="en">In development</span><span lang="pl">W trakcie tworzenia</span></span>
+        </div>
+      </div>
+      <h1 class="h-display">
+        <span lang="en"><span class="ln"><span>Read the numbers.</span></span><span class="ln"><span>Find the ICE.</span></span><span class="ln"><span class="acc-text">Never guess.</span></span></span>
+        <span lang="pl"><span class="ln"><span>Czytaj liczby.</span></span><span class="ln"><span>Znajdź ICE.</span></span><span class="ln"><span class="acc-text">Nie zgaduj.</span></span></span>
+      </h1>
+      <div class="hero-fade">
+        <p class="lede">
+          <span lang="en">Minesweeper rebuilt as a hacking game. Every board can be solved by logic alone, three worlds change everything from the room to the cat, and every game ends with an analysis of where your time went.</span><span lang="pl">Saper przebudowany w grę o hakowaniu. Każdą planszę da się rozwiązać samą logiką, trzy światy zmieniają wszystko od pokoju po kota, a każda partia kończy się analizą, gdzie uciekł Ci czas.</span>
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--solid" href="#play" data-dir="down"><span class="t"><span lang="en">Play a sector</span><span lang="pl">Zagraj sektor</span></span><span class="g" aria-hidden="true"><i>&#8595;</i></span></a>
+          <a class="btn btn--ghost" href="privacy-policy/"><span class="t"><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="bs-boot hero-fade">
+      <div class="hud">
+        <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+        <div class="hud-in">
+          <div class="hud-bar"><span><b>boot</b>.seq</span><span><span lang="en">Theme: Telemetry</span><span lang="pl">Motyw: Telemetry</span></span></div>
+          <canvas id="bs-boot" role="img" aria-label="A minesweeper board opens from the middle. The ICE it finds spells BAD SECTOR, and every number counts the ICE around it."></canvas>
+          <div class="bs-foot"><span><span lang="en">Every number counts its ICE</span><span lang="pl">Każda liczba liczy swoje ICE</span></span><button type="button" id="bs-boot-replay"><span lang="en">Run again &#8635;</span><span lang="pl">Jeszcze raz &#8635;</span></button></div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ STATS ============================ -->
+<div class="stats" aria-label="BADSECTOR in numbers">
+  <div class="stat" data-reveal><div class="n">0</div><div class="l"><span lang="en">Guesses needed</span><span lang="pl">Potrzebnych zgadywań</span></div></div>
+  <div class="stat" data-reveal style="--i:1"><div class="n">3</div><div class="l"><span lang="en">Worlds</span><span lang="pl">Światy</span></div></div>
+  <div class="stat" data-reveal style="--i:2"><div class="n">7</div><div class="l"><span lang="en">Ways to play</span><span lang="pl">Trybów gry</span></div></div>
+  <div class="stat" data-reveal style="--i:3"><div class="n">12</div><div class="l"><span lang="en">Academy lessons</span><span lang="pl">Lekcji w Akademii</span></div></div>
+</div>
+
+<!-- ============================ PLAY ============================ -->
+<section class="section" id="play" style="border-top:0">
+  <div class="wrap bs-play">
+    <div>
+      <p class="mono-label" data-scramble><span lang="en">Live demo</span><span lang="pl">Demo na żywo</span></p>
+      <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Play a sector.</span><span lang="pl">Zagraj sektor.</span></h2>
+      <p class="body" style="margin-top:28px" data-reveal>
+        <span lang="en">This is the game&#8217;s own engine, running in your browser. Before your first scan it builds a board, then a solver tries to clear it with logic alone. If it can&#8217;t, the board is thrown away. Whatever reaches you never needs a guess.</span><span lang="pl">To silnik z gry, uruchomiony w przeglądarce. Przed pierwszym skanem buduje planszę, a solver próbuje ją wyczyścić samą logiką. Jeśli nie da rady, plansza idzie do kosza. Do Ciebie trafia tylko taka, która nie wymaga zgadywania.</span>
+      </p>
+      <dl class="bs-keys" data-reveal style="--i:1">
+        <div><dt><span lang="en">Scan</span><span lang="pl">Skan</span></dt><dd><span lang="en">Tap or click a covered cell.</span><span lang="pl">Dotknij albo kliknij zakryte pole.</span></dd></div>
+        <div><dt>Marker</dt><dd><span lang="en">Hold, right-click, or press F.</span><span lang="pl">Przytrzymaj, kliknij prawym przyciskiem albo naciśnij F.</span></dd></div>
+        <div><dt>Chord</dt><dd><span lang="en">Tap a number with all its markers placed: the rest of its neighbours open.</span><span lang="pl">Dotknij liczby, która ma już wszystkie markery: reszta jej sąsiadów się odkryje.</span></dd></div>
+        <div><dt><span lang="en">Hint</span><span lang="pl">Podpowiedź</span></dt><dd><span lang="en">NULL points to a safe move and tells you why. H on a keyboard.</span><span lang="pl">NULL wskazuje pewny ruch i mówi dlaczego. Na klawiaturze H.</span></dd></div>
+        <div><dt>Daily</dt><dd><span lang="en">The same board as today&#8217;s daily in the app.</span><span lang="pl">Ta sama plansza co dzisiejsze daily w aplikacji.</span></dd></div>
+      </dl>
+    </div>
+
+    <figure class="bs-demo" id="bs-demo" data-reveal style="--i:1">
+      <div class="hud">
+        <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+        <div class="hud-in">
+          <div class="hud-bar"><span><b>sector</b>.live</span><span>No-guess</span></div>
+          <div class="bs-levels" role="group" aria-label="Board">
+            <button type="button" class="bs-chip" data-level="L1" aria-pressed="true"><span lang="en">Novice</span><span lang="pl">Nowicjusz</span> 9&#215;9</button>
+            <button type="button" class="bs-chip" data-level="L2" aria-pressed="false"><span lang="en">Amateur</span><span lang="pl">Amator</span> 16&#215;16</button>
+            <button type="button" class="bs-chip" data-level="D" aria-pressed="false">Daily <span data-dayno></span></button>
+          </div>
+          <div class="bs-hud">
+            <div class="bs-cnt"><small>ICE</small><b data-ice>010</b></div>
+            <div class="bs-cnt"><small><span lang="en">Time</span><span lang="pl">Czas</span></small><b data-time><span>00:00</span><i>.0</i></b></div>
+            <button type="button" class="bs-chip" data-act="new"><span lang="en">New</span><span lang="pl">Nowa</span></button>
+          </div>
+          <div class="bs-stage">
+            <div class="bs-board" role="group"></div>
+            <div class="bs-result" aria-live="polite" aria-hidden="true"></div>
+          </div>
+          <div class="bs-tool">
+            <div class="bs-seg" role="group" aria-label="Tap action">
+              <button type="button" data-mode="scan" aria-pressed="true"><i></i><span lang="en">Scan</span><span lang="pl">Skan</span></button>
+              <button type="button" data-mode="mark" aria-pressed="false"><i></i>Marker</button>
+            </div>
+            <div class="bs-tool-r"><button type="button" data-act="hint" disabled><span lang="en">Hint</span><span lang="pl">Podpowiedź</span></button></div>
+          </div>
+          <div class="bs-null" aria-live="polite"><canvas aria-hidden="true"></canvas><div><small>&gt; NULL</small><p></p></div></div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ MODES ============================ -->
+<section class="section" id="modes">
+  <div class="wrap">
+    <p class="mono-label" data-scramble><span lang="en">Modes</span><span lang="pl">Tryby</span></p>
+    <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Seven ways in.</span><span lang="pl">Siedem wejść.</span></h2>
+    <ul class="modes">
+      <li data-reveal><h3><span lang="en">Classic</span><span lang="pl">Classic</span></h3><p><span lang="en">Five levels, from 9&#215;9 up to 24&#215;30 with 160 ICE.</span><span lang="pl">Pięć poziomów, od 9&#215;9 do 24&#215;30 ze 160 ICE.</span></p><span class="meta"><span lang="en">5 levels</span><span lang="pl">5 poziomów</span></span></li>
+      <li data-reveal><h3><span lang="en">Daily</span><span lang="pl">Daily</span></h3><p><span lang="en">One board for everyone, one try a day, and a streak to keep alive.</span><span lang="pl">Jedna plansza dla wszystkich, jedna próba dziennie i seria do utrzymania.</span></p><span class="meta"><span lang="en">1 try</span><span lang="pl">1 próba</span></span></li>
+      <li data-reveal><h3><span lang="en">Blitz</span><span lang="pl">Blitz</span></h3><p><span lang="en">Three minutes on the clock. Clear as many sectors as you can.</span><span lang="pl">Trzy minuty na zegarze. Wyczyść tyle sektorów, ile zdążysz.</span></p><span class="meta"><span lang="en">3:00</span><span lang="pl">3:00</span></span></li>
+      <li data-reveal><h3><span lang="en">Endless</span><span lang="pl">Endless</span></h3><p><span lang="en">A board without edges. ZEN has no clock, RUN ends on the first hit.</span><span lang="pl">Plansza bez krawędzi. ZEN nie ma zegara, RUN kończy się na pierwszym trafieniu.</span></p><span class="meta"><span lang="en">Zen / Run</span><span lang="pl">Zen / Run</span></span></li>
+      <li data-reveal><h3><span lang="en">Campaign</span><span lang="pl">Kampania</span></h3><p><span lang="en">Twelve sectors on the network map, each with a briefing and pieces of the story.</span><span lang="pl">Dwanaście sektorów na mapie sieci, każdy z odprawą i kawałkami historii.</span></p><span class="meta"><span lang="en">12 sectors</span><span lang="pl">12 sektorów</span></span></li>
+      <li data-reveal><h3><span lang="en">Custom</span><span lang="pl">Custom</span></h3><p><span lang="en">Any size and density, no-guess on or off, and sector codes to share a board.</span><span lang="pl">Dowolny rozmiar i gęstość, no-guess włączony lub nie i kody sektorów do dzielenia się planszą.</span></p><span class="meta"><span lang="en">W &#215; H &#215; N</span><span lang="pl">W &#215; H &#215; N</span></span></li>
+      <li data-reveal><h3><span lang="en">Academy</span><span lang="pl">Akademia</span></h3><p><span lang="en">Twelve lessons on three levels, from what a number means to 1-2-2-1 and counting ICE.</span><span lang="pl">Dwanaście lekcji na trzech poziomach: od tego, co znaczy liczba, po 1-2-2-1 i liczenie ICE.</span></p><span class="meta"><span lang="en">12 lessons</span><span lang="pl">12 lekcji</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ WORLDS ============================ -->
+<section class="section" id="worlds" data-strip>
+  <div class="wrap strip-head">
+    <div>
+      <p class="mono-label" data-scramble><span lang="en">Worlds</span><span lang="pl">Światy</span></p>
+      <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Three worlds.<br>One board.</span><span lang="pl">Trzy światy.<br>Jedna plansza.</span></h2>
+      <p class="body" style="margin-top:24px" data-reveal><span lang="en">A world in BADSECTOR is more than a colour swap. It changes the room, the intro, the typeface, the words on screen, the cat&#8217;s voice, what lies under the hub and the story you uncover.</span><span lang="pl">Świat w BADSECTOR to coś więcej niż zmiana koloru. Zmienia pokój, intro, krój pisma, słowa na ekranie, głos kota, to, co leży pod hubem, i historię, którą odkrywasz.</span></p>
+    </div>
+    <div class="strip-ctrl">
+      <button type="button" data-strip-dir="-1" aria-label="Previous">&#8592;</button>
+      <button type="button" data-strip-dir="1" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div class="strip strip--tall" tabindex="0" aria-label="BADSECTOR worlds">
+    <figure data-reveal style="--i:0"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/tel-intro.webp" srcset="{{A}}assets/img/badsector/tel-intro-360.webp 360w, {{A}}assets/img/badsector/tel-intro.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="TELEMETRY boot: the board spells BAD SECTOR in ICE, then SECTOR CLEAN." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/tel-intro.webp" srcset="{{A}}assets/img/badsector/tel-intro-360.webp 360w, {{A}}assets/img/badsector/tel-intro.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Start motywu TELEMETRY: plansza układa z ICE napis BAD SECTOR, potem SECTOR CLEAN." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Boot</span><span lang="pl">Start</span></span><span class="w-tel">Telemetry</span></figcaption></figure>
+    <figure data-reveal style="--i:1"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/tel-hub.webp" srcset="{{A}}assets/img/badsector/tel-hub-360.webp 360w, {{A}}assets/img/badsector/tel-hub.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="TELEMETRY hub: the operator&#8217;s hideout with NULL the cat and the PLAY menu." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/tel-hub.webp" srcset="{{A}}assets/img/badsector/tel-hub-360.webp 360w, {{A}}assets/img/badsector/tel-hub.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Hub TELEMETRY: kryjówka operatora z kotem NULL i menu GRAJ." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Hideout</span><span lang="pl">Kryjówka</span></span><span class="w-tel">Telemetry</span></figcaption></figure>
+    <figure data-reveal style="--i:2"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/tel-board.webp" srcset="{{A}}assets/img/badsector/tel-board-360.webp 360w, {{A}}assets/img/badsector/tel-board.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="A 16 by 16 sector in progress: open cells, numbers and four markers on ICE." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/tel-board.webp" srcset="{{A}}assets/img/badsector/tel-board-360.webp 360w, {{A}}assets/img/badsector/tel-board.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Sektor 16 na 16 w trakcie gry: odkryte pola, liczby i cztery markery na ICE." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Sector</span><span lang="pl">Sektor</span></span><span class="w-tel">Telemetry</span></figcaption></figure>
+    <figure data-reveal style="--i:3"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/holo-intro.webp" srcset="{{A}}assets/img/badsector/holo-intro-360.webp 360w, {{A}}assets/img/badsector/holo-intro.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="HOLO boot: an emitter projects the title in hard light." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/holo-intro.webp" srcset="{{A}}assets/img/badsector/holo-intro-360.webp 360w, {{A}}assets/img/badsector/holo-intro.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Start motywu HOLO: emiter wyświetla tytuł twardym światłem." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Emitter</span><span lang="pl">Emiter</span></span><span class="w-holo">Holo</span></figcaption></figure>
+    <figure data-reveal style="--i:0"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/holo-hub.webp" srcset="{{A}}assets/img/badsector/holo-hub-360.webp 360w, {{A}}assets/img/badsector/holo-hub.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="HOLO hub: the room as a violet light projection, the cat asleep on the desk." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/holo-hub.webp" srcset="{{A}}assets/img/badsector/holo-hub-360.webp 360w, {{A}}assets/img/badsector/holo-hub.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Hub HOLO: pokój jako fioletowa projekcja światła, kot śpi na biurku." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Projection</span><span lang="pl">Projekcja</span></span><span class="w-holo">Holo</span></figcaption></figure>
+    <figure data-reveal style="--i:1"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/holo-hint.webp" srcset="{{A}}assets/img/badsector/holo-hint-360.webp 360w, {{A}}assets/img/badsector/holo-hint.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="A hint in HOLO: a number and a safe cell are highlighted, NULL explains the rule." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/holo-hint.webp" srcset="{{A}}assets/img/badsector/holo-hint-360.webp 360w, {{A}}assets/img/badsector/holo-hint.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Podpowiedź w HOLO: podświetlona liczba i pewne pole, NULL tłumaczy regułę." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Hint</span><span lang="pl">Podpowiedź</span></span><span class="w-holo">Holo</span></figcaption></figure>
+    <figure data-reveal style="--i:2"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/sam-intro.webp" srcset="{{A}}assets/img/badsector/sam-intro-360.webp 360w, {{A}}assets/img/badsector/sam-intro.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="SAMURAI OS boot: a neon megacity in the rain with billboards reading BADSECTOR." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-intro.webp" srcset="{{A}}assets/img/badsector/sam-intro-360.webp 360w, {{A}}assets/img/badsector/sam-intro.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Start SAMURAI OS: neonowe megamiasto w deszczu z billboardami BADSECTOR." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">City</span><span lang="pl">Miasto</span></span><span class="w-sam">Samurai OS</span></figcaption></figure>
+    <figure data-reveal style="--i:3"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/sam-hub.webp" srcset="{{A}}assets/img/badsector/sam-hub-360.webp 360w, {{A}}assets/img/badsector/sam-hub.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="SAMURAI OS hub: an operating system window over a neon room with two city windows." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-hub.webp" srcset="{{A}}assets/img/badsector/sam-hub-360.webp 360w, {{A}}assets/img/badsector/sam-hub.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Hub SAMURAI OS: okno systemu nad neonowym pokojem z dwoma oknami na miasto." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Play.exe</span><span lang="pl">Play.exe</span></span><span class="w-sam">Samurai OS</span></figcaption></figure>
+    <figure data-reveal style="--i:0"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/sam-board.webp" srcset="{{A}}assets/img/badsector/sam-board-360.webp 360w, {{A}}assets/img/badsector/sam-board.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="A district in SAMURAI OS: chamfered cells, cyan, green and magenta numbers, tagged ICE." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-board.webp" srcset="{{A}}assets/img/badsector/sam-board-360.webp 360w, {{A}}assets/img/badsector/sam-board.webp 720w" sizes="(max-width: 767px) 58vw, 300px" width="720" height="1552" alt="Dzielnica w SAMURAI OS: ścięte pola, kolorowe liczby i oznaczone ICE." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">District</span><span lang="pl">Dzielnica</span></span><span class="w-sam">Samurai OS</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- ============================ FEATURES ============================ -->
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="feat">
+      <figure class="phone hud" data-reveal><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img lang="en" src="{{A}}assets/img/badsector/holo-hint.webp" srcset="{{A}}assets/img/badsector/holo-hint-360.webp 360w, {{A}}assets/img/badsector/holo-hint.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="A hint in the HOLO world: a 1 and the safe cell next to it are highlighted, and NULL says: this 1 already has all its ICE around it." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/holo-hint.webp" srcset="{{A}}assets/img/badsector/holo-hint-360.webp 360w, {{A}}assets/img/badsector/holo-hint.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="Podpowiedź w świecie HOLO: podświetlona jedynka i pewne pole obok, a NULL mówi, że ta jedynka ma już wokół siebie całe swoje ICE." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Hint</span><span lang="pl">Podpowiedź</span></span><span>Holo</span></figcaption></figure>
+      <div>
+        <span class="k" data-reveal>&gt; <span lang="en">safe, because</span><span lang="pl">bezpieczne, bo</span></span>
+        <h2 class="h2" data-reveal><span lang="en">Stuck? Ask the cat.</span><span lang="pl">Nie wiesz, co dalej? Zapytaj kota.</span></h2>
+        <p class="body" data-reveal><span lang="en">NULL lights up a safe cell and the numbers that prove it, then says the rule out loud. You learn the pattern, not just the move. A game played with a hint still counts for you, but it stays out of records and rankings.</span><span lang="pl">NULL podświetla pewne pole i liczby, które tego dowodzą, a potem mówi regułę na głos. Uczysz się wzoru, a nie tylko ruchu. Partia z podpowiedzią liczy się dla Ciebie, ale nie trafia do rekordów ani rankingów.</span></p>
+        <div class="rules" data-reveal>
+          <div><b>SINGLE</b><p><span lang="en">A number already touches all its ICE: every other neighbour is clean. Or it has exactly as many covered neighbours as ICE left: all of them are ICE.</span><span lang="pl">Liczba dotyka już całego swojego ICE: reszta sąsiadów jest czysta. Albo ma dokładnie tyle zakrytych sąsiadów, ile brakuje jej ICE: wszystkie to ICE.</span></p></div>
+          <div><b>PAIR</b><p><span lang="en">Two numbers share cells and one decides for the other: 1-1, 1-2, 1-2-1, 1-2-2-1.</span><span lang="pl">Dwie liczby dzielą pola i jedna rozstrzyga za drugą: 1-1, 1-2, 1-2-1, 1-2-2-1.</span></p></div>
+          <div><b>COUNT</b><p><span lang="en">ICE left against covered cells: in the endgame the counter decides.</span><span lang="pl">Pozostałe ICE kontra zakryte pola: w końcówce rozstrzyga licznik.</span></p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat feat--rev">
+      <div class="duo">
+        <figure class="phone hud" data-reveal><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img lang="en" src="{{A}}assets/img/badsector/tel-analysis.webp" srcset="{{A}}assets/img/badsector/tel-analysis-360.webp 360w, {{A}}assets/img/badsector/tel-analysis.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="Post-game analysis: time 19.9 seconds, 3BV 49, 2.45 3BV per second, 53 clicks, 92 percent efficiency, and one 6 second pause where a safe move was waiting." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/tel-analysis.webp" srcset="{{A}}assets/img/badsector/tel-analysis-360.webp 360w, {{A}}assets/img/badsector/tel-analysis.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="Analiza po partii: czas 19,9 sekundy, 3BV 49, 2,45 3BV na sekundę, 53 kliknięcia, 92 procent efektywności i jedna przerwa 6 sekund, gdy czekał pewny ruch." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Analysis</span><span lang="pl">Analiza</span></span><span>Telemetry</span></figcaption></figure>
+        <figure class="phone hud" data-reveal><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img lang="en" src="{{A}}assets/img/badsector/tel-replay.webp" srcset="{{A}}assets/img/badsector/tel-replay-360.webp 360w, {{A}}assets/img/badsector/tel-replay.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="Replay of the same game at move 23 of 53." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/tel-replay.webp" srcset="{{A}}assets/img/badsector/tel-replay-360.webp 360w, {{A}}assets/img/badsector/tel-replay.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="Powtórka tej samej partii, ruch 23 z 53." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Replay</span><span lang="pl">Powtórka</span></span><span>Telemetry</span></figcaption></figure>
+      </div>
+      <div>
+        <span class="k" data-reveal>&gt; <span lang="en">after the game</span><span lang="pl">po partii</span></span>
+        <h2 class="h2" data-reveal><span lang="en">Where did the time go?</span><span lang="pl">Gdzie uciekł czas?</span></h2>
+        <p class="body" data-reveal><span lang="en">Every game ends with an analysis. Pauses over four seconds are listed with what you missed: a safe move that was already waiting. Then press REPLAY and watch the whole game again, move by move.</span><span lang="pl">Każda partia kończy się analizą. Przerwy dłuższe niż cztery sekundy są wypisane razem z tym, co wtedy umknęło: pewnym ruchem, który już czekał. Potem naciśnij POWTÓRKA i obejrzyj całą partię jeszcze raz, ruch po ruchu.</span></p>
+        <div class="readout" data-reveal>
+          <div class="hud-bar"><span><b>sector</b>.analysis</span><span>D281</span></div>
+          <dl>
+            <div><dt><span lang="en">Time</span><span lang="pl">Czas</span></dt><dd>00:19.9</dd></div>
+            <div><dt><span lang="en">3BV (minimum clicks)</span><span lang="pl">3BV (minimum kliknięć)</span></dt><dd>49</dd></div>
+            <div><dt>3BV/s</dt><dd class="acc-text">2.45</dd></div>
+            <div><dt><span lang="en">Clicks</span><span lang="pl">Kliknięcia</span></dt><dd>53</dd></div>
+            <div><dt><span lang="en">Efficiency</span><span lang="pl">Efektywność</span></dt><dd>92%</dd></div>
+            <div><dt><span lang="en">Pauses over 4 s</span><span lang="pl">Przerwy ponad 4 s</span></dt><dd>1 &#183; 6.1 s</dd></div>
+            <div><dt><span lang="en">Move log</span><span lang="pl">Log ruchów</span></dt><dd><span lang="en">Live, swipe the HUD down</span><span lang="pl">Na żywo, przeciągnij HUD w dół</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="duo">
+        <figure class="phone hud" data-reveal><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img lang="en" src="{{A}}assets/img/badsector/tel-academy.webp" srcset="{{A}}assets/img/badsector/tel-academy-360.webp 360w, {{A}}assets/img/badsector/tel-academy.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="The Academy at intermediate level: four lessons from pattern 1-2-1 to counting ICE, NULL explains 1-2-1 on an edge." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/tel-academy.webp" srcset="{{A}}assets/img/badsector/tel-academy-360.webp 360w, {{A}}assets/img/badsector/tel-academy.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="Akademia na poziomie średnim: cztery lekcje od wzoru 1-2-1 do liczenia ICE, NULL tłumaczy 1-2-1 przy krawędzi." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Academy</span><span lang="pl">Akademia</span></span><span>Telemetry</span></figcaption></figure>
+        <figure class="phone hud" data-reveal><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img lang="en" src="{{A}}assets/img/badsector/sam-map.webp" srcset="{{A}}assets/img/badsector/sam-map-360.webp 360w, {{A}}assets/img/badsector/sam-map.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="The network map in SAMURAI OS: hub tiles on top, campaign sectors S01 to S12 below, seven cleared." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-map.webp" srcset="{{A}}assets/img/badsector/sam-map-360.webp 360w, {{A}}assets/img/badsector/sam-map.webp 720w" sizes="(max-width: 1080px) 70vw, 360px" width="720" height="1552" alt="Mapa sieci w SAMURAI OS: kafelki huba u góry, sektory kampanii od S01 do S12 niżej, siedem zaliczonych." loading="lazy" decoding="async"></div><figcaption><span><span lang="en">Network map</span><span lang="pl">Mapa sieci</span></span><span>Samurai OS</span></figcaption></figure>
+      </div>
+      <div>
+        <span class="k" data-reveal>&gt; <span lang="en">academy &amp; campaign</span><span lang="pl">akademia i kampania</span></span>
+        <h2 class="h2" data-reveal><span lang="en">Learn it. Then go in.</span><span lang="pl">Naucz się. Potem wejdź.</span></h2>
+        <p class="body" data-reveal><span lang="en">Tell NULL how much you know and it picks the lessons: twelve of them on three levels, each with puzzles built around one pattern. When you are ready, the campaign waits on the network map: twelve sectors that grow harder, each one with a briefing, and pieces of the story hidden along the way.</span><span lang="pl">Powiedz NULL, ile umiesz, a sama dobierze lekcje: dwanaście na trzech poziomach, każda z zagadkami zbudowanymi wokół jednego wzoru. Potem na mapie sieci czeka kampania: dwanaście coraz trudniejszych sektorów, każdy z odprawą, a po drodze ukryte kawałki historii.</span></p>
+      </div>
+    </div>
+
+    <div class="bento">
+      <article class="cell cell--acc c-4" data-reveal>
+        <span class="k">&gt; codes</span>
+        <h3 class="h3"><span lang="en">Sector codes</span><span lang="pl">Kody sektorów</span></h3>
+        <p><span lang="en">Every board has a code. Send it, and a friend plays the exact same sector from the exact same first cell.</span><span lang="pl">Każda plansza ma swój kod. Wyślij go, a znajomy zagra dokładnie ten sam sektor od tego samego pierwszego pola.</span></p>
+      </article>
+      <article class="cell c-4" data-reveal style="--i:1">
+        <span class="k">&gt; cat</span>
+        <h3 class="h3"><span lang="en">NULL and RONIN</span><span lang="pl">NULL i RONIN</span></h3>
+        <p><span lang="en">The cat talks in the hub, comments on your game, falls asleep when you leave it alone and has 25 things to say when you pet it. Or build your own in the creator.</span><span lang="pl">Kot gada w hubie, komentuje grę, zasypia, gdy zostawisz go w spokoju, i ma 25 kwestii na głaskanie. Albo zbuduj własnego w kreatorze.</span></p>
+      </article>
+      <article class="cell cell--tint c-4" data-reveal style="--i:2">
+        <span class="k">&gt; editor</span>
+        <h3 class="h3"><span lang="en">Fork a world</span><span lang="pl">Zrób fork świata</span></h3>
+        <p><span lang="en">Change colours, board style, glass and effects, then share your version as a single BS4 code.</span><span lang="pl">Zmień kolory, styl planszy, szkło i efekty, a potem udostępnij swoją wersję jednym kodem BS4.</span></p>
+      </article>
+      <article class="cell c-4" data-reveal>
+        <span class="k">&gt; archive</span>
+        <h3 class="h3"><span lang="en">Lore archive</span><span lang="pl">Archiwum</span></h3>
+        <p><span lang="en">Eight fragments per world, dropped by rare glitches, campaign sectors and the bottom of the layers.</span><span lang="pl">Osiem fragmentów na świat. Wypadają z rzadkich glitchy, z sektorów kampanii i z dna warstw.</span></p>
+      </article>
+      <article class="cell c-4" data-reveal style="--i:1">
+        <span class="k">&gt; comfort</span>
+        <h3 class="h3"><span lang="en">Your controls</span><span lang="pl">Twoje sterowanie</span></h3>
+        <p><span lang="en">Swap tap and hold, set the hold time, turn chording, vibration and glitch up or down, reduce motion, pick effect quality.</span><span lang="pl">Zamień tap z przytrzymaniem, ustaw czas przytrzymania, reguluj chording, wibracje i glitch, ogranicz ruch, wybierz jakość efektów.</span></p>
+      </article>
+      <article class="cell cell--tint c-4" data-reveal style="--i:2">
+        <span class="k">&gt; offline</span>
+        <h3 class="h3"><span lang="en">No signal needed</span><span lang="pl">Bez zasięgu</span></h3>
+        <p><span lang="en">The whole game plays offline. Online rankings are opt-in and ask for nothing but a nickname.</span><span lang="pl">Cała gra działa offline. Rankingi online są dobrowolne i proszą tylko o nick.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ THE DEEP ============================ -->
+<section class="section" id="deep">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="mono-label" data-scramble><span lang="en">Under the hub</span><span lang="pl">Pod hubem</span></p>
+        <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Don&#8217;t dig<br>too deep.</span><span lang="pl">Nie kop<br>za głęboko.</span></h2>
+      </div>
+      <p class="body" data-reveal style="--i:1;align-self:end"><span lang="en">Swipe down past the hub and the game keeps going: a terminal log, a district gone dead, something that watches. Go one layer too far and the system crashes. Every world has its own bottom: in Telemetry it is sector zero and a collapsing CRT, in Holo the projection folds into a single point.</span><span lang="pl">Przesuń w dół za hub, a gra trwa dalej: log terminala, martwa dzielnica, coś, co patrzy. Zejdź o jedną warstwę za daleko, a system się wysypie. Każdy świat ma własne dno: w Telemetry to sektor zero i gasnący kineskop, w Holo projekcja zapada się w jeden punkt.</span></p>
+    </div>
+    <div class="deep">
+      <figure data-reveal style="--i:0"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/sam-log.webp" srcset="{{A}}assets/img/badsector/sam-log-360.webp 360w, {{A}}assets/img/badsector/sam-log.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="Layer one, LOG: the terminal history of your last sectors." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-log.webp" srcset="{{A}}assets/img/badsector/sam-log-360.webp 360w, {{A}}assets/img/badsector/sam-log.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="Warstwa pierwsza, LOG: historia ostatnich sektorów w terminalu." loading="lazy" decoding="async"><span class="depth">-1</span></div><figcaption><b><span lang="en">Log</span><span lang="pl">Log</span></b><span class="w-sam">Samurai OS</span></figcaption></figure>
+      <figure data-reveal style="--i:1"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/sam-dead.webp" srcset="{{A}}assets/img/badsector/sam-dead-360.webp 360w, {{A}}assets/img/badsector/sam-dead.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="Layer two, DEAD DISTRICT: a corrupted hex dump with words of the story inside." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-dead.webp" srcset="{{A}}assets/img/badsector/sam-dead-360.webp 360w, {{A}}assets/img/badsector/sam-dead.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="Warstwa druga, MARTWA DZIELNICA: uszkodzony zrzut hex z ukrytymi słowami historii." loading="lazy" decoding="async"><span class="depth">-2</span></div><figcaption><b><span lang="en">Dead district</span><span lang="pl">Martwa dzielnica</span></b><span class="w-sam">Samurai OS</span></figcaption></figure>
+      <figure data-reveal style="--i:2"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/sam-oni.webp" srcset="{{A}}assets/img/badsector/sam-oni-360.webp 360w, {{A}}assets/img/badsector/sam-oni.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="Layer three, ONI: a pixel oni mask stares back." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-oni.webp" srcset="{{A}}assets/img/badsector/sam-oni-360.webp 360w, {{A}}assets/img/badsector/sam-oni.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="Warstwa trzecia, ONI: pikselowa maska oni patrzy na Ciebie." loading="lazy" decoding="async"><span class="depth">-3</span></div><figcaption><b><span lang="en">Oni</span><span lang="pl">Oni</span></b><span class="w-sam">Samurai OS</span></figcaption></figure>
+      <figure data-reveal style="--i:3"><div class="frame"><img lang="en" src="{{A}}assets/img/badsector/sam-flatline.webp" srcset="{{A}}assets/img/badsector/sam-flatline-360.webp 360w, {{A}}assets/img/badsector/sam-flatline.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="One layer too far: the screen goes black and an ECG line flatlines." loading="lazy" decoding="async"><img lang="pl" src="{{A}}assets/img/badsector/sam-flatline.webp" srcset="{{A}}assets/img/badsector/sam-flatline-360.webp 360w, {{A}}assets/img/badsector/sam-flatline.webp 720w" sizes="(max-width: 1080px) 46vw, 330px" width="720" height="1552" alt="O jedną warstwę za daleko: ekran gaśnie, a linia EKG zamiera." loading="lazy" decoding="async"><span class="depth">&#215;</span></div><figcaption><b><span lang="en">Flatline</span><span lang="pl">Flatline</span></b><span class="w-sam">Samurai OS</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRIVACY ============================ -->
+<section class="section" id="privacy">
+  <div class="wrap split">
+    <div>
+      <p class="mono-label" data-scramble><span lang="en">Privacy</span><span lang="pl">Prywatność</span></p>
+      <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Offline by default.</span><span lang="pl">Domyślnie offline.</span></h2>
+      <p class="body" style="margin-top:28px" data-reveal><span lang="en">The game needs no account and no connection: progress, statistics and settings live on your phone. Online rankings and usage statistics only start if you switch them on, and the privacy policy lists every field they send.</span><span lang="pl">Gra nie potrzebuje konta ani połączenia: postęp, statystyki i ustawienia są na Twoim telefonie. Rankingi online i statystyki użycia ruszają dopiero wtedy, gdy je włączysz, a polityka prywatności wymienia każde pole, które wysyłają.</span></p>
+    </div>
+    <div class="readout" data-reveal style="--i:1">
+      <div class="hud-bar"><span><b>badsector</b>.audit</span><span><span lang="en">From the privacy policy</span><span lang="pl">Z polityki prywatności</span></span></div>
+      <dl>
+        <div><dt><span lang="en">Account required</span><span lang="pl">Wymagane konto</span></dt><dd class="acc-text"><span lang="en">No</span><span lang="pl">Nie</span></dd></div>
+        <div><dt><span lang="en">Plays offline</span><span lang="pl">Gra offline</span></dt><dd class="acc-text"><span lang="en">Yes, fully</span><span lang="pl">Tak, w pełni</span></dd></div>
+        <div><dt><span lang="en">Online rankings</span><span lang="pl">Rankingi online</span></dt><dd><span lang="en">Opt-in, nickname</span><span lang="pl">Za zgodą, nick</span></dd></div>
+        <div><dt><span lang="en">Usage statistics</span><span lang="pl">Statystyki użycia</span></dt><dd><span lang="en">Opt-in, off by default</span><span lang="pl">Za zgodą, domyślnie wył.</span></dd></div>
+        <div><dt><span lang="en">Advertising ID</span><span lang="pl">Identyfikator reklamowy</span></dt><dd class="acc-text"><span lang="en">Never</span><span lang="pl">Nigdy</span></dd></div>
+        <div><dt><span lang="en">Analytics or ad SDK</span><span lang="pl">SDK analityczne lub reklamowe</span></dt><dd class="acc-text"><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
+        <div><dt><span lang="en">Data sold</span><span lang="pl">Sprzedaż danych</span></dt><dd class="acc-text"><span lang="en">Never</span><span lang="pl">Nigdy</span></dd></div>
+        <div><dt><span lang="en">Location, contacts, files</span><span lang="pl">Lokalizacja, kontakty, pliki</span></dt><dd><span lang="en">Not requested</span><span lang="pl">Bez dostępu</span></dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="legal-links" style="margin-top:clamp(40px,5vw,72px)" data-reveal>
+      <a href="privacy-policy/">
+        <span class="mono-label">v1.0 / 08.10.2026</span>
+        <span class="h3"><span><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></span><i>&#8599;</i></span>
+      </a>
+      <a href="delete-data/">
+        <span class="mono-label"><span lang="en">In the app or by email</span><span lang="pl">W aplikacji albo mailem</span></span>
+        <span class="h3"><span><span lang="en">Delete online data</span><span lang="pl">Usuń dane online</span></span><i>&#8599;</i></span>
+      </a>
+      <a href="mailto:{{MAIL}}?subject=BADSECTOR">
+        <span class="mono-label">{{MAIL}}</span>
+        <span class="h3"><span><span lang="en">Ask a question</span><span lang="pl">Zadaj pytanie</span></span><i>&#8599;</i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL ============================ -->
+<section class="section">
+  <div class="wrap final">
+    <p class="h-display" data-wipe style="font-size:clamp(44px,8.4vw,150px)"><span lang="en">Coming to<br><span class="acc-text">Google Play.</span></span><span lang="pl">Wkrótce w<br><span class="acc-text">Google Play.</span></span></p>
+    <p class="lede" data-reveal><span lang="en">Want to know when it ships, or join testing? Send one line.</span><span lang="pl">Chcesz wiedzieć, kiedy wyjdzie, albo dołączyć do testów? Wyślij jedną linijkę.</span></p>
+    <div class="btn-row" data-reveal>
+      <a class="btn btn--solid" href="mailto:{{MAIL}}?subject=BADSECTOR%20launch"><span class="t"><span lang="en">Notify me</span><span lang="pl">Powiadom mnie</span></span><span class="g" aria-hidden="true"><i>@</i></span></a>
+      <a class="btn btn--ghost" href="#play"><span class="t"><span lang="en">Play another sector</span><span lang="pl">Zagraj jeszcze raz</span></span><span class="g" aria-hidden="true"><i>&#8593;</i></span></a>
+    </div>
+  </div>
+</section>
+
+<script src="{{A}}assets/js/badsector.js" defer></script>

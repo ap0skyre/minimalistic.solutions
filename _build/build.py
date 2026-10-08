@@ -56,7 +56,7 @@ def crumbs(lang, m):
     home = 'Home' if lang == 'en' else 'Strona główna'
     items = [(home, url(lang, 'index.html'))]
     if m.get('crumb'):
-        items.append((m['crumb'].capitalize(), url(lang, f"{m['crumb']}/index.html")))
+        items.append((m.get('crumb_name', m['crumb'].capitalize()), url(lang, f"{m['crumb']}/index.html")))
     if m['schema'] == 'doc':
         items.append((m[f'title_{lang}'].split(' | ')[0], url(lang, m['out'])))
     return {'@type': 'BreadcrumbList', 'itemListElement': [
@@ -86,6 +86,14 @@ def schema(lang, m):
         graph += [{'@type': 'MobileApplication', 'name': 'Killswitch', 'url': url(lang, m['out']),
                    'operatingSystem': 'Android', 'applicationCategory': 'UtilitiesApplication',
                    'description': desc, 'inLanguage': lang, 'publisher': ORG}, crumbs(lang, m)]
+    elif kind == 'badsector':
+        shots = ['tel-board', 'holo-hint', 'sam-board', 'tel-analysis', 'sam-intro']
+        graph += [{'@type': ['MobileApplication', 'VideoGame'], 'name': 'BADSECTOR', 'url': url(lang, m['out']),
+                   'operatingSystem': 'Android', 'applicationCategory': 'GameApplication', 'genre': 'Puzzle',
+                   'gamePlatform': 'Android', 'description': desc, 'inLanguage': lang,
+                   'image': f'{SITE}/assets/img/badsector.svg',
+                   'screenshot': [f'{SITE}/assets/img/badsector/{s}.webp' for s in shots],
+                   'publisher': ORG}, crumbs(lang, m)]
     elif kind == 'doc':
         graph += [{'@type': 'WebPage', 'name': m[f'title_{lang}'].split(' | ')[0], 'url': url(lang, m['out']),
                    'description': desc, 'inLanguage': lang, 'publisher': ORG}, crumbs(lang, m)]
@@ -177,10 +185,11 @@ def topbar(lang, m, P):
         ('apps', f'{P}#apps', L('Apps', 'Aplikacje')),
         ('outlier', f'{P}outlier/', 'Outlier'),
         ('killswitch', f'{P}killswitch/', 'Killswitch'),
+        ('badsector', f'{P}badsector/', 'Badsector'),
         ('contact', f'{P}#contact', L('Contact', 'Kontakt')),
     ]
     nav = ''.join(f'<li><a href="{h}"{cur(k)}>{t}</a></li>' for k, h, t in links)
-    sheet = ''.join(f'<li><a href="{h}">{t}<small>{"&#8599;" if k in ("outlier", "killswitch") else "&#8600;"}</small></a></li>' for k, h, t in links)
+    sheet = ''.join(f'<li><a href="{h}">{t}<small>{"&#8599;" if k in ("outlier", "killswitch", "badsector") else "&#8600;"}</small></a></li>' for k, h, t in links)
     sw = lang_switch(lang, m)
     login = (f'<a class="btn btn--ghost" href="{LOGIN}" rel="nofollow">'
              f'<span class="t">{L("Login", "Zaloguj")}</span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>')
@@ -227,6 +236,7 @@ def footer(lang, m, P, A):
         <ul>
           <li><a href="{P}outlier/">Outlier</a></li>
           <li><a href="{P}killswitch/">Killswitch</a></li>
+          <li><a href="{P}badsector/">BADSECTOR</a></li>
           <li><a href="{PLAY[lang]}" rel="noopener">{L('Outlier on Google Play', 'Outlier w Google Play')} &#8599;</a></li>
         </ul>
       </div>
@@ -236,6 +246,8 @@ def footer(lang, m, P, A):
           <li><a href="{P}outlier/privacy-policy/">{L('Outlier privacy', 'Outlier: prywatność')}</a></li>
           <li><a href="{P}outlier/delete-account/">{L('Outlier account deletion', 'Outlier: usunięcie konta')}</a></li>
           <li><a href="{P}killswitch/privacy-policy/">{L('Killswitch privacy', 'Killswitch: prywatność')}</a></li>
+          <li><a href="{P}badsector/privacy-policy/">{L('BADSECTOR privacy', 'BADSECTOR: prywatność')}</a></li>
+          <li><a href="{P}badsector/delete-data/">{L('BADSECTOR data deletion', 'BADSECTOR: usunięcie danych')}</a></li>
         </ul>
       </div>
       <div>

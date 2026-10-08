@@ -1,0 +1,385 @@
+<!--{
+"out": "badsector/privacy-policy/index.html",
+"depth": 2,
+"crumb": "badsector",
+"crumb_name": "BADSECTOR",
+"theme": "theme-badsector",
+"favicon": "badsector.svg",
+"back": "../",
+"back_name": "BADSECTOR",
+"title_en": "BADSECTOR privacy policy | minimalistic.solutions",
+"title_pl": "BADSECTOR: polityka prywatności | minimalistic.solutions",
+"desc": "BADSECTOR privacy policy: what stays on your phone, what opt-in online rankings and usage statistics send, Firebase, Google sign-in, GDPR rights and data deletion.",
+"schema": "doc",
+"desc_pl": "Polityka prywatności BADSECTOR: co zostaje na telefonie, co wysyłają dobrowolne rankingi online i statystyki użycia, Firebase, logowanie Google, prawa z RODO i usuwanie danych."
+}-->
+
+<header class="doc-head">
+  <div class="wrap">
+    <p class="mono-label" data-scramble>legal_doc // badsector // privacy_policy.txt</p>
+    <h1 class="h-display"><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></h1>
+    <dl class="doc-meta">
+      <div><dt><span lang="en">App</span><span lang="pl">Aplikacja</span></dt><dd>BADSECTOR</dd></div>
+      <div><dt><span lang="en">Version</span><span lang="pl">Wersja</span></dt><dd>1.0</dd></div>
+      <div><dt><span lang="en">Last updated</span><span lang="pl">Ostatnia zmiana</span></dt><dd><span lang="en">October 8, 2026</span><span lang="pl">8 października 2026</span></dd></div>
+      <div><dt><span lang="en">Contact</span><span lang="pl">Kontakt</span></dt><dd><a class="tlink" href="mailto:{{MAIL}}">{{MAIL}}</a></dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- ============================ ENGLISH ============================ -->
+<div class="doc wrap" lang="en">
+<!--TOC-->
+<div class="prose">
+
+<section id="who">
+<h2>Who we are</h2>
+<p>BADSECTOR is an independent Android puzzle game made by minimalistic.solutions, a one-person studio. It is not affiliated with any corporation. "We" in this policy means the developer of BADSECTOR, who is the controller of the personal data described here.</p>
+<p>For anything about privacy, write to the address at the bottom of this page. A person reads it.</p>
+</section>
+
+<section id="short">
+<h2>The short version</h2>
+<div class="note"><b>POLICY</b>BADSECTOR plays fully offline and needs no account. What you do in the game stays on your phone unless you switch on online rankings or usage statistics, and both stay off until you choose otherwise. No ads, no advertising ID, no analytics or advertising SDK. We never sell data.</div>
+<p>Sections 04 and 05 list exactly what is sent when you switch those features on. Section 11 explains how to get a copy of your data or delete it.</p>
+</section>
+
+<section id="device">
+<h2>Data stored on your phone</h2>
+<p>BADSECTOR keeps a small amount of data in its own private storage on your device. Only the game can read it. In full:</p>
+<table class="table">
+<thead><tr><th>Stored</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td><small>SETTINGS</small>World and your edits to it, language, controls (tap and hold, hold time, chording), vibration, glitch level, effect quality, reduced motion</td><td>So the game looks and plays the way you set it</td></tr>
+<tr><td><small>STATS</small>Games, wins, best time per level, totals, and your last 30 results (date, board, time, 3BV, clicks)</td><td>Profile, records and the local rankings view</td></tr>
+<tr><td><small>PROGRESS</small>Campaign sectors cleared, Academy level and lessons, achievements, daily streak, Blitz and Endless bests, story fragments found</td><td>Your progress through the game</td></tr>
+<tr><td><small>CAT</small>Which cat you picked; for a cat you built, its name, grammatical gender and looks</td><td>So the cat looks and talks the way you made it</td></tr>
+<tr><td><small>ENDLESS</small>The ZEN world in progress: its seed and the areas you opened</td><td>To continue where you left off</td></tr>
+<tr><td><small>ONLINE</small>Only after you join online rankings: your player ID, nickname, your statistics choice and statistics ID</td><td>To connect the game to its online features</td></tr>
+</tbody>
+</table>
+<p>None of this leaves your phone on its own. It is erased when you clear the game's storage or uninstall it. Section 08 covers Android's own backup.</p>
+</section>
+
+<section id="rankings">
+<h2>Online rankings (opt-in)</h2>
+<p>Online rankings stay off until you open them in the game, choose a nickname and confirm. Until then BADSECTOR sends nothing at all, not even an anonymous identifier.</p>
+<h3>What is sent once you join</h3>
+<ul>
+<li>A player ID: a random identifier created by Firebase Authentication when you join. It is an anonymous account, with no email address or name</li>
+<li>The nickname you choose</li>
+<li>For each ranked game: the mode and board (for example the daily number, level or size), the board's seed and first cell, the result, time, 3BV and number of clicks, the date and time, and the app version</li>
+<li>The move log of that game: which cell you scanned or marked and when, counted from the start of the game</li>
+<li>Your best results and positions, which we calculate from the above</li>
+</ul>
+<p>The move log holds moves and timings, nothing else. We use it to check on the server that a result was really played on that board: the board is rebuilt from its seed and your moves are replayed on it. It is also what lets other players watch a replay.</p>
+<h3>What other players see</h3>
+<ul>
+<li>Your nickname, your results and positions, and the date of each result</li>
+<li>Replays of your results that appear on a leaderboard, including as a ghost to race against</li>
+</ul>
+<p>Your player ID, your linked Google account and everything else in this section are never shown to other players. Pick a nickname that is not your real name. A nickname that is offensive or pretends to be someone else may be changed or removed.</p>
+<h3>Linking a Google account (optional)</h3>
+<p>So that your rankings follow you to a new phone, you can link your profile to your Google account. Google then gives Firebase Authentication your Google account ID, email address, name and profile picture. We use only the account ID, to recognise you on another device. We never show your name, email or picture to other players and never use your email for marketing. We look at it only if you write to us about your data. You can unlink Google or delete your profile at any time (section 11).</p>
+<h3>Where it is kept</h3>
+<p>In our own Google Firebase project: Firebase Authentication for the account, Cloud Firestore for profiles, results and replays, and Cloud Functions for checking results. Everything travels encrypted (HTTPS/TLS).</p>
+</section>
+
+<section id="stats">
+<h2>Usage statistics (opt-in)</h2>
+<p>Usage statistics show us which modes, worlds and features are used and where players get stuck. They are off by default. The game asks once, and you can change your answer at any time in SETTINGS.</p>
+<h3>When switched on, the game sends</h3>
+<ul>
+<li>Events: the app was opened, a game started or finished (mode, board size, world, result, duration), a feature was used (for example a hint, a lesson or the theme editor), a setting was changed (language, world, effect quality)</li>
+<li>Technical details: app version, Android version and the device's language</li>
+<li>A statistics ID: a random identifier made on your phone, separate from your player ID. Switching statistics off deletes it from the phone, and a new one is made only if you switch them on again</li>
+</ul>
+<h3>It never includes</h3>
+<ul>
+<li>Your nickname, Google account or player ID</li>
+<li>The advertising ID, hardware identifiers such as IMEI or serial number, or your location</li>
+<li>Anything you type</li>
+</ul>
+<p>Statistics go to the same Firebase project (Cloud Firestore). We do not use Google Analytics for Firebase or any other analytics SDK. We do not store your IP address. Google's servers handle it only to carry the connection.</p>
+</section>
+
+<section id="permissions">
+<h2>Android permissions</h2>
+<table class="table">
+<thead><tr><th>Permission</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td><small>VIBRATE</small>Vibration</td><td>Haptic feedback for scans, markers, glitches and the cat's purr. You can switch it off in SETTINGS</td></tr>
+<tr><td><small>INTERNET</small>Network access</td><td>Used only by online rankings and usage statistics, and only after you switch them on</td></tr>
+</tbody>
+</table>
+<p>BADSECTOR does not ask for location, contacts, camera, microphone, photos, files or phone state, and it does not use the advertising ID.</p>
+</section>
+
+<section id="clipboard">
+<h2>Clipboard</h2>
+<p>The game touches the clipboard only when you ask it to. COPY and EXPORT put a sector code or a theme code (BS4.) on it. PLAY and IMPORT read it if you left the code field empty. These codes describe a board or a colour scheme and contain no personal data. The clipboard is never read in the background.</p>
+</section>
+
+<section id="backup">
+<h2>Android backup</h2>
+<p>Android can back up app data to your Google account and restore it on a new phone (Android Auto Backup, or a transfer from your old device). BADSECTOR allows this for the data in section 03, so your progress survives a change of phone.</p>
+<p>That backup is made, encrypted and stored by Google, in your Google account and under Google's privacy policy. We have no access to it. You can turn backup off in Android Settings &gt; Google &gt; Backup, and delete existing backups in Google Drive &gt; Backups.</p>
+</section>
+
+<section id="third">
+<h2>Third-party services</h2>
+<p>BADSECTOR relies on these services, each with its own privacy policy:</p>
+<table class="table">
+<thead><tr><th>Service</th><th>Purpose</th><th>Privacy policy</th></tr></thead>
+<tbody>
+<tr><td><small>FIREBASE</small>Authentication</td><td>Anonymous player accounts and the optional Google link</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+<tr><td><small>FIREBASE</small>Cloud Firestore</td><td>Profiles, results, replays and usage statistics</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+<tr><td><small>FIREBASE</small>Cloud Functions</td><td>Checking results and building leaderboards</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+<tr><td><small>GOOGLE</small>Sign-In</td><td>Optional link of your profile to a Google account</td><td><a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></td></tr>
+<tr><td><small>GOOGLE</small>Play</td><td>Distribution, purchases and Android backup</td><td><a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></td></tr>
+</tbody>
+</table>
+<p>There is no advertising network, no analytics SDK and no crash-reporting SDK. Fonts and graphics are built into the app, so nothing is downloaded to draw a screen.</p>
+<h3>Purchases</h3>
+<p>If BADSECTOR is sold as a paid app or offers in-app purchases, Google Play handles the payment. We receive only what is needed to confirm and restore a purchase (the product, an order number and a purchase token), never your card or payment details.</p>
+<h3>Advertising</h3>
+<p>BADSECTOR shows no ads. If a future free edition ever includes advertising, it will be non-intrusive, this policy will name the ad provider and what it collects before that version is released, and the change will be announced in the game.</p>
+</section>
+
+<section id="basis">
+<h2>Legal basis and transfers</h2>
+<p>Under the GDPR we rely on:</p>
+<ul>
+<li><strong>Online rankings, replays and the Google link:</strong> providing the service you asked for (Art. 6(1)(b))</li>
+<li><strong>Checking results and moderating nicknames:</strong> our legitimate interest in fair and safe leaderboards (Art. 6(1)(f))</li>
+<li><strong>Usage statistics:</strong> your consent (Art. 6(1)(a)), which you withdraw by switching them off</li>
+<li><strong>Answering your emails:</strong> our legitimate interest in replying to you (Art. 6(1)(f))</li>
+</ul>
+<p>Firebase is run by Google, and data may be processed on servers outside the European Economic Area, including in the United States. Those transfers are covered by Google's Standard Contractual Clauses and its certification under the EU-U.S. Data Privacy Framework.</p>
+</section>
+
+<section id="rights">
+<h2>Your rights</h2>
+<h3>European Union (GDPR)</h3>
+<div class="rights">
+<div><b>Access</b><p>Ask by email for a copy of everything we hold for your player ID. Data on your phone is visible in the game.</p></div>
+<div><b>Rectification</b><p>Change your nickname in the game, or ask us.</p></div>
+<div><b>Erasure</b><p>Delete your online data in the game, or ask us. <a href="../delete-data/">Delete data &#8599;</a></p></div>
+<div><b>Portability</b><p>Ask for your results and replays as a JSON file.</p></div>
+<div><b>Object / withdraw</b><p>Switch statistics off, leave the rankings or unlink Google, at any time.</p></div>
+<div><b>Complaint</b><p>In Poland, the President of the Personal Data Protection Office (UODO), or your own national authority.</p></div>
+</div>
+<p>We answer requests within 30 days. Online profiles are anonymous, so please include your nickname and player ID (shown in PROFILE &gt; ONLINE) so we can find yours.</p>
+<h3>California (CCPA / CPRA)</h3>
+<p>We do not sell personal information or share it for cross-context behavioural advertising. You can ask to know, correct or delete the personal information we hold about you, and you will not be treated differently for asking.</p>
+</section>
+
+<section id="age">
+<h2>Minimum age</h2>
+<p>BADSECTOR is intended for players aged 16 and older. We do not knowingly collect personal data from anyone under 16. If you believe a younger player has joined the online rankings, write to us and we will delete that profile.</p>
+</section>
+
+<section id="security">
+<h2>Security and retention</h2>
+<p>Firebase encrypts online data in transit and at rest. Security rules let each player write only to their own profile, and results are checked on the server before they reach a leaderboard. Data on your phone is protected by Android's app sandbox, your screen lock and device encryption.</p>
+<ul>
+<li><strong>Data on your phone:</strong> until you clear the game's storage or uninstall it</li>
+<li><strong>Online profile, results and replays:</strong> until you delete them, in the game or by request</li>
+<li><strong>Usage statistics:</strong> up to 14 months, then deleted</li>
+<li><strong>Your emails:</strong> as long as needed to handle your request</li>
+<li><strong>After a deletion:</strong> gone from leaderboards at once, and from all our systems, backups included, within 30 days</li>
+</ul>
+</section>
+
+<section id="changes">
+<h2>Policy changes</h2>
+<p>When this policy changes, the "Last updated" date at the top changes with it. If BADSECTOR ever starts collecting anything not described here, the new policy will be published and the change announced in the game before that update reaches you.</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Questions, data requests, or anything here that looks wrong: write directly.</p>
+<div class="mail-cta"><a class="btn btn--solid" href="mailto:{{MAIL}}?subject=BADSECTOR%20privacy"><span class="t">{{MAIL}}</span><span class="g" aria-hidden="true"><i>@</i></span></a></div>
+</section>
+
+</div>
+</div><!--/doc-->
+
+<!-- ============================ POLSKI ============================ -->
+<div class="doc wrap" lang="pl">
+<!--TOC-->
+<div class="prose">
+<p class="translation-note">Tłumaczenie polskie ma charakter informacyjny. W razie rozbieżności rozstrzyga wersja angielska.</p>
+
+<section id="pl-who">
+<h2>Kim jesteśmy</h2>
+<p>BADSECTOR to niezależna gra logiczna na Androida, którą tworzy minimalistic.solutions, jednoosobowe studio. Nie jest powiązana z żadną korporacją. „My” w tej polityce oznacza twórcę BADSECTOR, który jest administratorem opisanych tu danych osobowych.</p>
+<p>W każdej sprawie dotyczącej prywatności napisz na adres podany na dole strony. Czyta go człowiek.</p>
+</section>
+
+<section id="pl-short">
+<h2>W skrócie</h2>
+<div class="note"><b>ZASADA</b>BADSECTOR działa w pełni offline i nie wymaga konta. To, co robisz w grze, zostaje na telefonie, dopóki nie włączysz rankingów online albo statystyk użycia, a obie funkcje są wyłączone, dopóki sam o tym nie zdecydujesz. Bez reklam, bez identyfikatora reklamowego, bez SDK analitycznego czy reklamowego. Nigdy nie sprzedajemy danych.</div>
+<p>Punkty 04 i 05 dokładnie wymieniają, co jest wysyłane po włączeniu tych funkcji. Punkt 11 wyjaśnia, jak dostać kopię swoich danych albo je usunąć.</p>
+</section>
+
+<section id="pl-device">
+<h2>Dane zapisane na telefonie</h2>
+<p>BADSECTOR przechowuje niewielką ilość danych we własnej, prywatnej pamięci na urządzeniu. Może je odczytać tylko gra. Pełna lista:</p>
+<table class="table">
+<thead><tr><th>Co</th><th>Po co</th></tr></thead>
+<tbody>
+<tr><td><small>SETTINGS</small>Świat i Twoje zmiany w nim, język, sterowanie (tap i przytrzymanie, czas przytrzymania, chording), wibracje, poziom glitcha, jakość efektów, ograniczenie ruchu</td><td>Żeby gra wyglądała i działała tak, jak ją ustawisz</td></tr>
+<tr><td><small>STATS</small>Partie, wygrane, najlepszy czas na każdym poziomie, sumy i ostatnie 30 wyników (data, plansza, czas, 3BV, kliknięcia)</td><td>Profil, rekordy i lokalny widok rankingów</td></tr>
+<tr><td><small>PROGRESS</small>Zaliczone sektory kampanii, poziom i lekcje Akademii, osiągnięcia, seria daily, rekordy Blitz i Endless, znalezione fragmenty historii</td><td>Twój postęp w grze</td></tr>
+<tr><td><small>CAT</small>Wybrany kot; dla kota z kreatora jego imię, rodzaj gramatyczny i wygląd</td><td>Żeby kot wyglądał i mówił tak, jak go stworzysz</td></tr>
+<tr><td><small>ENDLESS</small>Rozpoczęty świat ZEN: jego seed i odkryte obszary</td><td>Żeby wrócić tam, gdzie skończyłeś</td></tr>
+<tr><td><small>ONLINE</small>Dopiero po dołączeniu do rankingów: identyfikator gracza, nick, Twój wybór co do statystyk i identyfikator statystyk</td><td>Żeby połączyć grę z funkcjami online</td></tr>
+</tbody>
+</table>
+<p>Nic z tego nie opuszcza telefonu samo z siebie. Dane znikają po wyczyszczeniu pamięci gry albo jej odinstalowaniu. Kopię zapasową Androida opisuje punkt 08.</p>
+</section>
+
+<section id="pl-rankings">
+<h2>Rankingi online (dobrowolne)</h2>
+<p>Rankingi online są wyłączone, dopóki nie otworzysz ich w grze, nie wybierzesz nicku i nie potwierdzisz. Do tego czasu BADSECTOR nie wysyła niczego, nawet anonimowego identyfikatora.</p>
+<h3>Co jest wysyłane po dołączeniu</h3>
+<ul>
+<li>Identyfikator gracza: losowy identyfikator, który Firebase Authentication tworzy przy dołączeniu. To anonimowe konto, bez adresu e-mail i bez imienia</li>
+<li>Wybrany przez Ciebie nick</li>
+<li>Dla każdej partii rankingowej: tryb i plansza (na przykład numer daily, poziom albo rozmiar), seed planszy i pierwsze pole, wynik, czas, 3BV i liczba kliknięć, data i godzina oraz wersja aplikacji</li>
+<li>Log ruchów tej partii: które pole skanowałeś lub oznaczałeś i kiedy, licząc od początku partii</li>
+<li>Twoje najlepsze wyniki i pozycje, które obliczamy na podstawie powyższych danych</li>
+</ul>
+<p>Log ruchów zawiera tylko ruchy i czasy. Służy do sprawdzenia na serwerze, że wynik naprawdę padł na tej planszy: plansza jest odtwarzana z seeda, a Twoje ruchy są na niej powtarzane. Dzięki niemu inni gracze mogą też obejrzeć powtórkę.</p>
+<h3>Co widzą inni gracze</h3>
+<ul>
+<li>Twój nick, Twoje wyniki i pozycje oraz datę każdego wyniku</li>
+<li>Powtórki Twoich wyników, które trafiły do rankingu, także jako ducha do ścigania się</li>
+</ul>
+<p>Identyfikator gracza, połączone konto Google i wszystko inne z tego punktu nigdy nie są pokazywane innym graczom. Wybierz nick, który nie jest Twoim prawdziwym imieniem i nazwiskiem. Nick obraźliwy albo podszywający się pod kogoś może zostać zmieniony lub usunięty.</p>
+<h3>Połączenie z kontem Google (opcjonalne)</h3>
+<p>Żeby rankingi przeszły z Tobą na nowy telefon, możesz połączyć profil z kontem Google. Google przekazuje wtedy do Firebase Authentication identyfikator konta Google, adres e-mail, imię i nazwisko oraz zdjęcie profilowe. Używamy wyłącznie identyfikatora konta, żeby rozpoznać Cię na innym urządzeniu. Nigdy nie pokazujemy innym graczom Twojego imienia, adresu e-mail ani zdjęcia i nie używamy adresu e-mail do marketingu. Zaglądamy do niego tylko wtedy, gdy sam napiszesz do nas w sprawie swoich danych. Połączenie z Google możesz zerwać, a profil usunąć w każdej chwili (punkt 11).</p>
+<h3>Gdzie dane są przechowywane</h3>
+<p>W naszym własnym projekcie Google Firebase: Firebase Authentication dla konta, Cloud Firestore dla profili, wyników i powtórek oraz Cloud Functions do sprawdzania wyników. Wszystko jest przesyłane w formie zaszyfrowanej (HTTPS/TLS).</p>
+</section>
+
+<section id="pl-stats">
+<h2>Statystyki użycia (dobrowolne)</h2>
+<p>Statystyki użycia pokazują nam, które tryby, światy i funkcje są używane i gdzie gracze utykają. Domyślnie są wyłączone. Gra pyta o nie raz, a odpowiedź możesz zmienić w każdej chwili w USTAWIENIACH.</p>
+<h3>Po włączeniu gra wysyła</h3>
+<ul>
+<li>Zdarzenia: uruchomienie aplikacji, początek i koniec partii (tryb, rozmiar planszy, świat, wynik, czas trwania), użycie funkcji (na przykład podpowiedzi, lekcji albo edytora motywu), zmiana ustawienia (język, świat, jakość efektów)</li>
+<li>Dane techniczne: wersja aplikacji, wersja Androida i język urządzenia</li>
+<li>Identyfikator statystyk: losowy identyfikator utworzony na telefonie, oddzielny od identyfikatora gracza. Wyłączenie statystyk usuwa go z telefonu, a nowy powstaje dopiero po ponownym włączeniu</li>
+</ul>
+<h3>Nigdy nie zawierają</h3>
+<ul>
+<li>Twojego nicku, konta Google ani identyfikatora gracza</li>
+<li>Identyfikatora reklamowego, identyfikatorów sprzętu takich jak IMEI czy numer seryjny ani Twojej lokalizacji</li>
+<li>Niczego, co wpisujesz</li>
+</ul>
+<p>Statystyki trafiają do tego samego projektu Firebase (Cloud Firestore). Nie używamy Google Analytics dla Firebase ani żadnego innego SDK analitycznego. Nie zapisujemy Twojego adresu IP. Serwery Google przetwarzają go wyłącznie po to, żeby zestawić połączenie.</p>
+</section>
+
+<section id="pl-permissions">
+<h2>Uprawnienia Androida</h2>
+<table class="table">
+<thead><tr><th>Uprawnienie</th><th>Po co</th></tr></thead>
+<tbody>
+<tr><td><small>VIBRATE</small>Wibracje</td><td>Reakcja haptyczna przy skanach, markerach, glitchach i mruczeniu kota. Można ją wyłączyć w USTAWIENIACH</td></tr>
+<tr><td><small>INTERNET</small>Dostęp do sieci</td><td>Używany wyłącznie przez rankingi online i statystyki użycia i tylko po ich włączeniu</td></tr>
+</tbody>
+</table>
+<p>BADSECTOR nie prosi o dostęp do lokalizacji, kontaktów, aparatu, mikrofonu, zdjęć, plików ani stanu telefonu i nie używa identyfikatora reklamowego.</p>
+</section>
+
+<section id="pl-clipboard">
+<h2>Schowek</h2>
+<p>Gra korzysta ze schowka tylko na Twoje polecenie. KOPIUJ i EKSPORTUJ kładą w nim kod sektora albo kod motywu (BS4.). ZAGRAJ i IMPORTUJ odczytują go, jeśli pole kodu zostało puste. Te kody opisują planszę albo zestaw kolorów i nie zawierają danych osobowych. Schowek nigdy nie jest odczytywany w tle.</p>
+</section>
+
+<section id="pl-backup">
+<h2>Kopia zapasowa Androida</h2>
+<p>Android potrafi zapisać dane aplikacji na Twoim koncie Google i przywrócić je na nowym telefonie (Android Auto Backup albo przeniesienie ze starego urządzenia). BADSECTOR na to pozwala dla danych z punktu 03, żeby postęp przetrwał zmianę telefonu.</p>
+<p>Taką kopię tworzy, szyfruje i przechowuje Google, na Twoim koncie Google i zgodnie z polityką prywatności Google. Nie mamy do niej dostępu. Kopię zapasową wyłączysz w Ustawieniach Androida &gt; Google &gt; Kopia zapasowa, a istniejące kopie usuniesz w Dysku Google &gt; Kopie zapasowe.</p>
+</section>
+
+<section id="pl-third">
+<h2>Usługi zewnętrzne</h2>
+<p>BADSECTOR korzysta z poniższych usług, a każda ma własną politykę prywatności:</p>
+<table class="table">
+<thead><tr><th>Usługa</th><th>Cel</th><th>Polityka prywatności</th></tr></thead>
+<tbody>
+<tr><td><small>FIREBASE</small>Authentication</td><td>Anonimowe konta graczy i opcjonalne połączenie z Google</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+<tr><td><small>FIREBASE</small>Cloud Firestore</td><td>Profile, wyniki, powtórki i statystyki użycia</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+<tr><td><small>FIREBASE</small>Cloud Functions</td><td>Sprawdzanie wyników i budowanie rankingów</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+<tr><td><small>GOOGLE</small>Sign-In</td><td>Opcjonalne połączenie profilu z kontem Google</td><td><a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></td></tr>
+<tr><td><small>GOOGLE</small>Play</td><td>Dystrybucja, zakupy i kopia zapasowa Androida</td><td><a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></td></tr>
+</tbody>
+</table>
+<p>Nie ma sieci reklamowej, SDK analitycznego ani SDK do raportowania awarii. Czcionki i grafika są wbudowane w aplikację, więc do narysowania ekranu nic nie jest pobierane.</p>
+<h3>Zakupy</h3>
+<p>Jeśli BADSECTOR jest sprzedawany jako płatna aplikacja albo oferuje zakupy w aplikacji, płatność obsługuje Google Play. Otrzymujemy tylko to, co potrzebne do potwierdzenia i przywrócenia zakupu (produkt, numer zamówienia i token zakupu), nigdy danych karty ani płatności.</p>
+<h3>Reklamy</h3>
+<p>BADSECTOR nie wyświetla reklam. Jeśli przyszła darmowa wersja kiedykolwiek będzie je zawierać, będą nienachalne, ta polityka wskaże dostawcę reklam i to, co zbiera, zanim taka wersja zostanie wydana, a zmiana zostanie ogłoszona w grze.</p>
+</section>
+
+<section id="pl-basis">
+<h2>Podstawa prawna i przekazywanie danych</h2>
+<p>Na gruncie RODO opieramy się na:</p>
+<ul>
+<li><strong>Rankingi online, powtórki i połączenie z Google:</strong> świadczenie usługi, o którą prosisz (art. 6 ust. 1 lit. b)</li>
+<li><strong>Sprawdzanie wyników i moderacja nicków:</strong> nasz prawnie uzasadniony interes w uczciwych i bezpiecznych rankingach (art. 6 ust. 1 lit. f)</li>
+<li><strong>Statystyki użycia:</strong> Twoja zgoda (art. 6 ust. 1 lit. a), którą wycofujesz, wyłączając statystyki</li>
+<li><strong>Odpowiedzi na Twoje e-maile:</strong> nasz prawnie uzasadniony interes w odpowiedzi (art. 6 ust. 1 lit. f)</li>
+</ul>
+<p>Firebase prowadzi Google, a dane mogą być przetwarzane na serwerach poza Europejskim Obszarem Gospodarczym, także w Stanach Zjednoczonych. Takie przekazanie zabezpieczają standardowe klauzule umowne Google i certyfikacja Google w ramach EU-U.S. Data Privacy Framework.</p>
+</section>
+
+<section id="pl-rights">
+<h2>Twoje prawa</h2>
+<h3>Unia Europejska (RODO)</h3>
+<div class="rights">
+<div><b>Dostęp</b><p>Poproś mailem o kopię wszystkiego, co mamy dla Twojego identyfikatora gracza. Dane z telefonu widać w grze.</p></div>
+<div><b>Sprostowanie</b><p>Zmień nick w grze albo poproś nas o to.</p></div>
+<div><b>Usunięcie</b><p>Usuń dane online w grze albo poproś nas o to. <a href="../delete-data/">Usuń dane &#8599;</a></p></div>
+<div><b>Przenoszenie</b><p>Poproś o swoje wyniki i powtórki w pliku JSON.</p></div>
+<div><b>Sprzeciw / wycofanie</b><p>Wyłącz statystyki, wyjdź z rankingów albo odłącz Google, kiedy chcesz.</p></div>
+<div><b>Skarga</b><p>W Polsce do Prezesa Urzędu Ochrony Danych Osobowych (UODO) albo do organu nadzorczego w Twoim kraju.</p></div>
+</div>
+<p>Na wnioski odpowiadamy w ciągu 30 dni. Profile online są anonimowe, więc podaj nick i identyfikator gracza (widoczny w PROFIL &gt; ONLINE), żebyśmy mogli znaleźć Twój.</p>
+<h3>Kalifornia (CCPA / CPRA)</h3>
+<p>Nie sprzedajemy danych osobowych ani nie udostępniamy ich do reklamy behawioralnej. Możesz zapytać, jakie dane o Tobie mamy, poprosić o ich poprawienie lub usunięcie i nie spotka Cię za to żadne gorsze traktowanie.</p>
+</section>
+
+<section id="pl-age">
+<h2>Minimalny wiek</h2>
+<p>BADSECTOR jest przeznaczony dla graczy w wieku 16 lat i starszych. Świadomie nie zbieramy danych osobowych osób poniżej 16 roku życia. Jeśli sądzisz, że młodsza osoba dołączyła do rankingów online, napisz do nas, a usuniemy jej profil.</p>
+</section>
+
+<section id="pl-security">
+<h2>Bezpieczeństwo i przechowywanie</h2>
+<p>Firebase szyfruje dane online w trakcie przesyłania i w spoczynku. Reguły bezpieczeństwa pozwalają każdemu graczowi zapisywać tylko we własnym profilu, a wyniki są sprawdzane na serwerze, zanim trafią do rankingu. Dane na telefonie chroni piaskownica aplikacji Androida, blokada ekranu i szyfrowanie urządzenia.</p>
+<ul>
+<li><strong>Dane na telefonie:</strong> do wyczyszczenia pamięci gry albo jej odinstalowania</li>
+<li><strong>Profil online, wyniki i powtórki:</strong> dopóki ich nie usuniesz, w grze albo na wniosek</li>
+<li><strong>Statystyki użycia:</strong> do 14 miesięcy, potem są usuwane</li>
+<li><strong>Twoje e-maile:</strong> tak długo, jak to potrzebne do obsługi sprawy</li>
+<li><strong>Po usunięciu:</strong> od razu znikają z rankingów, a ze wszystkich naszych systemów, łącznie z kopiami zapasowymi, w ciągu 30 dni</li>
+</ul>
+</section>
+
+<section id="pl-changes">
+<h2>Zmiany polityki</h2>
+<p>Gdy ta polityka się zmienia, zmienia się też data „Ostatnia zmiana” na górze strony. Jeśli BADSECTOR kiedykolwiek zacznie zbierać coś, czego tu nie opisano, nowa polityka zostanie opublikowana, a zmiana ogłoszona w grze, zanim ta aktualizacja do Ciebie trafi.</p>
+</section>
+
+<section id="pl-contact">
+<h2>Kontakt</h2>
+<p>Pytania, wnioski o dane albo coś w tej polityce, co wygląda na błąd: napisz bezpośrednio.</p>
+<div class="mail-cta"><a class="btn btn--solid" href="mailto:{{MAIL}}?subject=BADSECTOR%20privacy"><span class="t">{{MAIL}}</span><span class="g" aria-hidden="true"><i>@</i></span></a></div>
+</section>
+
+</div>
+</div><!--/doc-->

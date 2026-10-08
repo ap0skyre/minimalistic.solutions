@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html data-alt="/pl/badsector/" data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>BADSECTOR: no-guess minesweeper for Android | minimalistic.solutions</title>
+<meta content="BADSECTOR is minesweeper rebuilt as a hacking game: every board solvable by logic, three worlds, post-game analysis, an academy and a cat that talks. Play a sector in your browser." name="description"/>
+<link href="https://minimalistic.solutions/badsector/" rel="canonical"/>
+<link href="https://minimalistic.solutions/badsector/" hreflang="en" rel="alternate"/>
+<link href="https://minimalistic.solutions/pl/badsector/" hreflang="pl" rel="alternate"/>
+<link href="https://minimalistic.solutions/badsector/" hreflang="x-default" rel="alternate"/>
+<meta content="https://minimalistic.solutions/badsector/" property="og:url"/>
+<meta content="#0a0a0b" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<meta content="website" property="og:type"/>
+<meta content="minimalistic.solutions" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="pl_PL" property="og:locale:alternate"/>
+<meta content="BADSECTOR: no-guess minesweeper for Android | minimalistic.solutions" property="og:title"/>
+<meta content="BADSECTOR is minesweeper rebuilt as a hacking game: every board solvable by logic, three worlds, post-game analysis, an academy and a cat that talks. Play a sector in your browser." property="og:description"/>
+<meta content="https://minimalistic.solutions/assets/img/og.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="minimalistic.solutions" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="BADSECTOR: no-guess minesweeper for Android | minimalistic.solutions" name="twitter:title"/>
+<meta content="BADSECTOR is minesweeper rebuilt as a hacking game: every board solvable by logic, three worlds, post-game analysis, an academy and a cat that talks. Play a sector in your browser." name="twitter:description"/>
+<meta content="https://minimalistic.solutions/assets/img/og.png" name="twitter:image"/>
+<link href="../favicon.ico" rel="icon" sizes="48x48"/>
+<link href="../assets/img/badsector.svg" rel="icon" type="image/svg+xml"/>
+<link href="../apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../site.webmanifest" rel="manifest"/>
+<link as="font" crossorigin="" href="../assets/fonts/Archivo-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../assets/fonts/JetBrainsMono-latin.woff2" rel="preload" type="font/woff2"/>
+<link href="../assets/css/fonts.css" rel="stylesheet"/>
+<link href="../assets/css/site.css" rel="stylesheet"/>
+<script>(function(){var d=document.documentElement,l;d.classList.add('js');try{l=localStorage.getItem('ms-lang')}catch(e){}if(l&&l!==d.lang&&d.dataset.alt){location.replace(d.dataset.alt+location.hash)}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": ["MobileApplication", "VideoGame"], "name": "BADSECTOR", "url": "https://minimalistic.solutions/badsector/", "operatingSystem": "Android", "applicationCategory": "GameApplication", "genre": "Puzzle", "gamePlatform": "Android", "description": "BADSECTOR is minesweeper rebuilt as a hacking game: every board solvable by logic, three worlds, post-game analysis, an academy and a cat that talks. Play a sector in your browser.", "inLanguage": "en", "image": "https://minimalistic.solutions/assets/img/badsector.svg", "screenshot": ["https://minimalistic.solutions/assets/img/badsector/tel-board.webp", "https://minimalistic.solutions/assets/img/badsector/holo-hint.webp", "https://minimalistic.solutions/assets/img/badsector/sam-board.webp", "https://minimalistic.solutions/assets/img/badsector/tel-analysis.webp", "https://minimalistic.solutions/assets/img/badsector/sam-intro.webp"], "publisher": {"@type": "Organization", "@id": "https://minimalistic.solutions/#org", "name": "minimalistic.solutions", "url": "https://minimalistic.solutions/", "logo": "https://minimalistic.solutions/assets/img/icon-512.png", "email": "empyreaninu@gmail.com"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://minimalistic.solutions/"}, {"@type": "ListItem", "position": 2, "name": "BADSECTOR", "item": "https://minimalistic.solutions/badsector/"}]}]}</script>
+</head>
+<body class="theme-badsector">
+<a class="skip" href="#main">Skip to content</a>
+<div aria-hidden="true" class="crt"></div>
+<header class="topbar">
+<div class="wrap">
+<a aria-label="minimalistic.solutions" class="brand" href="../">
+<span aria-hidden="true" class="brand-mark"></span>
+<span><span class="full">minimalistic<span class="dim">.solutions</span></span><span class="short">m<span class="dim">.s</span></span><span class="dim">/</span><span class="crumb">badsector</span></span>
+</a>
+<nav aria-label="Main" class="nav-wrap"><ul class="nav"><li><a href="../#apps">Apps</a></li><li><a href="../outlier/">Outlier</a></li><li><a href="../killswitch/">Killswitch</a></li><li><a aria-current="page" href="../badsector/">Badsector</a></li><li><a href="../#contact">Contact</a></li></ul></nav>
+<div class="bar-right">
+<nav aria-label="Language / Język" class="lang"><a aria-current="true" data-set-lang="en" href="/badsector/" hreflang="en">EN</a><a data-set-lang="pl" href="/pl/badsector/" hreflang="pl">PL</a></nav>
+<div class="team">
+<span class="team-q">Part of the team?</span>
+<a class="btn btn--ghost" href="https://app.minimalistic.solutions/" rel="nofollow"><span class="t">Login</span><span aria-hidden="true" class="g"><i>↗</i></span></a>
+</div>
+<button aria-controls="sheet" aria-expanded="false" aria-label="Open menu" class="menu-btn" type="button"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<div class="sheet" id="sheet">
+<ul><li><a href="../#apps">Apps<small>↘</small></a></li><li><a href="../outlier/">Outlier<small>↗</small></a></li><li><a href="../killswitch/">Killswitch<small>↗</small></a></li><li><a href="../badsector/">Badsector<small>↗</small></a></li><li><a href="../#contact">Contact<small>↘</small></a></li></ul>
+<div class="sheet-foot">
+<span class="mono-label">Language</span>
+<nav aria-label="Language / Język" class="lang"><a aria-current="true" data-set-lang="en" href="/badsector/" hreflang="en">EN</a><a data-set-lang="pl" href="/pl/badsector/" hreflang="pl">PL</a></nav>
+<span class="mono-label">Part of the team?</span>
+<div><a class="btn btn--ghost" href="https://app.minimalistic.solutions/" rel="nofollow"><span class="t">Login</span><span aria-hidden="true" class="g"><i>↗</i></span></a></div>
+</div>
+</div>
+<main id="main">
+<!-- ============================ HERO ============================ -->
+<section class="p-hero">
+<div class="wrap p-hero-grid">
+<div>
+<div class="app-id hero-fade">
+<img alt="" class="bs-mark" height="48" src="../assets/img/badsector.svg" width="48"/>
+<div>
+<div class="mono-label" style="color:var(--fg)">BADSECTOR</div>
+<span class="status" style="margin-top:4px"><i></i>In development</span>
+</div>
+</div>
+<h1 class="h-display">
+<span class="ln"><span>Read the numbers.</span></span><span class="ln"><span>Find the ICE.</span></span><span class="ln"><span class="acc-text">Never guess.</span></span>
+
+</h1>
+<div class="hero-fade">
+<p class="lede">
+Minesweeper rebuilt as a hacking game. Every board can be solved by logic alone, three worlds change everything from the room to the cat, and every game ends with an analysis of where your time went.
+</p>
+<div class="btn-row">
+<a class="btn btn--solid" data-dir="down" href="#play"><span class="t">Play a sector</span><span aria-hidden="true" class="g"><i>↓</i></span></a>
+<a class="btn btn--ghost" href="privacy-policy/"><span class="t">Privacy policy</span><span aria-hidden="true" class="g"><i>↗</i></span></a>
+</div>
+</div>
+</div>
+<figure class="bs-boot hero-fade">
+<div class="hud">
+<span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+<div class="hud-in">
+<div class="hud-bar"><span><b>boot</b>.seq</span><span>Theme: Telemetry</span></div>
+<canvas aria-label="A minesweeper board opens from the middle. The ICE it finds spells BAD SECTOR, and every number counts the ICE around it." id="bs-boot" role="img"></canvas>
+<div class="bs-foot"><span>Every number counts its ICE</span><button id="bs-boot-replay" type="button">Run again ↻</button></div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<!-- ============================ STATS ============================ -->
+<div aria-label="BADSECTOR in numbers" class="stats">
+<div class="stat" data-reveal=""><div class="n">0</div><div class="l">Guesses needed</div></div>
+<div class="stat" data-reveal="" style="--i:1"><div class="n">3</div><div class="l">Worlds</div></div>
+<div class="stat" data-reveal="" style="--i:2"><div class="n">7</div><div class="l">Ways to play</div></div>
+<div class="stat" data-reveal="" style="--i:3"><div class="n">12</div><div class="l">Academy lessons</div></div>
+</div>
+<!-- ============================ PLAY ============================ -->
+<section class="section" id="play" style="border-top:0">
+<div class="wrap bs-play">
+<div>
+<p class="mono-label" data-scramble="">Live demo</p>
+<h2 class="h2" data-reveal="" style="margin-top:20px">Play a sector.</h2>
+<p class="body" data-reveal="" style="margin-top:28px">
+This is the game’s own engine, running in your browser. Before your first scan it builds a board, then a solver tries to clear it with logic alone. If it can’t, the board is thrown away. Whatever reaches you never needs a guess.
+</p>
+<dl class="bs-keys" data-reveal="" style="--i:1">
+<div><dt>Scan</dt><dd>Tap or click a covered cell.</dd></div>
+<div><dt>Marker</dt><dd>Hold, right-click, or press F.</dd></div>
+<div><dt>Chord</dt><dd>Tap a number with all its markers placed: the rest of its neighbours open.</dd></div>
+<div><dt>Hint</dt><dd>NULL points to a safe move and tells you why. H on a keyboard.</dd></div>
+<div><dt>Daily</dt><dd>The same board as today’s daily in the app.</dd></div>
+</dl>
+</div>
+<figure class="bs-demo" data-reveal="" id="bs-demo" style="--i:1">
+<div class="hud">
+<span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+<div class="hud-in">
+<div class="hud-bar"><span><b>sector</b>.live</span><span>No-guess</span></div>
+<div aria-label="Board" class="bs-levels" role="group">
+<button aria-pressed="true" class="bs-chip" data-level="L1" type="button">Novice 9×9</button>
+<button aria-pressed="false" class="bs-chip" data-level="L2" type="button">Amateur 16×16</button>
+<button aria-pressed="false" class="bs-chip" data-level="D" type="button">Daily <span data-dayno=""></span></button>
+</div>
+<div class="bs-hud">
+<div class="bs-cnt"><small>ICE</small><b data-ice="">010</b></div>
+<div class="bs-cnt"><small>Time</small><b data-time=""><span>00:00</span><i>.0</i></b></div>
+<button class="bs-chip" data-act="new" type="button">New</button>
+</div>
+<div class="bs-stage">
+<div class="bs-board" role="group"></div>
+<div aria-hidden="true" aria-live="polite" class="bs-result"></div>
+</div>
+<div class="bs-tool">
+<div aria-label="Tap action" class="bs-seg" role="group">
+<button aria-pressed="true" data-mode="scan" type="button"><i></i>Scan</button>
+<button aria-pressed="false" data-mode="mark" type="button"><i></i>Marker</button>
+</div>
+<div class="bs-tool-r"><button data-act="hint" disabled="" type="button">Hint</button></div>
+</div>
+<div aria-live="polite" class="bs-null"><canvas aria-hidden="true"></canvas><div><small>&gt; NULL</small><p></p></div></div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<!-- ============================ MODES ============================ -->
+<section class="section" id="modes">
+<div class="wrap">
+<p class="mono-label" data-scramble="">Modes</p>
+<h2 class="h2" data-reveal="" style="margin-top:20px">Seven ways in.</h2>
+<ul class="modes">
+<li data-reveal=""><h3>Classic</h3><p>Five levels, from 9×9 up to 24×30 with 160 ICE.</p><span class="meta">5 levels</span></li>
+<li data-reveal=""><h3>Daily</h3><p>One board for everyone, one try a day, and a streak to keep alive.</p><span class="meta">1 try</span></li>
+<li data-reveal=""><h3>Blitz</h3><p>Three minutes on the clock. Clear as many sectors as you can.</p><span class="meta">3:00</span></li>
+<li data-reveal=""><h3>Endless</h3><p>A board without edges. ZEN has no clock, RUN ends on the first hit.</p><span class="meta">Zen / Run</span></li>
+<li data-reveal=""><h3>Campaign</h3><p>Twelve sectors on the network map, each with a briefing and pieces of the story.</p><span class="meta">12 sectors</span></li>
+<li data-reveal=""><h3>Custom</h3><p>Any size and density, no-guess on or off, and sector codes to share a board.</p><span class="meta">W × H × N</span></li>
+<li data-reveal=""><h3>Academy</h3><p>Twelve lessons on three levels, from what a number means to 1-2-2-1 and counting ICE.</p><span class="meta">12 lessons</span></li>
+</ul>
+</div>
+</section>
+<!-- ============================ WORLDS ============================ -->
+<section class="section" data-strip="" id="worlds">
+<div class="wrap strip-head">
+<div>
+<p class="mono-label" data-scramble="">Worlds</p>
+<h2 class="h2" data-reveal="" style="margin-top:20px">Three worlds.<br/>One board.</h2>
+<p class="body" data-reveal="" style="margin-top:24px">A world in BADSECTOR is more than a colour swap. It changes the room, the intro, the typeface, the words on screen, the cat’s voice, what lies under the hub and the story you uncover.</p>
+</div>
+<div class="strip-ctrl">
+<button aria-label="Previous" data-strip-dir="-1" type="button">←</button>
+<button aria-label="Next" data-strip-dir="1" type="button">→</button>
+</div>
+</div>
+<div aria-label="BADSECTOR worlds" class="strip strip--tall" tabindex="0">
+<figure data-reveal="" style="--i:0"><div class="frame"><img alt="TELEMETRY boot: the board spells BAD SECTOR in ICE, then SECTOR CLEAN." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/tel-intro.webp" srcset="../assets/img/badsector/tel-intro-360.webp 360w, ../assets/img/badsector/tel-intro.webp 720w" width="720"/></div><figcaption><span>Boot</span><span class="w-tel">Telemetry</span></figcaption></figure>
+<figure data-reveal="" style="--i:1"><div class="frame"><img alt="TELEMETRY hub: the operator’s hideout with NULL the cat and the PLAY menu." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/tel-hub.webp" srcset="../assets/img/badsector/tel-hub-360.webp 360w, ../assets/img/badsector/tel-hub.webp 720w" width="720"/></div><figcaption><span>Hideout</span><span class="w-tel">Telemetry</span></figcaption></figure>
+<figure data-reveal="" style="--i:2"><div class="frame"><img alt="A 16 by 16 sector in progress: open cells, numbers and four markers on ICE." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/tel-board.webp" srcset="../assets/img/badsector/tel-board-360.webp 360w, ../assets/img/badsector/tel-board.webp 720w" width="720"/></div><figcaption><span>Sector</span><span class="w-tel">Telemetry</span></figcaption></figure>
+<figure data-reveal="" style="--i:3"><div class="frame"><img alt="HOLO boot: an emitter projects the title in hard light." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/holo-intro.webp" srcset="../assets/img/badsector/holo-intro-360.webp 360w, ../assets/img/badsector/holo-intro.webp 720w" width="720"/></div><figcaption><span>Emitter</span><span class="w-holo">Holo</span></figcaption></figure>
+<figure data-reveal="" style="--i:0"><div class="frame"><img alt="HOLO hub: the room as a violet light projection, the cat asleep on the desk." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/holo-hub.webp" srcset="../assets/img/badsector/holo-hub-360.webp 360w, ../assets/img/badsector/holo-hub.webp 720w" width="720"/></div><figcaption><span>Projection</span><span class="w-holo">Holo</span></figcaption></figure>
+<figure data-reveal="" style="--i:1"><div class="frame"><img alt="A hint in HOLO: a number and a safe cell are highlighted, NULL explains the rule." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/holo-hint.webp" srcset="../assets/img/badsector/holo-hint-360.webp 360w, ../assets/img/badsector/holo-hint.webp 720w" width="720"/></div><figcaption><span>Hint</span><span class="w-holo">Holo</span></figcaption></figure>
+<figure data-reveal="" style="--i:2"><div class="frame"><img alt="SAMURAI OS boot: a neon megacity in the rain with billboards reading BADSECTOR." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/sam-intro.webp" srcset="../assets/img/badsector/sam-intro-360.webp 360w, ../assets/img/badsector/sam-intro.webp 720w" width="720"/></div><figcaption><span>City</span><span class="w-sam">Samurai OS</span></figcaption></figure>
+<figure data-reveal="" style="--i:3"><div class="frame"><img alt="SAMURAI OS hub: an operating system window over a neon room with two city windows." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/sam-hub.webp" srcset="../assets/img/badsector/sam-hub-360.webp 360w, ../assets/img/badsector/sam-hub.webp 720w" width="720"/></div><figcaption><span>Play.exe</span><span class="w-sam">Samurai OS</span></figcaption></figure>
+<figure data-reveal="" style="--i:0"><div class="frame"><img alt="A district in SAMURAI OS: chamfered cells, cyan, green and magenta numbers, tagged ICE." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 767px) 58vw, 300px" src="../assets/img/badsector/sam-board.webp" srcset="../assets/img/badsector/sam-board-360.webp 360w, ../assets/img/badsector/sam-board.webp 720w" width="720"/></div><figcaption><span>District</span><span class="w-sam">Samurai OS</span></figcaption></figure>
+</div>
+</section>
+<!-- ============================ FEATURES ============================ -->
+<section class="section" id="features">
+<div class="wrap">
+<div class="feat">
+<figure class="phone hud" data-reveal=""><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img alt="A hint in the HOLO world: a 1 and the safe cell next to it are highlighted, and NULL says: this 1 already has all its ICE around it." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 70vw, 360px" src="../assets/img/badsector/holo-hint.webp" srcset="../assets/img/badsector/holo-hint-360.webp 360w, ../assets/img/badsector/holo-hint.webp 720w" width="720"/></div><figcaption><span>Hint</span><span>Holo</span></figcaption></figure>
+<div>
+<span class="k" data-reveal="">&gt; safe, because</span>
+<h2 class="h2" data-reveal="">Stuck? Ask the cat.</h2>
+<p class="body" data-reveal="">NULL lights up a safe cell and the numbers that prove it, then says the rule out loud. You learn the pattern, not just the move. A game played with a hint still counts for you, but it stays out of records and rankings.</p>
+<div class="rules" data-reveal="">
+<div><b>SINGLE</b><p>A number already touches all its ICE: every other neighbour is clean. Or it has exactly as many covered neighbours as ICE left: all of them are ICE.</p></div>
+<div><b>PAIR</b><p>Two numbers share cells and one decides for the other: 1-1, 1-2, 1-2-1, 1-2-2-1.</p></div>
+<div><b>COUNT</b><p>ICE left against covered cells: in the endgame the counter decides.</p></div>
+</div>
+</div>
+</div>
+<div class="feat feat--rev">
+<div class="duo">
+<figure class="phone hud" data-reveal=""><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img alt="Post-game analysis: time 19.9 seconds, 3BV 49, 2.45 3BV per second, 53 clicks, 92 percent efficiency, and one 6 second pause where a safe move was waiting." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 70vw, 360px" src="../assets/img/badsector/tel-analysis.webp" srcset="../assets/img/badsector/tel-analysis-360.webp 360w, ../assets/img/badsector/tel-analysis.webp 720w" width="720"/></div><figcaption><span>Analysis</span><span>Telemetry</span></figcaption></figure>
+<figure class="phone hud" data-reveal=""><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img alt="Replay of the same game at move 23 of 53." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 70vw, 360px" src="../assets/img/badsector/tel-replay.webp" srcset="../assets/img/badsector/tel-replay-360.webp 360w, ../assets/img/badsector/tel-replay.webp 720w" width="720"/></div><figcaption><span>Replay</span><span>Telemetry</span></figcaption></figure>
+</div>
+<div>
+<span class="k" data-reveal="">&gt; after the game</span>
+<h2 class="h2" data-reveal="">Where did the time go?</h2>
+<p class="body" data-reveal="">Every game ends with an analysis. Pauses over four seconds are listed with what you missed: a safe move that was already waiting. Then press REPLAY and watch the whole game again, move by move.</p>
+<div class="readout" data-reveal="">
+<div class="hud-bar"><span><b>sector</b>.analysis</span><span>D281</span></div>
+<dl>
+<div><dt>Time</dt><dd>00:19.9</dd></div>
+<div><dt>3BV (minimum clicks)</dt><dd>49</dd></div>
+<div><dt>3BV/s</dt><dd class="acc-text">2.45</dd></div>
+<div><dt>Clicks</dt><dd>53</dd></div>
+<div><dt>Efficiency</dt><dd>92%</dd></div>
+<div><dt>Pauses over 4 s</dt><dd>1 · 6.1 s</dd></div>
+<div><dt>Move log</dt><dd>Live, swipe the HUD down</dd></div>
+</dl>
+</div>
+</div>
+</div>
+<div class="feat">
+<div class="duo">
+<figure class="phone hud" data-reveal=""><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img alt="The Academy at intermediate level: four lessons from pattern 1-2-1 to counting ICE, NULL explains 1-2-1 on an edge." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 70vw, 360px" src="../assets/img/badsector/tel-academy.webp" srcset="../assets/img/badsector/tel-academy-360.webp 360w, ../assets/img/badsector/tel-academy.webp 720w" width="720"/></div><figcaption><span>Academy</span><span>Telemetry</span></figcaption></figure>
+<figure class="phone hud" data-reveal=""><span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span><div class="hud-in"><img alt="The network map in SAMURAI OS: hub tiles on top, campaign sectors S01 to S12 below, seven cleared." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 70vw, 360px" src="../assets/img/badsector/sam-map.webp" srcset="../assets/img/badsector/sam-map-360.webp 360w, ../assets/img/badsector/sam-map.webp 720w" width="720"/></div><figcaption><span>Network map</span><span>Samurai OS</span></figcaption></figure>
+</div>
+<div>
+<span class="k" data-reveal="">&gt; academy &amp; campaign</span>
+<h2 class="h2" data-reveal="">Learn it. Then go in.</h2>
+<p class="body" data-reveal="">Tell NULL how much you know and it picks the lessons: twelve of them on three levels, each with puzzles built around one pattern. When you are ready, the campaign waits on the network map: twelve sectors that grow harder, each one with a briefing, and pieces of the story hidden along the way.</p>
+</div>
+</div>
+<div class="bento">
+<article class="cell cell--acc c-4" data-reveal="">
+<span class="k">&gt; codes</span>
+<h3 class="h3">Sector codes</h3>
+<p>Every board has a code. Send it, and a friend plays the exact same sector from the exact same first cell.</p>
+</article>
+<article class="cell c-4" data-reveal="" style="--i:1">
+<span class="k">&gt; cat</span>
+<h3 class="h3">NULL and RONIN</h3>
+<p>The cat talks in the hub, comments on your game, falls asleep when you leave it alone and has 25 things to say when you pet it. Or build your own in the creator.</p>
+</article>
+<article class="cell cell--tint c-4" data-reveal="" style="--i:2">
+<span class="k">&gt; editor</span>
+<h3 class="h3">Fork a world</h3>
+<p>Change colours, board style, glass and effects, then share your version as a single BS4 code.</p>
+</article>
+<article class="cell c-4" data-reveal="">
+<span class="k">&gt; archive</span>
+<h3 class="h3">Lore archive</h3>
+<p>Eight fragments per world, dropped by rare glitches, campaign sectors and the bottom of the layers.</p>
+</article>
+<article class="cell c-4" data-reveal="" style="--i:1">
+<span class="k">&gt; comfort</span>
+<h3 class="h3">Your controls</h3>
+<p>Swap tap and hold, set the hold time, turn chording, vibration and glitch up or down, reduce motion, pick effect quality.</p>
+</article>
+<article class="cell cell--tint c-4" data-reveal="" style="--i:2">
+<span class="k">&gt; offline</span>
+<h3 class="h3">No signal needed</h3>
+<p>The whole game plays offline. Online rankings are opt-in and ask for nothing but a nickname.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- ============================ THE DEEP ============================ -->
+<section class="section" id="deep">
+<div class="wrap">
+<div class="split">
+<div>
+<p class="mono-label" data-scramble="">Under the hub</p>
+<h2 class="h2" data-reveal="" style="margin-top:20px">Don’t dig<br/>too deep.</h2>
+</div>
+<p class="body" data-reveal="" style="--i:1;align-self:end">Swipe down past the hub and the game keeps going: a terminal log, a district gone dead, something that watches. Go one layer too far and the system crashes. Every world has its own bottom: in Telemetry it is sector zero and a collapsing CRT, in Holo the projection folds into a single point.</p>
+</div>
+<div class="deep">
+<figure data-reveal="" style="--i:0"><div class="frame"><img alt="Layer one, LOG: the terminal history of your last sectors." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 46vw, 330px" src="../assets/img/badsector/sam-log.webp" srcset="../assets/img/badsector/sam-log-360.webp 360w, ../assets/img/badsector/sam-log.webp 720w" width="720"/><span class="depth">-1</span></div><figcaption><b>Log</b><span class="w-sam">Samurai OS</span></figcaption></figure>
+<figure data-reveal="" style="--i:1"><div class="frame"><img alt="Layer two, DEAD DISTRICT: a corrupted hex dump with words of the story inside." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 46vw, 330px" src="../assets/img/badsector/sam-dead.webp" srcset="../assets/img/badsector/sam-dead-360.webp 360w, ../assets/img/badsector/sam-dead.webp 720w" width="720"/><span class="depth">-2</span></div><figcaption><b>Dead district</b><span class="w-sam">Samurai OS</span></figcaption></figure>
+<figure data-reveal="" style="--i:2"><div class="frame"><img alt="Layer three, ONI: a pixel oni mask stares back." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 46vw, 330px" src="../assets/img/badsector/sam-oni.webp" srcset="../assets/img/badsector/sam-oni-360.webp 360w, ../assets/img/badsector/sam-oni.webp 720w" width="720"/><span class="depth">-3</span></div><figcaption><b>Oni</b><span class="w-sam">Samurai OS</span></figcaption></figure>
+<figure data-reveal="" style="--i:3"><div class="frame"><img alt="One layer too far: the screen goes black and an ECG line flatlines." decoding="async" height="1552" lang="en" loading="lazy" sizes="(max-width: 1080px) 46vw, 330px" src="../assets/img/badsector/sam-flatline.webp" srcset="../assets/img/badsector/sam-flatline-360.webp 360w, ../assets/img/badsector/sam-flatline.webp 720w" width="720"/><span class="depth">×</span></div><figcaption><b>Flatline</b><span class="w-sam">Samurai OS</span></figcaption></figure>
+</div>
+</div>
+</section>
+<!-- ============================ PRIVACY ============================ -->
+<section class="section" id="privacy">
+<div class="wrap split">
+<div>
+<p class="mono-label" data-scramble="">Privacy</p>
+<h2 class="h2" data-reveal="" style="margin-top:20px">Offline by default.</h2>
+<p class="body" data-reveal="" style="margin-top:28px">The game needs no account and no connection: progress, statistics and settings live on your phone. Online rankings and usage statistics only start if you switch them on, and the privacy policy lists every field they send.</p>
+</div>
+<div class="readout" data-reveal="" style="--i:1">
+<div class="hud-bar"><span><b>badsector</b>.audit</span><span>From the privacy policy</span></div>
+<dl>
+<div><dt>Account required</dt><dd class="acc-text">No</dd></div>
+<div><dt>Plays offline</dt><dd class="acc-text">Yes, fully</dd></div>
+<div><dt>Online rankings</dt><dd>Opt-in, nickname</dd></div>
+<div><dt>Usage statistics</dt><dd>Opt-in, off by default</dd></div>
+<div><dt>Advertising ID</dt><dd class="acc-text">Never</dd></div>
+<div><dt>Analytics or ad SDK</dt><dd class="acc-text">None</dd></div>
+<div><dt>Data sold</dt><dd class="acc-text">Never</dd></div>
+<div><dt>Location, contacts, files</dt><dd>Not requested</dd></div>
+</dl>
+</div>
+</div>
+<div class="wrap">
+<div class="legal-links" data-reveal="" style="margin-top:clamp(40px,5vw,72px)">
+<a href="privacy-policy/">
+<span class="mono-label">v1.0 / 08.10.2026</span>
+<span class="h3"><span>Privacy policy</span><i>↗</i></span>
+</a>
+<a href="delete-data/">
+<span class="mono-label">In the app or by email</span>
+<span class="h3"><span>Delete online data</span><i>↗</i></span>
+</a>
+<a href="mailto:empyreaninu@gmail.com?subject=BADSECTOR">
+<span class="mono-label">empyreaninu@gmail.com</span>
+<span class="h3"><span>Ask a question</span><i>↗</i></span>
+</a>
+</div>
+</div>
+</section>
+<!-- ============================ FINAL ============================ -->
+<section class="section">
+<div class="wrap final">
+<p class="h-display" data-wipe="" style="font-size:clamp(44px,8.4vw,150px)">Coming to<br/><span class="acc-text">Google Play.</span></p>
+<p class="lede" data-reveal="">Want to know when it ships, or join testing? Send one line.</p>
+<div class="btn-row" data-reveal="">
+<a class="btn btn--solid" href="mailto:empyreaninu@gmail.com?subject=BADSECTOR%20launch"><span class="t">Notify me</span><span aria-hidden="true" class="g"><i>@</i></span></a>
+<a class="btn btn--ghost" href="#play"><span class="t">Play another sector</span><span aria-hidden="true" class="g"><i>↑</i></span></a>
+</div>
+</div>
+</section>
+<script defer="" src="../assets/js/badsector.js"></script>
+</main>
+<footer class="footer">
+<div class="wrap">
+<div class="foot-grid">
+<div class="foot-brand">
+<a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span><span>minimalistic<span class="dim">.solutions</span></span></a>
+<p>Independent Android studio. Focused apps, no ads, privacy policies written for humans.</p>
+</div>
+<div>
+<h2 class="foot-h">Apps</h2>
+<ul>
+<li><a href="../outlier/">Outlier</a></li>
+<li><a href="../killswitch/">Killswitch</a></li>
+<li><a href="../badsector/">BADSECTOR</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.project.outlier&amp;hl=en" rel="noopener">Outlier on Google Play ↗</a></li>
+</ul>
+</div>
+<div>
+<h2 class="foot-h">Legal</h2>
+<ul>
+<li><a href="../outlier/privacy-policy/">Outlier privacy</a></li>
+<li><a href="../outlier/delete-account/">Outlier account deletion</a></li>
+<li><a href="../killswitch/privacy-policy/">Killswitch privacy</a></li>
+<li><a href="../badsector/privacy-policy/">BADSECTOR privacy</a></li>
+<li><a href="../badsector/delete-data/">BADSECTOR data deletion</a></li>
+</ul>
+</div>
+<div>
+<h2 class="foot-h">Studio</h2>
+<ul>
+<li><a href="mailto:empyreaninu@gmail.com">empyreaninu@gmail.com</a></li>
+<li><a href="https://app.minimalistic.solutions/" rel="nofollow">Team login ↗</a></li>
+</ul>
+</div>
+</div>
+<div aria-hidden="true" class="foot-word">Minimalistic</div>
+<div class="foot-base">
+<span>© <span data-year="">2026</span> minimalistic.solutions</span>
+<span>No ads. No tracking.</span>
+</div>
+</div>
+</footer>
+<script defer="" src="../assets/js/site.js"></script>
+</body>
+</html>
