@@ -17,10 +17,10 @@
   <div class="wrap p-hero-grid">
     <div>
       <div class="app-id hero-fade">
-        <span aria-hidden="true" style="width:48px;height:48px;background:var(--acc);display:grid;place-items:center;color:var(--acc-ink);font:800 22px/1 var(--sans);font-stretch:125%">K</span>
+        <img src="{{A}}assets/img/killswitch/icon.webp" width="96" height="96" alt="Killswitch icon">
         <div>
-          <div class="mono-label" style="color:var(--fg)">Killswitch</div>
-          <span class="status" style="margin-top:4px"><i></i><span lang="en">In development</span><span lang="pl">W trakcie tworzenia</span></span>
+          <div class="mono-label" style="color:var(--fg)">Killswitch: No Doomscroll</div>
+          <span class="status live" style="margin-top:4px"><i></i><span lang="en">Live on Google Play</span><span lang="pl">Dostępna w Google Play</span></span>
         </div>
       </div>
       <h1 class="h-display">
@@ -29,12 +29,12 @@
       </h1>
       <div class="hero-fade">
         <p class="lede">
-          <span lang="en">Killswitch interrupts infinite scrolling in the apps you choose, while comments, chats and replies keep working.</span>
-          <span lang="pl">Killswitch przerywa nieskończone przewijanie w wybranych aplikacjach, a komentarze, czaty i odpowiedzi działają dalej.</span>
+          <span lang="en">Killswitch cuts short videos and infinite scrolling in the apps you choose, while comments, chats and replies keep working.</span>
+          <span lang="pl">Killswitch ucina krótkie filmy i nieskończone przewijanie w wybranych aplikacjach, a komentarze, czaty i odpowiedzi działają dalej.</span>
         </p>
         <div class="btn-row">
-          <a class="btn btn--solid" href="#demo" data-dir="down"><span class="t"><span lang="en">Try the demo</span><span lang="pl">Wypróbuj demo</span></span><span class="g" aria-hidden="true"><i>&#8595;</i></span></a>
-          <a class="btn btn--ghost" href="privacy-policy/"><span class="t"><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+          <a class="btn btn--solid" href="{{PLAY_KS}}" rel="noopener"><span class="t"><span lang="en">Get it on Google Play</span><span lang="pl">Pobierz z Google Play</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+          <a class="btn btn--ghost" href="#how" data-dir="down"><span class="t"><span lang="en">How it works</span><span lang="pl">Jak to działa</span></span><span class="g" aria-hidden="true"><i>&#8595;</i></span></a>
         </div>
       </div>
     </div>
@@ -75,8 +75,8 @@
 <div class="stats" aria-label="Killswitch in numbers">
   <div class="stat" data-reveal><div class="n">0</div><div class="l"><span lang="en">Bytes collected</span><span lang="pl">Zebranych bajtów</span></div></div>
   <div class="stat" data-reveal style="--i:1"><div class="n">0</div><div class="l"><span lang="en">Network requests</span><span lang="pl">Żądań sieciowych</span></div></div>
-  <div class="stat" data-reveal style="--i:2"><div class="n"><span class="acc-text">~</span>40</div><div class="l"><span lang="en">Feed apps it can guard</span><span lang="pl">Aplikacji z feedem</span></div></div>
-  <div class="stat" data-reveal style="--i:3"><div class="n">3<span class="acc-text">s</span></div><div class="l"><span lang="en">Block screen, then Back</span><span lang="pl">Blokada, potem Wstecz</span></div></div>
+  <div class="stat" data-reveal style="--i:2"><div class="n">27</div><div class="l"><span lang="en">Feed apps it can guard</span><span lang="pl">Aplikacji z feedem</span></div></div>
+  <div class="stat" data-reveal style="--i:3"><div class="n">3</div><div class="l"><span lang="en">Levels, light to strict</span><span lang="pl">Poziomy, od lekkiego do surowego</span></div></div>
 </div>
 
 <!-- ============================ HOW ============================ -->
@@ -87,24 +87,46 @@
       <li data-reveal>
         <span class="arrow">&gt;</span>
         <h3><span lang="en">Pick targets</span><span lang="pl">Wybierz cele</span></h3>
-        <p><span lang="en">Tick the apps to guard on the TARGETS screen. The service listens to those packages and nothing else.</span><span lang="pl">Zaznacz aplikacje na ekranie TARGETS. Usługa nasłuchuje tylko tych pakietów i niczego więcej.</span></p>
+        <p><span lang="en">Tick the apps you lose time in on TARGETS. Allow screen time and the list is sorted by the hours you really spend in each. The service listens to those apps and nothing else.</span><span lang="pl">Zaznacz na ekranie TARGETS aplikacje, w których tracisz czas. Jeśli pozwolisz na czas ekranu, lista ułoży się według godzin, które naprawdę w nich spędzasz. Usługa nasłuchuje tylko tych aplikacji.</span></p>
       </li>
       <li data-reveal style="--i:1">
         <span class="arrow">&gt;&gt;</span>
-        <h3><span lang="en">Scroll</span><span lang="pl">Przewijaj</span></h3>
-        <p><span lang="en">Feed scrolls are counted against a time window. Comment threads, chats and focused text fields are recognised and left alone.</span><span lang="pl">Przewinięcia feedu są liczone w oknie czasowym. Wątki komentarzy, czaty i aktywne pola tekstowe są rozpoznawane i pomijane.</span></p>
+        <h3><span lang="en">Choose your level</span><span lang="pl">Wybierz poziom</span></h3>
+        <p><span lang="en">SHORTS ONLY blocks short videos and nothing else. SHORTS + BINGE also cuts the feed once you flick through it non-stop. NO SCROLLING cuts it on the first swipe. One level for every app, or one per app.</span><span lang="pl">SHORTS ONLY blokuje tylko krótkie filmy. SHORTS + BINGE ucina też feed, gdy przewijasz go bez przerwy. NO SCROLLING ucina go przy pierwszym przewinięciu. Jeden poziom dla wszystkich aplikacji albo osobny dla każdej.</span></p>
       </li>
       <li data-reveal style="--i:2">
         <span class="arrow">&gt;&gt;&gt;</span>
         <h3><span lang="en">Get cut off</span><span lang="pl">Odetnij się</span></h3>
-        <p><span lang="en">Cross the threshold and a block screen shows for about three seconds, then Back is pressed for you.</span><span lang="pl">Po przekroczeniu progu na około trzy sekundy pojawia się ekran blokady, a potem aplikacja naciska za Ciebie Wstecz.</span></p>
+        <p><span lang="en">A block screen shows for about three seconds and names what it stopped: Shorts, Reels, TikToks. Then you land in the app's inbox, or outside the app if you prefer. Three 5-minute passes a day for when you really need the feed.</span><span lang="pl">Ekran blokady na około trzy sekundy mówi, co zatrzymał: Shorts, Reels, TikToki. Potem lądujesz w skrzynce wiadomości aplikacji albo, jeśli wolisz, poza nią. Na sytuacje, gdy feed jest naprawdę potrzebny: trzy 5-minutowe przepustki dziennie.</span></p>
       </li>
       <li data-reveal style="--i:3">
         <span class="arrow">///</span>
-        <h3><span lang="en">See progress</span><span lang="pl">Śledź postęp</span></h3>
-        <p><span lang="en">Set your own hours-per-day BASELINE. The STATS screen tracks daily blocks and scrolls for the last 30 days.</span><span lang="pl">Ustaw własny BASELINE godzin dziennie. Ekran STATS pokazuje dzienne blokady i przewinięcia z ostatnich 30 dni.</span></p>
+        <h3><span lang="en">See the difference</span><span lang="pl">Zobacz różnicę</span></h3>
+        <p><span lang="en">STATS shows interruptions over the last 7 days, time spent in feeds, time reclaimed and how many days in a row the guard has been armed.</span><span lang="pl">STATS pokazuje blokady z ostatnich 7 dni, czas spędzony w feedach, odzyskany czas i liczbę dni z rzędu z uzbrojoną blokadą.</span></p>
       </li>
     </ol>
+  </div>
+</section>
+
+<!-- ============================ SCREENS ============================ -->
+<section class="section" id="screens" data-strip>
+  <div class="wrap strip-head">
+    <div>
+      <p class="mono-label" data-scramble><span lang="en">Screens</span><span lang="pl">Ekrany</span></p>
+      <h2 class="h2" style="margin-top:20px" data-reveal><span lang="en">Four tabs. Nothing else.</span><span lang="pl">Cztery zakładki. Nic więcej.</span></h2>
+      <p class="body" style="margin-top:24px" data-reveal><span lang="en">STATUS, TARGETS, STATS and CONFIG. Everything Killswitch does is on one of them.</span><span lang="pl">STATUS, TARGETS, STATS i CONFIG. Wszystko, co robi Killswitch, jest na jednej z nich.</span></p>
+    </div>
+    <div class="strip-ctrl">
+      <button type="button" data-strip-dir="-1" aria-label="Previous">&#8592;</button>
+      <button type="button" data-strip-dir="1" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div class="strip" tabindex="0" aria-label="Killswitch screens">
+    <figure data-reveal><div class="frame"><img src="{{A}}assets/img/killswitch/cut-the-feed.webp" srcset="{{A}}assets/img/killswitch/cut-the-feed-360.webp 360w, {{A}}assets/img/killswitch/cut-the-feed.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="STATUS screen: Killswitch armed, 69 feeds cut today, time reclaimed, scrolls seen and the armed streak." loading="lazy" decoding="async"></div><figcaption><span>Status</span><span><span lang="en">Armed</span><span lang="pl">Uzbrojony</span></span></figcaption></figure>
+    <figure data-reveal style="--i:1"><div class="frame"><img src="{{A}}assets/img/killswitch/guard-the-feeds.webp" srcset="{{A}}assets/img/killswitch/guard-the-feeds-360.webp 360w, {{A}}assets/img/killswitch/guard-the-feeds.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="TARGETS screen: Instagram, Reddit, Threads and TikTok guarded, each with its blocking level." loading="lazy" decoding="async"></div><figcaption><span>Targets</span><span><span lang="en">Your apps</span><span lang="pl">Twoje aplikacje</span></span></figcaption></figure>
+    <figure data-reveal style="--i:2"><div class="frame"><img src="{{A}}assets/img/killswitch/pick-your-targets.webp" srcset="{{A}}assets/img/killswitch/pick-your-targets-360.webp 360w, {{A}}assets/img/killswitch/pick-your-targets.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="TARGETS screen with the level picker open for Instagram: SHORTS ONLY, SHORTS + BINGE, NO SCROLLING." loading="lazy" decoding="async"></div><figcaption><span>Targets</span><span><span lang="en">Level per app</span><span lang="pl">Poziom dla aplikacji</span></span></figcaption></figure>
+    <figure data-reveal style="--i:3"><div class="frame"><img src="{{A}}assets/img/killswitch/choose-your-level.webp" srcset="{{A}}assets/img/killswitch/choose-your-level-360.webp 360w, {{A}}assets/img/killswitch/choose-your-level.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="CONFIG screen: the three levels with what each one blocks. Messages work in every mode." loading="lazy" decoding="async"></div><figcaption><span>Config</span><span><span lang="en">Three levels</span><span lang="pl">Trzy poziomy</span></span></figcaption></figure>
+    <figure data-reveal style="--i:4"><div class="frame"><img src="{{A}}assets/img/killswitch/see-the-difference.webp" srcset="{{A}}assets/img/killswitch/see-the-difference-360.webp 360w, {{A}}assets/img/killswitch/see-the-difference.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="STATS screen: interruptions over the last 7 days, time in feeds and all-time totals." loading="lazy" decoding="async"></div><figcaption><span>Stats</span><span><span lang="en">Last 7 days</span><span lang="pl">Ostatnie 7 dni</span></span></figcaption></figure>
   </div>
 </section>
 
@@ -126,7 +148,8 @@
         <div><dt><span lang="en">Network requests</span><span lang="pl">Żądania sieciowe</span></dt><dd>0</dd></div>
         <div><dt><span lang="en">Works in airplane mode</span><span lang="pl">Działa w trybie samolotowym</span></dt><dd><span lang="en">Yes, permanently</span><span lang="pl">Tak, zawsze</span></dd></div>
         <div><dt>QUERY_ALL_PACKAGES</dt><dd><span lang="en">Not requested</span><span lang="pl">Nie wymagane</span></dd></div>
-        <div><dt><span lang="en">Screen text read</span><span lang="pl">Czytanie tekstu ekranu</span></dt><dd><span lang="en">Never</span><span lang="pl">Nigdy</span></dd></div>
+        <div><dt><span lang="en">Text on screen</span><span lang="pl">Tekst na ekranie</span></dt><dd><span lang="en">Tapped button labels only, never kept</span><span lang="pl">Tylko etykiety stukniętych przycisków, bez zapisu</span></dd></div>
+        <div><dt><span lang="en">Screen time</span><span lang="pl">Czas ekranu</span></dt><dd><span lang="en">Optional, never stored</span><span lang="pl">Opcjonalny, nie jest zapisywany</span></dd></div>
         <div><dt><span lang="en">Stored on device</span><span lang="pl">Zapisane na telefonie</span></dt><dd><span lang="en">Targets, counters, settings</span><span lang="pl">Cele, liczniki, ustawienia</span></dd></div>
       </dl>
     </div>
@@ -136,14 +159,15 @@
 <!-- ============================ PERMISSIONS ============================ -->
 <section class="section" id="permissions">
   <div class="wrap">
-    <h2 class="h2" data-reveal><span lang="en">Two permissions, fully explained.</span><span lang="pl">Dwa uprawnienia, w pełni wyjaśnione.</span></h2>
+    <h2 class="h2" data-reveal><span lang="en">Two permissions and one optional, fully explained.</span><span lang="pl">Dwa uprawnienia i jedno opcjonalne, w pełni wyjaśnione.</span></h2>
     <div class="perm" data-reveal>
       <div>
         <code>AccessibilityService</code>
         <h3 class="h3"><span lang="en">Detecting the scroll</span><span lang="pl">Wykrywanie przewijania</span></h3>
         <ul>
-          <li><span lang="en">Receives scroll and app-switch events, only from the apps you ticked</span><span lang="pl">Odbiera zdarzenia przewijania i przełączania aplikacji, tylko z zaznaczonych przez Ciebie aplikacji</span></li>
-          <li><span lang="en">Reads screen structure (view IDs, class names) to tell a feed from a thread</span><span lang="pl">Czyta strukturę ekranu (ID widoków, nazwy klas), żeby odróżnić feed od wątku</span></li>
+          <li><span lang="en">Receives scroll, tap and screen-change events, only from the apps you ticked</span><span lang="pl">Odbiera zdarzenia przewijania, stuknięć i zmiany ekranu, tylko z zaznaczonych przez Ciebie aplikacji</span></li>
+          <li><span lang="en">Reads screen structure (view IDs, class names, sizes) to tell a feed or a short video from a thread</span><span lang="pl">Czyta strukturę ekranu (ID widoków, nazwy klas, rozmiary), żeby odróżnić feed albo krótki film od wątku</span></li>
+          <li><span lang="en">Reads only the short label of a button you tap, like Inbox, and keeps nothing</span><span lang="pl">Czyta tylko krótką etykietę stukniętego przycisku, np. Wiadomości, i niczego nie zapisuje</span></li>
           <li class="no"><span lang="en">Never reads your text, messages or comments</span><span lang="pl">Nigdy nie czyta Twoich tekstów, wiadomości ani komentarzy</span></li>
           <li class="no"><span lang="en">No keylogging, no screenshots, no recording</span><span lang="pl">Bez keyloggera, zrzutów ekranu i nagrywania</span></li>
           <li class="no"><span lang="en">Off until you switch it on, off whenever you want</span><span lang="pl">Wyłączone, dopóki go nie włączysz, i wyłączasz je, kiedy chcesz</span></li>
@@ -153,10 +177,20 @@
         <code>SYSTEM_ALERT_WINDOW</code>
         <h3 class="h3"><span lang="en">Drawing the block screen</span><span lang="pl">Wyświetlanie blokady</span></h3>
         <ul>
-          <li><span lang="en">Shows the app name and your count for the day</span><span lang="pl">Pokazuje nazwę aplikacji i dzisiejszy licznik</span></li>
+          <li><span lang="en">Names what it stopped (Shorts, Reels, TikToks) and shows your count for the day</span><span lang="pl">Mówi, co zatrzymał (Shorts, Reels, TikToki), i pokazuje dzisiejszy licznik</span></li>
           <li><span lang="en">Dismisses itself after about three seconds</span><span lang="pl">Znika sam po około trzech sekundach</span></li>
           <li class="no"><span lang="en">No advertising, no tap collection</span><span lang="pl">Bez reklam i bez zbierania kliknięć</span></li>
           <li class="no"><span lang="en">Never appears over apps you did not guard</span><span lang="pl">Nigdy nie pojawia się nad aplikacjami, których nie wybrałeś</span></li>
+        </ul>
+      </div>
+      <div style="grid-column:1 / -1">
+        <code>PACKAGE_USAGE_STATS</code>
+        <h3 class="h3"><span lang="en">Showing your screen time (optional)</span><span lang="pl">Pokazywanie czasu ekranu (opcjonalne)</span></h3>
+        <ul>
+          <li><span lang="en">Sorts TARGETS by the minutes a day you really spend in each feed app</span><span lang="pl">Układa listę TARGETS według minut dziennie, które naprawdę spędzasz w każdej aplikacji z feedem</span></li>
+          <li><span lang="en">Looks only at the feed apps on Killswitch's list</span><span lang="pl">Sprawdza tylko aplikacje z feedem z listy Killswitch</span></li>
+          <li class="no"><span lang="en">Read on the phone, never stored, never sent</span><span lang="pl">Czytany na telefonie, nigdy nie zapisywany ani wysyłany</span></li>
+          <li class="no"><span lang="en">Killswitch works fully without it</span><span lang="pl">Killswitch działa w pełni bez niego</span></li>
         </ul>
       </div>
     </div>
@@ -167,10 +201,9 @@
 <!-- ============================ FINAL ============================ -->
 <section class="section">
   <div class="wrap final">
-    <p class="h-display" data-wipe style="font-size:clamp(44px,8.4vw,150px)"><span lang="en">Coming to<br><span class="acc-text">Google Play.</span></span><span lang="pl">Wkrótce w<br><span class="acc-text">Google Play.</span></span></p>
-    <p class="lede" data-reveal><span lang="en">Want to know when it ships, or join testing? Send one line.</span><span lang="pl">Chcesz wiedzieć, kiedy wyjdzie, albo dołączyć do testów? Wyślij jedną linijkę.</span></p>
+    <p class="h-display" data-wipe style="font-size:clamp(44px,8.4vw,150px)"><span lang="en">Put the phone<br><span class="acc-text">down.</span></span><span lang="pl">Odłóż<br><span class="acc-text">telefon.</span></span></p>
     <div class="btn-row" data-reveal>
-      <a class="btn btn--solid" href="mailto:{{MAIL}}?subject=Killswitch%20launch"><span class="t"><span lang="en">Notify me</span><span lang="pl">Powiadom mnie</span></span><span class="g" aria-hidden="true"><i>@</i></span></a>
+      <a class="btn btn--solid" href="{{PLAY_KS}}" rel="noopener"><span class="t"><span lang="en">Get it on Google Play</span><span lang="pl">Pobierz z Google Play</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
     </div>
   </div>
 </section>

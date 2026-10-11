@@ -12,6 +12,7 @@ Tokens inside page content:
   {{P}}     relative path to the home page of the current language
   {{A}}     relative path to the site root (assets)
   {{MAIL}}  contact e-mail      {{PLAY}}  Outlier on Google Play
+  {{PLAY_KS}} Killswitch on Google Play
   {{LOGIN}} team login URL
 
 Run:  python _build/build.py        (requires: pip install beautifulsoup4)
@@ -28,6 +29,9 @@ MAIL = 'empyreaninu@gmail.com'
 PLAY_ID = 'com.project.outlier'
 PLAY = {'en': f'https://play.google.com/store/apps/details?id={PLAY_ID}&amp;hl=en',
         'pl': f'https://play.google.com/store/apps/details?id={PLAY_ID}&amp;hl=pl'}
+PLAY_KS_ID = 'com.minimalistic.killswitch'
+PLAY_KS = {'en': f'https://play.google.com/store/apps/details?id={PLAY_KS_ID}&amp;hl=en',
+           'pl': f'https://play.google.com/store/apps/details?id={PLAY_KS_ID}&amp;hl=pl'}
 LANGS = ('en', 'pl')
 TODAY = datetime.date.today().isoformat()
 
@@ -83,9 +87,15 @@ def schema(lang, m):
                    'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'},
                    'publisher': ORG}, crumbs(lang, m)]
     elif kind == 'killswitch':
+        ks_play = PLAY_KS[lang].replace('&amp;', '&')
+        shots = ['cut-the-feed', 'guard-the-feeds', 'pick-your-targets', 'choose-your-level', 'see-the-difference']
         graph += [{'@type': 'MobileApplication', 'name': 'Killswitch', 'url': url(lang, m['out']),
                    'operatingSystem': 'Android', 'applicationCategory': 'UtilitiesApplication',
-                   'description': desc, 'inLanguage': lang, 'publisher': ORG}, crumbs(lang, m)]
+                   'description': desc, 'inLanguage': lang, 'installUrl': ks_play, 'downloadUrl': ks_play,
+                   'image': f'{SITE}/assets/img/killswitch/icon.webp',
+                   'screenshot': [f'{SITE}/assets/img/killswitch/{s}.webp' for s in shots],
+                   'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'},
+                   'publisher': ORG}, crumbs(lang, m)]
     elif kind == 'badsector':
         shots = ['tel-board', 'holo-hint', 'sam-board', 'tel-analysis', 'sam-intro']
         graph += [{'@type': ['MobileApplication', 'VideoGame'], 'name': 'BADSECTOR', 'url': url(lang, m['out']),
@@ -238,6 +248,7 @@ def footer(lang, m, P, A):
           <li><a href="{P}killswitch/">Killswitch</a></li>
           <li><a href="{P}badsector/">BADSECTOR</a></li>
           <li><a href="{PLAY[lang]}" rel="noopener">{L('Outlier on Google Play', 'Outlier w Google Play')} &#8599;</a></li>
+          <li><a href="{PLAY_KS[lang]}" rel="noopener">{L('Killswitch on Google Play', 'Killswitch w Google Play')} &#8599;</a></li>
         </ul>
       </div>
       <div>
@@ -333,7 +344,8 @@ def build():
                 nm = m['back_name']
                 body = body.replace('<!--BACK-->', f'<a class="back tlink" href="{m["back"]}">&lt; {L("Back to " + nm, "Wróć do: " + nm)}</a>')
             body = (body.replace('{{A}}', A).replace('{{P}}', P).replace('{{LOGIN}}', LOGIN)
-                        .replace('{{MAIL}}', MAIL).replace('{{PLAY}}', PLAY[lang]))
+                        .replace('{{MAIL}}', MAIL).replace('{{PLAY_KS}}', PLAY_KS[lang])
+                        .replace('{{PLAY}}', PLAY[lang]))
             html = head(lang, m, A) + topbar(lang, m, P) + '<main id="main">\n' + body + '\n</main>\n' + footer(lang, m, P, A)
             html = versioned(keep_lang(html, lang))
             out = ROOT / (('pl/' if lang == 'pl' and not m.get('only') else '') + m['out'])

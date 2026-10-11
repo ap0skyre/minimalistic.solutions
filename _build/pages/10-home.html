@@ -45,8 +45,8 @@
 
   <div class="wrap">
     <dl class="hero-meta hero-fade">
-      <div><dt><span lang="en">Live</span><span lang="pl">Opublikowane</span></dt><dd>Outlier</dd></div>
-      <div><dt><span lang="en">In development</span><span lang="pl">W produkcji</span></dt><dd>Killswitch, BADSECTOR</dd></div>
+      <div><dt><span lang="en">Live</span><span lang="pl">Opublikowane</span></dt><dd>Outlier, Killswitch</dd></div>
+      <div><dt><span lang="en">In development</span><span lang="pl">W produkcji</span></dt><dd>BADSECTOR</dd></div>
       <div><dt><span lang="en">Platform</span><span lang="pl">Platforma</span></dt><dd>Android</dd></div>
     </dl>
   </div>
@@ -96,11 +96,11 @@
     <article class="app theme-killswitch" data-reveal>
       <div class="app-info">
         <div>
-          <span class="status"><i></i><span lang="en">In development</span><span lang="pl">W trakcie tworzenia</span></span>
+          <span class="status live"><i></i><span lang="en">Live on Google Play</span><span lang="pl">Dostępna w Google Play</span></span>
           <h3 class="app-name h-display" style="margin-top:28px">Kill<span class="acc">switch</span></h3>
           <p class="app-tag">
-            <span lang="en">Stops infinite feeds in the apps you choose. Comments, chats and replies keep working.</span>
-            <span lang="pl">Zatrzymuje nieskończone feedy w wybranych aplikacjach. Komentarze, czaty i odpowiedzi działają dalej.</span>
+            <span lang="en">Cuts short videos and infinite feeds in the apps you choose. Comments, chats and replies keep working.</span>
+            <span lang="pl">Ucina krótkie filmy i nieskończone feedy w wybranych aplikacjach. Komentarze, czaty i odpowiedzi działają dalej.</span>
           </p>
         </div>
         <div style="display:grid;gap:24px">
@@ -111,20 +111,13 @@
             <div><dt><span lang="en">Network access</span><span lang="pl">Dostęp do sieci</span></dt><dd><span lang="en">None</span><span lang="pl">Brak</span></dd></div>
           </dl>
           <div class="app-cta">
-            <a class="btn btn--solid" href="{{P}}killswitch/"><span class="t"><span lang="en">Explore Killswitch</span><span lang="pl">Poznaj Killswitch</span></span><span class="g" aria-hidden="true"><i>&#8594;</i></span></a>
-            <a class="btn btn--ghost" href="{{P}}killswitch/privacy-policy/"><span class="t"><span lang="en">Privacy</span><span lang="pl">Prywatność</span></span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+            <a class="btn btn--solid" href="{{PLAY_KS}}" rel="noopener"><span class="t">Google Play</span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>
+            <a class="btn btn--ghost" href="{{P}}killswitch/"><span class="t"><span lang="en">Explore Killswitch</span><span lang="pl">Poznaj Killswitch</span></span><span class="g" aria-hidden="true"><i>&#8594;</i></span></a>
           </div>
         </div>
       </div>
       <a class="app-visual" href="{{P}}killswitch/" tabindex="-1" aria-hidden="true">
-        <span class="hazard">
-          <span class="hazard-card">
-            <span class="row"><span>Killswitch</span><span class="acc-text">&#9632; <span lang="en">Triggered</span><span lang="pl">Aktywny</span></span></span>
-            <span class="big"><span lang="en">Feed<br>blocked.</span><span lang="pl">Feed<br>zablokowany.</span></span>
-            <span class="meter"></span>
-            <span class="row"><span><span lang="en">Comments</span><span lang="pl">Komentarze</span></span><span><span lang="en">Still open</span><span lang="pl">Nadal otwarte</span></span></span>
-          </span>
-        </span>
+        <img src="{{A}}assets/img/killswitch/cut-the-feed.webp" srcset="{{A}}assets/img/killswitch/cut-the-feed-360.webp 360w, {{A}}assets/img/killswitch/cut-the-feed.webp 720w" sizes="(max-width: 1080px) 100vw, 50vw" width="720" height="1280" alt="" loading="lazy" decoding="async">
       </a>
     </article>
 
