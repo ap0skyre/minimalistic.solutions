@@ -19,8 +19,8 @@
     <h1 class="h-display"><span lang="en">Privacy policy</span><span lang="pl">Polityka prywatności</span></h1>
     <dl class="doc-meta">
       <div><dt><span lang="en">App</span><span lang="pl">Aplikacja</span></dt><dd>Killswitch</dd></div>
-      <div><dt><span lang="en">Version</span><span lang="pl">Wersja</span></dt><dd>1.1</dd></div>
-      <div><dt><span lang="en">Last updated</span><span lang="pl">Ostatnia zmiana</span></dt><dd><span lang="en">October 6, 2026</span><span lang="pl">6 października 2026</span></dd></div>
+      <div><dt><span lang="en">Version</span><span lang="pl">Wersja</span></dt><dd>1.2</dd></div>
+      <div><dt><span lang="en">Last updated</span><span lang="pl">Ostatnia zmiana</span></dt><dd><span lang="en">October 13, 2026</span><span lang="pl">13 października 2026</span></dd></div>
       <div><dt><span lang="en">Contact</span><span lang="pl">Kontakt</span></dt><dd><a class="tlink" href="mailto:{{MAIL}}">{{MAIL}}</a></dd></div>
     </dl>
   </div>
@@ -70,18 +70,18 @@
 <li>Only from the apps you personally ticked on the TARGETS screen. The service narrows itself to that exact list of packages and is not woken by any other app</li>
 <li>Reads the structure of the visible screen to tell a feed or a short-video player apart from a comment thread or a chat: view identifiers, class names, positions on screen, and whether a text field is present or focused</li>
 <li>Uses taps for one purpose: to know that you tapped your way into your messages, your comments or a share sheet, so that nothing you open from there is blocked. For that it reads the short label of the button you tapped, such as "Inbox" or "Comments", compares it on the spot against a fixed list of words, and discards it. A label longer than 40 characters, such as a video title or a message, is content rather than a button and is never read</li>
-<li>Applies the mode you chose for each app: blocks short-video players, blocks a burst of fast feed scrolling, or blocks feed scrolling altogether. When it fires, it shows the block screen and takes you out of the feed: it opens the app's own inbox, leaves the app, or presses Back, as you choose in CONFIG. The inbox is opened by pressing the app's own messages button, exactly as your finger would, and nothing outside that app is ever pressed</li>
+<li>Applies the mode you chose for each app: blocks short-video players, blocks a burst of fast feed scrolling, or blocks feed scrolling altogether. When it fires, it shows the block screen and takes you out of the feed: it opens the app's own inbox, leaves the app, or presses Back, as you choose in CONFIG. The inbox is opened by pressing the app's own messages button, exactly as your finger would, and nothing outside that app is ever pressed. To find that button it checks the view identifiers and the short labels of the buttons on screen, under the same 40 character limit, against a fixed list of words, and discards them</li>
 </ul>
 <h3>What the service does not do</h3>
 <ul>
-<li>It does not read your posts, your messages, your comments, or anything else people write. The only words it ever reads are the short labels of buttons you tap, as described above</li>
+<li>It does not read your posts, your messages, your comments, or anything else people write. The only words it ever reads are short labels of buttons, 40 characters at most, as described above</li>
 <li>It does not log keystrokes or capture anything you type</li>
 <li>It does not take screenshots or record your screen</li>
 <li>It does not store any screen content, not even temporarily on the device</li>
 <li>It does not transmit anything anywhere. The service has no network access path</li>
 </ul>
 <p>The structural signals in section 04 are examined in memory, in the moment, to answer a single yes/no question ("is this a feed?") and are discarded immediately. Nothing derived from them is written to disk beyond the daily counters listed in section 06.</p>
-<div class="note"><b>NOTE</b>The accessibility service is off until you switch it on yourself in Android Settings, and you can switch it off at any time in the same place. Killswitch stops working the moment you do, and does nothing to discourage or prevent it.</div>
+<div class="note"><b>NOTE</b>Before the service can be used, Killswitch shows a screen inside the app that explains what the service accesses and how it is used, and asks you to agree or decline. If you decline, the service stays off and the app does not run. If you agree, the service is still off until you switch it on yourself in Android Settings, and you can switch it off at any time in the same place. Killswitch stops working the moment you do, and does nothing to discourage or prevent it.</div>
 </section>
 
 <section id="overlay">
@@ -217,18 +217,18 @@
 <li>Tylko z aplikacji, które sam zaznaczyłeś na ekranie TARGETS. Usługa ogranicza się dokładnie do tej listy pakietów i nie jest wybudzana przez żadną inną aplikację</li>
 <li>Czyta strukturę widocznego ekranu, aby odróżnić feed lub odtwarzacz krótkich filmów od wątku komentarzy lub czatu: identyfikatory widoków, nazwy klas, położenie na ekranie oraz to, czy jest na nim pole tekstowe i czy jest aktywne</li>
 <li>Używa stuknięć w jednym celu: żeby wiedzieć, że przeszedłeś do wiadomości, komentarzy albo okna udostępniania, i niczego, co stamtąd otworzysz, nie blokować. W tym celu odczytuje krótką etykietę stukniętego przycisku, na przykład „Inbox” albo „Komentarze”, porównuje ją na miejscu ze stałą listą słów i od razu odrzuca. Etykieta dłuższa niż 40 znaków, na przykład tytuł filmu albo wiadomość, to treść, a nie przycisk, i nigdy nie jest odczytywana</li>
-<li>Stosuje tryb wybrany dla każdej aplikacji: blokuje odtwarzacze krótkich filmów, blokuje serię szybkich przewinięć feedu albo blokuje przewijanie feedu w ogóle. Gdy zadziała, pokazuje ekran blokady i wyprowadza Cię z feedu: otwiera skrzynkę wiadomości tej aplikacji, zamyka aplikację albo naciska Wstecz, zależnie od ustawienia w CONFIG. Skrzynkę otwiera, naciskając przycisk wiadomości tej aplikacji, dokładnie tak, jak zrobiłby to Twój palec, i nigdy nie naciska niczego poza tą aplikacją</li>
+<li>Stosuje tryb wybrany dla każdej aplikacji: blokuje odtwarzacze krótkich filmów, blokuje serię szybkich przewinięć feedu albo blokuje przewijanie feedu w ogóle. Gdy zadziała, pokazuje ekran blokady i wyprowadza Cię z feedu: otwiera skrzynkę wiadomości tej aplikacji, zamyka aplikację albo naciska Wstecz, zależnie od ustawienia w CONFIG. Skrzynkę otwiera, naciskając przycisk wiadomości tej aplikacji, dokładnie tak, jak zrobiłby to Twój palec, i nigdy nie naciska niczego poza tą aplikacją. Żeby znaleźć ten przycisk, porównuje identyfikatory widoków i krótkie etykiety przycisków widocznych na ekranie, z tym samym limitem 40 znaków, ze stałą listą słów i od razu je odrzuca</li>
 </ul>
 <h3>Czego usługa nie robi</h3>
 <ul>
-<li>Nie czyta Twoich postów, wiadomości, komentarzy ani niczego innego, co ktoś napisał. Jedyne słowa, jakie w ogóle odczytuje, to krótkie etykiety stukniętych przycisków, opisane wyżej</li>
+<li>Nie czyta Twoich postów, wiadomości, komentarzy ani niczego innego, co ktoś napisał. Jedyne słowa, jakie w ogóle odczytuje, to krótkie etykiety przycisków, najwyżej 40 znaków, opisane wyżej</li>
 <li>Nie rejestruje naciśnięć klawiszy ani niczego, co wpisujesz</li>
 <li>Nie robi zrzutów ekranu ani nie nagrywa ekranu</li>
 <li>Nie zapisuje żadnej zawartości ekranu, nawet tymczasowo na urządzeniu</li>
 <li>Niczego nigdzie nie wysyła. Usługa nie ma dostępu do sieci</li>
 </ul>
 <p>Sygnały strukturalne z punktu 04 są analizowane w pamięci, w danej chwili, aby odpowiedzieć na jedno pytanie tak/nie („czy to feed?”), i natychmiast odrzucane. Nic z nich nie trafia na dysk poza dziennymi licznikami wymienionymi w punkcie 06.</p>
-<div class="note"><b>UWAGA</b>Usługa ułatwień dostępu jest wyłączona, dopóki sam jej nie włączysz w Ustawieniach Androida, i w tym samym miejscu możesz ją w każdej chwili wyłączyć. Killswitch przestaje wtedy działać i w żaden sposób Cię od tego nie odwodzi ani tego nie blokuje.</div>
+<div class="note"><b>UWAGA</b>Zanim usługa zacznie działać, Killswitch pokazuje w aplikacji ekran, który wyjaśnia, do czego usługa ma dostęp i jak z niego korzysta, i prosi o zgodę albo odmowę. Jeśli odmówisz, usługa pozostaje wyłączona, a aplikacja nie działa. Jeśli się zgodzisz, usługa i tak jest wyłączona, dopóki sam jej nie włączysz w Ustawieniach Androida, i w tym samym miejscu możesz ją w każdej chwili wyłączyć. Killswitch przestaje wtedy działać i w żaden sposób Cię od tego nie odwodzi ani tego nie blokuje.</div>
 </section>
 
 <section id="pl-overlay">
