@@ -258,6 +258,7 @@ def footer(lang, m, P, A):
           <li><a href="{P}outlier/delete-account/">{L('Outlier account deletion', 'Outlier: usunięcie konta')}</a></li>
           <li><a href="{P}killswitch/privacy-policy/">{L('Killswitch privacy', 'Killswitch: prywatność')}</a></li>
           <li><a href="{P}badsector/privacy-policy/">{L('BADSECTOR privacy', 'BADSECTOR: prywatność')}</a></li>
+          <li><a href="{P}badsector/terms/">{L('BADSECTOR terms', 'BADSECTOR: warunki')}</a></li>
           <li><a href="{P}badsector/delete-data/">{L('BADSECTOR data deletion', 'BADSECTOR: usunięcie danych')}</a></li>
         </ul>
       </div>
