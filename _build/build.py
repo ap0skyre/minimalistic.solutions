@@ -15,6 +15,9 @@ Tokens inside page content:
   {{PLAY_KS}} Killswitch on Google Play
   {{LOGIN}} team login URL
 
+Attributes cannot be written bilingually, so a translated one sits next to the English one:
+  alt="Outlier icon" alt-pl="Ikona Outliera"   (any attribute, suffix -pl; used on /pl/, dropped on /)
+
 Run:  python _build/build.py        (requires: pip install beautifulsoup4)
 """
 import datetime, hashlib, json, pathlib, re
@@ -205,7 +208,7 @@ def topbar(lang, m, P):
              f'<span class="t">{L("Login", "Zaloguj")}</span><span class="g" aria-hidden="true"><i>&#8599;</i></span></a>')
     return f'''<header class="topbar">
   <div class="wrap">
-    <a class="brand" href="{P}" aria-label="minimalistic.solutions">
+    <a class="brand" href="{P or './'}" aria-label="minimalistic.solutions">
       <span class="brand-mark" aria-hidden="true"></span>
       <span><span class="full">minimalistic<span class="dim">.solutions</span></span><span class="short">m<span class="dim">.s</span></span>{crumb}</span>
     </a>
@@ -237,9 +240,9 @@ def footer(lang, m, P, A):
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="{P}"><span class="brand-mark" aria-hidden="true"></span><span>minimalistic<span class="dim">.solutions</span></span></a>
-        <p>{L('Independent Android studio. Focused apps, no ads, privacy policies written for humans.',
-              'Niezależne studio aplikacji na Androida. Skupione aplikacje, zero reklam, polityki prywatności pisane dla ludzi.')}</p>
+        <a class="brand" href="{P or './'}"><span class="brand-mark" aria-hidden="true"></span><span>minimalistic<span class="dim">.solutions</span></span></a>
+        <p>{L('Independent Android studio. Small apps with no ads and clear privacy policies.',
+              'Niezależne studio aplikacji na Androida. Proste aplikacje bez reklam, z czytelną polityką prywatności.')}</p>
       </div>
       <div>
         <h2 class="foot-h">{L('Apps', 'Aplikacje')}</h2>
@@ -305,6 +308,12 @@ def keep_lang(html, lang):
     for el in soup.find_all('span', attrs={'lang': lang}):
         if list(el.attrs) == ['lang']:
             el.unwrap()
+    # Attributes cannot hold a <span lang>: alt-pl="…" / aria-label-pl="…" replace the base attribute on /pl/.
+    for el in soup.find_all(True):
+        for k in [k for k in el.attrs if k.endswith('-pl')]:
+            v = el.attrs.pop(k)
+            if lang == 'pl':
+                el[k[:-3]] = v
     return str(soup)
 
 
@@ -328,6 +337,11 @@ def versioned(html):
 
 def build():
     sitemap = []
+    # <lastmod> is the day a page's HTML last changed, not the day of the build: keep the old date
+    # for pages that come out identical (search engines ignore lastmod that changes on every deploy).
+    sm = ROOT / 'sitemap.xml'
+    old = dict(re.findall(r'<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>', sm.read_text(encoding='utf-8'))) if sm.exists() else {}
+    lastmod = {}
     for f in sorted(PAGES.glob('*.html')):
         raw = f.read_text(encoding='utf-8')
         mm = re.match(r'\s*<!--(\{.*?\})-->\s*', raw, re.S)
@@ -351,6 +365,8 @@ def build():
             html = versioned(keep_lang(html, lang))
             out = ROOT / (('pl/' if lang == 'pl' and not m.get('only') else '') + m['out'])
             out.parent.mkdir(parents=True, exist_ok=True)
+            same = out.exists() and out.read_text(encoding='utf-8') == html
+            lastmod[url(lang, m['out'])] = old.get(url(lang, m['out']), TODAY) if same else TODAY
             out.write_text(html, encoding='utf-8')
             print('built', out.relative_to(ROOT))
         if not m.get('noindex'):
@@ -361,7 +377,7 @@ def build():
         for lang in LANGS:
             alts = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{url(l, out)}"/>' for l in LANGS)
             alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url("en", out)}"/>'
-            rows.append(f'  <url>\n    <loc>{url(lang, out)}</loc>\n    <lastmod>{TODAY}</lastmod>{alts}\n  </url>')
+            rows.append(f'  <url>\n    <loc>{url(lang, out)}</loc>\n    <lastmod>{lastmod[url(lang, out)]}</lastmod>{alts}\n  </url>')
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

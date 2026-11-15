@@ -17,7 +17,7 @@
   <div class="wrap p-hero-grid">
     <div>
       <div class="app-id hero-fade">
-        <img src="{{A}}assets/img/killswitch/icon.webp" width="96" height="96" alt="Killswitch icon">
+        <img src="{{A}}assets/img/killswitch/icon.webp" width="96" height="96" alt="Killswitch icon" alt-pl="Ikona Killswitcha">
         <div>
           <div class="mono-label" style="color:var(--fg)">Killswitch: No Doomscroll</div>
           <span class="status live" style="margin-top:4px"><i></i><span lang="en">Live on Google Play</span><span lang="pl">Dostępna w Google Play</span></span>
@@ -47,7 +47,7 @@
           <div class="ks-screen">
             <div class="ks-app">
               <div class="ks-app-bar"><span>feed.app</span><span><span lang="en">For you</span><span lang="pl">Dla ciebie</span></span></div>
-              <div class="ks-feed" id="ks-feed" tabindex="0" aria-label="Demo feed. Scroll it quickly to trigger Killswitch."></div>
+              <div class="ks-feed" id="ks-feed" tabindex="0" aria-label="Demo feed. Scroll it quickly to trigger Killswitch." aria-label-pl="Demonstracyjny feed. Przewijaj go szybko, żeby uruchomić Killswitcha."></div>
             </div>
             <div class="ks-hud" aria-live="polite">
               <div class="row"><span><span lang="en">Swipes (10 s)</span><span lang="pl">Przesunięcia (10 s)</span></span><b id="ks-s">0/8</b></div>
@@ -72,7 +72,7 @@
 </section>
 
 <!-- ============================ STATS ============================ -->
-<div class="stats" aria-label="Killswitch in numbers">
+<div class="stats" aria-label="Killswitch in numbers" aria-label-pl="Killswitch w liczbach">
   <div class="stat" data-reveal><div class="n">0</div><div class="l"><span lang="en">Bytes collected</span><span lang="pl">Zebranych bajtów</span></div></div>
   <div class="stat" data-reveal style="--i:1"><div class="n">0</div><div class="l"><span lang="en">Network requests</span><span lang="pl">Żądań sieciowych</span></div></div>
   <div class="stat" data-reveal style="--i:2"><div class="n">27</div><div class="l"><span lang="en">Feed apps it can guard</span><span lang="pl">Aplikacji z feedem</span></div></div>
@@ -117,16 +117,16 @@
       <p class="body" style="margin-top:24px" data-reveal><span lang="en">STATUS, TARGETS, STATS and CONFIG. Everything Killswitch does is on one of them.</span><span lang="pl">STATUS, TARGETS, STATS i CONFIG. Wszystko, co robi Killswitch, jest na jednej z nich.</span></p>
     </div>
     <div class="strip-ctrl">
-      <button type="button" data-strip-dir="-1" aria-label="Previous">&#8592;</button>
-      <button type="button" data-strip-dir="1" aria-label="Next">&#8594;</button>
+      <button type="button" data-strip-dir="-1" aria-label="Previous" aria-label-pl="Poprzedni">&#8592;</button>
+      <button type="button" data-strip-dir="1" aria-label="Next" aria-label-pl="Następny">&#8594;</button>
     </div>
   </div>
-  <div class="strip" tabindex="0" aria-label="Killswitch screens">
-    <figure data-reveal><div class="frame"><img src="{{A}}assets/img/killswitch/cut-the-feed.webp" srcset="{{A}}assets/img/killswitch/cut-the-feed-360.webp 360w, {{A}}assets/img/killswitch/cut-the-feed.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="STATUS screen: Killswitch armed, 69 feeds cut today, time reclaimed, scrolls seen and the armed streak." loading="lazy" decoding="async"></div><figcaption><span>Status</span><span><span lang="en">Armed</span><span lang="pl">Uzbrojony</span></span></figcaption></figure>
-    <figure data-reveal style="--i:1"><div class="frame"><img src="{{A}}assets/img/killswitch/guard-the-feeds.webp" srcset="{{A}}assets/img/killswitch/guard-the-feeds-360.webp 360w, {{A}}assets/img/killswitch/guard-the-feeds.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="TARGETS screen: Instagram, Reddit, Threads and TikTok guarded, each with its blocking level." loading="lazy" decoding="async"></div><figcaption><span>Targets</span><span><span lang="en">Your apps</span><span lang="pl">Twoje aplikacje</span></span></figcaption></figure>
-    <figure data-reveal style="--i:2"><div class="frame"><img src="{{A}}assets/img/killswitch/pick-your-targets.webp" srcset="{{A}}assets/img/killswitch/pick-your-targets-360.webp 360w, {{A}}assets/img/killswitch/pick-your-targets.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="TARGETS screen with the level picker open for Instagram: SHORTS ONLY, SHORTS + BINGE, NO SCROLLING." loading="lazy" decoding="async"></div><figcaption><span>Targets</span><span><span lang="en">Level per app</span><span lang="pl">Poziom dla aplikacji</span></span></figcaption></figure>
-    <figure data-reveal style="--i:3"><div class="frame"><img src="{{A}}assets/img/killswitch/choose-your-level.webp" srcset="{{A}}assets/img/killswitch/choose-your-level-360.webp 360w, {{A}}assets/img/killswitch/choose-your-level.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="CONFIG screen: the three levels with what each one blocks. Messages work in every mode." loading="lazy" decoding="async"></div><figcaption><span>Config</span><span><span lang="en">Three levels</span><span lang="pl">Trzy poziomy</span></span></figcaption></figure>
-    <figure data-reveal style="--i:4"><div class="frame"><img src="{{A}}assets/img/killswitch/see-the-difference.webp" srcset="{{A}}assets/img/killswitch/see-the-difference-360.webp 360w, {{A}}assets/img/killswitch/see-the-difference.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="STATS screen: interruptions over the last 7 days, time in feeds and all-time totals." loading="lazy" decoding="async"></div><figcaption><span>Stats</span><span><span lang="en">Last 7 days</span><span lang="pl">Ostatnie 7 dni</span></span></figcaption></figure>
+  <div class="strip" tabindex="0" aria-label="Killswitch screens" aria-label-pl="Ekrany Killswitcha">
+    <figure data-reveal><div class="frame"><img src="{{A}}assets/img/killswitch/cut-the-feed.webp" srcset="{{A}}assets/img/killswitch/cut-the-feed-360.webp 360w, {{A}}assets/img/killswitch/cut-the-feed.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="STATUS screen: Killswitch armed, 69 feeds cut today, time reclaimed, scrolls seen and the armed streak." alt-pl="Ekran STATUS: Killswitch uzbrojony, 69 feedów przerwanych dzisiaj, odzyskany czas, liczba przewinięć i seria dni z włączoną ochroną." loading="lazy" decoding="async"></div><figcaption><span>Status</span><span><span lang="en">Armed</span><span lang="pl">Uzbrojony</span></span></figcaption></figure>
+    <figure data-reveal style="--i:1"><div class="frame"><img src="{{A}}assets/img/killswitch/guard-the-feeds.webp" srcset="{{A}}assets/img/killswitch/guard-the-feeds-360.webp 360w, {{A}}assets/img/killswitch/guard-the-feeds.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="TARGETS screen: Instagram, Reddit, Threads and TikTok guarded, each with its blocking level." alt-pl="Ekran TARGETS: chronione Instagram, Reddit, Threads i TikTok, każda aplikacja z własnym poziomem blokady." loading="lazy" decoding="async"></div><figcaption><span>Targets</span><span><span lang="en">Your apps</span><span lang="pl">Twoje aplikacje</span></span></figcaption></figure>
+    <figure data-reveal style="--i:2"><div class="frame"><img src="{{A}}assets/img/killswitch/pick-your-targets.webp" srcset="{{A}}assets/img/killswitch/pick-your-targets-360.webp 360w, {{A}}assets/img/killswitch/pick-your-targets.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="TARGETS screen with the level picker open for Instagram: SHORTS ONLY, SHORTS + BINGE, NO SCROLLING." alt-pl="Ekran TARGETS z otwartym wyborem poziomu dla Instagrama: SHORTS ONLY, SHORTS + BINGE, NO SCROLLING." loading="lazy" decoding="async"></div><figcaption><span>Targets</span><span><span lang="en">Level per app</span><span lang="pl">Poziom dla aplikacji</span></span></figcaption></figure>
+    <figure data-reveal style="--i:3"><div class="frame"><img src="{{A}}assets/img/killswitch/choose-your-level.webp" srcset="{{A}}assets/img/killswitch/choose-your-level-360.webp 360w, {{A}}assets/img/killswitch/choose-your-level.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="CONFIG screen: the three levels with what each one blocks. Messages work in every mode." alt-pl="Ekran CONFIG: trzy poziomy i to, co każdy z nich blokuje. Wiadomości działają w każdym trybie." loading="lazy" decoding="async"></div><figcaption><span>Config</span><span><span lang="en">Three levels</span><span lang="pl">Trzy poziomy</span></span></figcaption></figure>
+    <figure data-reveal style="--i:4"><div class="frame"><img src="{{A}}assets/img/killswitch/see-the-difference.webp" srcset="{{A}}assets/img/killswitch/see-the-difference-360.webp 360w, {{A}}assets/img/killswitch/see-the-difference.webp 720w" sizes="(max-width: 767px) 62vw, 340px" width="720" height="1280" alt="STATS screen: interruptions over the last 7 days, time in feeds and all-time totals." alt-pl="Ekran STATS: przerwania z ostatnich 7 dni, czas w feedach i sumy od początku." loading="lazy" decoding="async"></div><figcaption><span>Stats</span><span><span lang="en">Last 7 days</span><span lang="pl">Ostatnie 7 dni</span></span></figcaption></figure>
   </div>
 </section>
 
@@ -170,7 +170,7 @@
           <li><span lang="en">Reads only the short label of a button you tap, like Inbox, and keeps nothing</span><span lang="pl">Czyta tylko krótką etykietę stukniętego przycisku, np. Wiadomości, i niczego nie zapisuje</span></li>
           <li class="no"><span lang="en">Never reads your text, messages or comments</span><span lang="pl">Nigdy nie czyta Twoich tekstów, wiadomości ani komentarzy</span></li>
           <li class="no"><span lang="en">No keylogging, no screenshots, no recording</span><span lang="pl">Bez keyloggera, zrzutów ekranu i nagrywania</span></li>
-          <li class="no"><span lang="en">Off until you switch it on, off whenever you want</span><span lang="pl">Wyłączone, dopóki go nie włączysz, i wyłączasz je, kiedy chcesz</span></li>
+          <li class="no"><span lang="en">Off until you switch it on, off whenever you want</span><span lang="pl">Wyłączona, dopóki jej nie włączysz, a wyłączysz ją, kiedy chcesz</span></li>
         </ul>
       </div>
       <div>

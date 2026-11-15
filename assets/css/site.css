@@ -1376,7 +1376,7 @@ input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.2); }
   .principle:nth-child(n) { grid-column: span 6; }
   .foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .foot-brand { grid-column: 1 / -1; }
-  .doc { grid-template-columns: 1fr; }
+  .doc { grid-template-columns: minmax(0, 1fr); }
   .toc { position: static; }
   .p-hero { min-height: 0; }
   .phone-shot { width: min(100%, 380px); }
@@ -1466,6 +1466,23 @@ html { -webkit-tap-highlight-color: transparent; }
   .foot-grid a, .legal-links a { padding-block: 4px; }
 }
 .galton-foot > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Narrow phones: no text may be cut off or push the page wider than the screen. */
+html:lang(pl) .ks-block .big { font-size: min(34px, 8.3vw); }
+@media (max-width: 520px) {
+  .galton-foot > span:first-child { white-space: normal; }
+  .prose h2 { font-stretch: 100%; overflow-wrap: anywhere; }
+}
+/* Killswitch steps (EN): "difference" is wider than a four-column cell at the default size and crossed the card border. */
+@media (min-width: 1081px) { html:lang(en) .theme-killswitch .rail h3 { font-size: clamp(23px, 2.15vw, 32px); } }
+@media (max-width: 359px) {
+  .doc-head h1, .app-name { font-size: 36px; }
+  .doc-meta { grid-template-columns: minmax(0, 1fr); }
+  .prose h2 { font-size: 23px; }
+  .modes li h3 { font-stretch: 100%; }
+  .gauss-read > div { padding: 12px 9px; }
+  .gauss-read dd { font-size: 17px; font-stretch: 100%; }
+}
 
 /* =====================================================================
    BADSECTOR

@@ -14,6 +14,7 @@ killswitch/privacy-policy/         polityka prywatności Killswitcha (EN + PL)
 badsector/                         strona BADSECTOR (grywalne demo na silniku z gry)
 badsector/privacy-policy/          polityka prywatności BADSECTOR (EN + PL)
 badsector/delete-data/             usuwanie danych online BADSECTOR (EN + PL)
+badsector/terms/                   warunki korzystania z BADSECTOR (EN + PL)
 404.html
 assets/css  assets/js  assets/fonts (fonty lokalnie, bez Google Fonts = RODO ok)
 assets/img
@@ -41,6 +42,8 @@ python _build/build.py
 
 Języki: każdy tekst występuje dwa razy, `<span lang="en">…</span><span lang="pl">…</span>`.
 Każdy język jest budowany jako osobna strona (/ i /pl/), z czystym HTML w jednym języku.
+Atrybuty (`alt`, `aria-label`) tłumaczy się dopiskiem `-pl`: `alt="Outlier icon" alt-pl="Ikona Outliera"`.
+`<lastmod>` w `sitemap.xml` zmienia się tylko dla stron, których HTML faktycznie się zmienił.
 
 ## Deploy na GitHub Pages
 

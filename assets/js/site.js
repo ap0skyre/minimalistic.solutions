@@ -371,9 +371,11 @@
 
       var p = cdf(z) * 100;
       var top = 100 - p;
-      outZ.textContent = (z >= 0 ? '+' : '−') + Math.abs(z).toFixed(2) + 'σ';
-      outP.textContent = p.toFixed(1) + '%';
-      outT.textContent = (lang() === 'pl' ? 'TOP ' : 'TOP ') + (top < 0.1 ? '<0.1' : top.toFixed(1)) + '%';
+      // Polish uses a decimal comma
+      var num = function (v, d) { var s = v.toFixed(d); return lang() === 'pl' ? s.replace('.', ',') : s; };
+      outZ.textContent = (z >= 0 ? '+' : '−') + num(Math.abs(z), 2) + 'σ';
+      outP.textContent = num(p, 1) + '%';
+      outT.textContent = 'TOP ' + (top < 0.1 ? '<' + num(0.1, 1) : num(top, 1)) + '%';
       slider.style.setProperty('--p', ((z + 3) / 6 * 100) + '%');
       slider.setAttribute('aria-valuetext', outZ.textContent + ', ' + outP.textContent);
     }
